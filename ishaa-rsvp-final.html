@@ -1,0 +1,1740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#0D2018">
+<title>Ishaa Turns One · May 2, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+:root{
+  --f9:#091710;--f8:#0D2018;--f7:#132B1E;--f6:#1C3D2A;--f5:#274F38;
+  --sage:#4A7A5A;--sagl:#7AAA88;--sagp:#C4D9CC;
+  --gold:#A8823A;--goldl:#C4A060;--goldp:#EDE0C8;
+  --iv:#F7F3ED;--ivd:#EDE7DC;--ivdd:#D8CFC0;
+  --ink:#1A271E;--ink2:#3A5048;--ink3:#6B8578;--ink4:#9FB0A8;
+  --line:rgba(74,122,90,0.14);--line2:rgba(74,122,90,0.08);
+  --r:12px;--rsm:8px;
+}
+html{-webkit-font-smoothing:antialiased;min-height:100%;}
+body{font-family:'DM Sans',sans-serif;background:var(--f8);color:var(--iv);min-height:100dvh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 160% 70% at -10% -5%,rgba(21,48,30,.9) 0%,transparent 55%),radial-gradient(ellipse 90% 80% at 110% 10%,rgba(15,30,20,.7) 0%,transparent 50%),radial-gradient(ellipse 90% 100% at 50% 110%,rgba(10,24,16,.9) 0%,transparent 55%);}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.35;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");}
+
+.page{position:relative;z-index:1;max-width:640px;margin:0 auto;min-height:100dvh;display:flex;flex-direction:column;}
+
+/* MASTHEAD */
+.mast{padding:24px 24px 0;text-align:center;flex-shrink:0;}
+.mast-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--goldl);margin-bottom:12px;opacity:0;animation:up .7s .1s ease forwards;}
+.mast-eyebrow::before,.mast-eyebrow::after{content:'';display:block;width:30px;height:1px;background:linear-gradient(90deg,transparent,var(--gold));opacity:.5;}
+.mast-eyebrow::after{transform:scaleX(-1);}
+.mast-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,9vw,48px);font-weight:300;font-style:italic;color:#fff;line-height:1.05;margin-bottom:8px;opacity:0;animation:up .7s .2s ease forwards;}
+.mast-hosts{font-size:12px;font-weight:300;color:var(--ink4);letter-spacing:.04em;line-height:1.55;opacity:0;animation:up .7s .3s ease forwards;}
+.mast-hosts strong{color:var(--sagp);font-weight:400;}
+.mast-personal{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:300;font-style:italic;color:rgba(196,217,204,.65);line-height:1.6;margin-top:8px;opacity:0;animation:up .7s .36s ease forwards;}
+.mast-when{display:inline-flex;align-items:center;gap:10px;font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--goldl);margin-top:12px;opacity:0;animation:up .7s .42s ease forwards;}
+.mast-when::before,.mast-when::after{content:'—';color:var(--gold);opacity:.4;}
+.mast-where{font-size:11px;color:var(--ink3);font-weight:300;letter-spacing:.07em;margin-top:3px;opacity:0;animation:up .7s .48s ease forwards;}
+.hr{height:1px;margin:14px 24px;background:linear-gradient(90deg,transparent,var(--line),transparent);opacity:0;animation:up .5s .52s ease forwards;flex-shrink:0;}
+
+/* CARD SLOT */
+.card-slot{
+  margin:0;
+  position:relative;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  opacity:0;
+  animation:up .8s .58s ease forwards;
+  padding:8px 12px;
+}
+.card{background:var(--iv);border-radius:20px;box-shadow:0 4px 6px rgba(9,23,16,.2),0 20px 60px rgba(9,23,16,.38);overflow:hidden;position:relative;width:100%;transition:opacity .28s ease,transform .28s ease;opacity:1;transform:translateY(0);pointer-events:auto;}
+.card.out{opacity:0;transform:translateY(-8px);pointer-events:none;}
+.card.hidden{display:none !important;}
+
+/* QUESTION CARD */
+.q-inner{padding:28px 28px 32px;}
+.q-label{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--sage);margin-bottom:10px;display:block;}
+.q-text{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;font-style:italic;color:var(--ink);line-height:1.3;margin-bottom:20px;}
+.rel-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.rel-tile{border:1px solid var(--ivdd);border-radius:var(--r);padding:16px 12px;cursor:pointer;transition:all .2s;background:var(--iv);}
+.rel-tile:hover{border-color:var(--sagp);background:var(--ivd);}
+.rel-tile.on{border-color:var(--sage);background:var(--f8);box-shadow:0 2px 12px rgba(9,23,16,.2);}
+.rel-name{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:500;color:var(--ink);display:block;margin-bottom:2px;transition:color .2s;line-height:1.2;}
+.rel-desc{font-size:11px;color:var(--ink3);font-weight:300;transition:color .2s;}
+.rel-tile.on .rel-name{color:var(--iv);}
+.rel-tile.on .rel-desc{color:var(--sagl);}
+
+/* RSVP CARD */
+.back-bar{display:flex;align-items:center;gap:8px;padding:13px 20px;border-bottom:1px solid var(--line);cursor:pointer;}
+.back-bar:hover .back-label{color:var(--ink2);}
+.back-arrow{font-size:15px;color:var(--ink3);}
+.back-label{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);transition:color .18s;}
+.back-rel{font-size:11px;color:var(--ink4);font-weight:300;margin-left:auto;}
+
+.ev-rows{padding:16px 22px;border-bottom:1px solid var(--line);}
+.ev-row{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);}
+.ev-row:last-child{border-bottom:none;}
+.ev-dot{width:5px;height:5px;border-radius:50%;background:var(--sage);flex-shrink:0;margin-top:7px;}
+.ev-name{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:500;color:var(--ink);font-style:italic;}
+.ev-time{font-size:11px;color:var(--sage);font-weight:500;letter-spacing:.04em;margin-top:2px;}
+.ev-note{font-size:12px;color:var(--ink3);font-weight:300;margin-top:3px;line-height:1.5;}
+.ev-single{padding:16px 22px;border-bottom:1px solid var(--line);}
+.ev-single-eyebrow{font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);margin-bottom:4px;}
+.ev-single-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;font-style:italic;color:var(--ink);}
+.ev-single-meta{font-size:12px;color:var(--ink3);font-weight:300;margin-top:3px;line-height:1.5;}
+
+.farea{padding:16px 22px;border-bottom:1px solid var(--line);}
+.farea:last-of-type{border-bottom:none;}
+.fl{display:block;font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);margin-bottom:6px;}
+.fl-tip{font-size:9px;font-weight:400;letter-spacing:.1em;color:var(--ink4);text-transform:none;}
+.field-note{display:block;font-size:11px;color:var(--ink4);font-weight:300;margin-top:5px;font-style:italic;line-height:1.45;}
+.fi{width:100%;padding:12px 16px;border:1px solid var(--ivdd);border-radius:var(--rsm);font-size:15px;font-family:'DM Sans',sans-serif;font-weight:400;color:var(--ink);background:var(--iv);outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;}
+.fi::placeholder{color:var(--ink4);}
+.fi:focus{border-color:var(--sage);box-shadow:0 0 0 3px rgba(74,122,90,.1);}
+.fi.sel{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%236B8578' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+@media(max-width:380px){.frow{grid-template-columns:1fr;}}
+.field{margin-bottom:12px;}
+.field:last-child{margin-bottom:0;}
+
+/* phone with flag */
+.phone-wrap{display:flex;gap:0;border:1px solid var(--ivdd);border-radius:var(--rsm);overflow:hidden;transition:border-color .2s,box-shadow .2s;}
+.phone-wrap:focus-within{border-color:var(--sage);box-shadow:0 0 0 3px rgba(74,122,90,.1);}
+.phone-prefix{display:flex;align-items:center;gap:6px;padding:12px 12px 12px 14px;background:var(--ivd);border-right:1px solid var(--ivdd);font-size:14px;font-weight:500;color:var(--ink2);white-space:nowrap;flex-shrink:0;}
+.phone-flag{font-size:16px;}
+.phone-code{font-size:13px;font-weight:500;color:var(--ink3);}
+.phone-inp{flex:1;padding:12px 14px;border:none;font-size:15px;font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--iv);outline:none;min-width:0;}
+.phone-inp::placeholder{color:var(--ink4);}
+
+/* city with map icon */
+.city-wrap{position:relative;}
+.city-inp{padding-right:14px !important;}
+.city-map-btn{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:6px;background:var(--f7);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .18s;}
+.city-map-btn:hover{background:var(--f6);}
+.city-map-btn svg{width:14px;height:14px;stroke:#fff;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+
+/* Places autocomplete dropdown */
+.dt-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.guest-row{display:flex;align-items:flex-end;gap:6px;margin-bottom:0;}
+.guest-box{flex:1;min-width:0;}
+.guest-label{display:block;font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);margin-bottom:5px;}
+.guest-sep{font-size:18px;color:var(--ink4);font-weight:300;padding-bottom:12px;flex-shrink:0;}
+.guest-inp{text-align:center;padding-left:8px !important;padding-right:8px !important;}
+.bloom-note{
+  background:rgba(26,61,42,0.05);border:1px solid rgba(74,122,90,0.18);
+  border-radius:var(--rsm);padding:10px 14px;
+  font-size:12px;color:var(--ink2);font-weight:300;line-height:1.55;
+}
+.bloom-link{color:var(--sage);font-weight:500;text-decoration:underline;text-underline-offset:3px;}
+.bloom-link:hover{color:var(--sagl);}
+.ac-wrap{position:relative;}
+
+/* transport detail sub-sections */
+.tr-detail{
+  background:rgba(26,61,42,0.04);border:1px solid rgba(74,122,90,0.15);
+  border-radius:var(--r);padding:14px 16px;margin-bottom:12px;
+}
+.tr-detail-title{
+  font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--sage);margin-bottom:12px;display:block;
+}
+.ac-place-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;}
+@media(max-width:400px){.ac-place-grid{grid-template-columns:1fr;}}
+.place-btn{
+  border:1.5px solid var(--ivdd);border-radius:var(--rsm);padding:10px 12px;
+  background:var(--iv);cursor:pointer;text-align:left;transition:all .18s;
+  font-family:'DM Sans',sans-serif;
+}
+.place-btn:hover{border-color:var(--sagp);background:var(--ivd);}
+.place-btn.on{border-color:var(--sage);background:var(--f8);}
+.place-btn-name{display:block;font-size:13px;font-weight:500;color:var(--ink);transition:color .18s;}
+.place-btn-sub{display:block;font-size:10px;color:var(--ink3);margin-top:2px;transition:color .18s;}
+.place-btn.on .place-btn-name{color:var(--iv);}
+.place-btn.on .place-btn-sub{color:var(--sagl);}
+
+.pickup-section{background:rgba(26,61,42,0.03);border:1px solid rgba(74,122,90,0.14);border-radius:var(--r);overflow:hidden;}
+.pickup-toggle{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:13px 14px;cursor:pointer;transition:all .18s;
+}
+.pickup-toggle.on{background:rgba(74,122,90,0.05);}
+.pickup-toggle-label{font-size:13px;font-weight:500;color:var(--ink2);}
+.pickup-toggle-note{font-size:11px;color:var(--ink4);font-weight:300;margin-top:1px;}
+.pickup-check{width:20px;height:20px;border-radius:50%;border:2px solid var(--ivdd);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .18s;}
+.pickup-toggle.on .pickup-check{border-color:var(--sage);background:var(--sage);}
+.pickup-check svg{width:10px;height:10px;stroke:#fff;stroke-width:3;fill:none;stroke-linecap:round;display:none;}
+.pickup-toggle.on .pickup-check svg{display:block;}
+.dt-compact{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;}
+.pickup-section .reveal-inner{padding:0 14px 14px;}
+.ac-dropdown{
+  position:absolute;top:calc(100% + 4px);left:0;right:0;
+  background:var(--iv);border:1px solid var(--ivdd);
+  border-radius:var(--r);box-shadow:0 8px 30px rgba(9,23,16,.16);
+  z-index:200;overflow:hidden;display:none;
+}
+.ac-dropdown.show{display:block;}
+.ac-item{
+  display:flex;align-items:center;gap:10px;
+  padding:11px 14px;cursor:pointer;transition:background .15s;
+  border-bottom:1px solid rgba(216,207,192,.4);
+}
+.ac-item:last-child{border-bottom:none;}
+.ac-item:hover,.ac-item.focused{background:var(--ivd);}
+.ac-pin{width:28px;height:28px;border-radius:50%;background:var(--f7);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ac-pin svg{width:12px;height:12px;stroke:var(--sagl);stroke-width:2;fill:none;stroke-linecap:round;}
+.ac-main{font-size:14px;font-weight:500;color:var(--ink);line-height:1.2;}
+.ac-sub{font-size:11px;color:var(--ink3);font-weight:300;margin-top:1px;}
+.ac-powered{padding:8px 14px;font-size:10px;color:var(--ink4);text-align:right;letter-spacing:.03em;}
+
+.seg{display:flex;background:var(--ivd);border:1px solid var(--ivdd);border-radius:var(--rsm);padding:3px;gap:2px;}
+.seg-b{flex:1;padding:10px 6px;border:none;border-radius:6px;font-size:12px;font-weight:400;font-family:'DM Sans',sans-serif;color:var(--ink3);background:transparent;cursor:pointer;transition:all .18s;text-align:center;line-height:1.2;}
+.seg-b:hover:not(.on):not(.ona):not(.onm){background:rgba(74,122,90,.07);color:var(--ink2);}
+.seg-b.on{background:var(--f7);color:var(--iv);box-shadow:0 1px 5px rgba(9,23,16,.25);}
+.seg-b.ona{background:var(--goldp);color:var(--gold);box-shadow:0 1px 4px rgba(168,130,58,.15);}
+.seg-b.onm{background:var(--ivdd);color:var(--ink2);}
+
+.reveal{overflow:hidden;max-height:0;opacity:0;transition:max-height .38s ease,opacity .3s ease;}
+.reveal.open{max-height:900px;opacity:1;}
+.reveal-inner{padding-top:14px;}
+
+.travel-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;}
+@media(max-width:360px){.travel-grid{grid-template-columns:repeat(3,1fr);}}
+.tv{border:1px solid var(--ivdd);border-radius:var(--rsm);padding:11px 4px 9px;background:var(--iv);cursor:pointer;text-align:center;transition:all .18s;}
+.tv:hover{border-color:var(--sagp);background:var(--ivd);}
+.tv.on{border-color:var(--sage);background:var(--f8);}
+.tv-c{display:block;font-size:10px;font-weight:500;letter-spacing:.08em;color:var(--ink2);margin-bottom:4px;transition:color .18s;}
+.tv-l{display:block;font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);transition:color .18s;}
+.tv.on .tv-c{color:var(--iv);}
+.tv.on .tv-l{color:var(--sagl);}
+
+.ticket-note{background:rgba(168,130,58,.07);border:1px solid rgba(168,130,58,.18);border-radius:var(--rsm);padding:14px 16px;margin-bottom:10px;}
+.tn-head{font-size:12px;font-weight:500;color:var(--gold);margin-bottom:3px;}
+.tn-body{font-size:12px;color:var(--ink3);font-weight:300;line-height:1.6;}
+.ticket-drop{border:1.5px dashed rgba(74,122,90,.3);border-radius:var(--rsm);padding:18px;text-align:center;cursor:pointer;position:relative;transition:all .2s;background:rgba(74,122,90,.03);}
+.ticket-drop:hover{border-color:var(--sagl);background:rgba(74,122,90,.07);}
+.ticket-drop input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;}
+.td-title{font-size:13px;font-weight:400;color:var(--ink2);margin-bottom:2px;}
+.td-sub{font-size:11px;color:var(--ink3);font-weight:300;}
+.ticket-done{display:none;align-items:center;gap:10px;padding:10px 12px;background:rgba(74,122,90,.08);border:1px solid rgba(74,122,90,.2);border-radius:var(--rsm);}
+.ticket-done.show{display:flex;}
+.tick-ic{width:32px;height:32px;border-radius:6px;background:var(--sage);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.tick-ic svg{width:16px;height:16px;stroke:#fff;stroke-width:2;fill:none;stroke-linecap:round;}
+.tick-name{font-size:13px;font-weight:500;color:var(--ink);flex:1;}
+.tick-rm{font-size:11px;color:var(--ink4);cursor:pointer;text-decoration:underline;text-underline-offset:3px;}
+
+.sub-wrap{padding:18px 22px;}
+.sub-btn{width:100%;padding:15px 24px;border-radius:var(--rsm);border:none;background:var(--f6);color:var(--iv);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;transition:all .22s;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 2px 12px rgba(9,23,16,.3);}
+.sub-btn::after{content:'→';font-size:16px;transition:transform .18s;}
+.sub-btn:hover{background:var(--f5);transform:translateY(-1px);box-shadow:0 4px 20px rgba(9,23,16,.4);}
+.sub-btn:hover::after{transform:translateX(3px);}
+.sub-note{text-align:center;font-size:11px;color:var(--ink4);margin-top:8px;font-weight:300;letter-spacing:.03em;}
+
+/* ── LOGIN CARD ── */
+.login-inner{padding:28px 28px 32px;}
+.login-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;font-style:italic;color:var(--ink);margin-bottom:6px;}
+.login-sub{font-size:13px;color:var(--ink3);font-weight:300;line-height:1.6;margin-bottom:22px;}
+.login-field{margin-bottom:14px;}
+.login-field label{display:block;font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);margin-bottom:6px;}
+
+
+
+
+
+
+/* ── DASHBOARD CARD ── */
+.dash-top{padding:20px 22px 0;}
+.dash-greeting{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;font-style:italic;color:var(--ink);margin-bottom:2px;}
+.dash-sub{font-size:12px;color:var(--ink3);font-weight:300;}
+
+/* tabs */
+.dash-tabs{display:flex;border-bottom:1px solid var(--line);margin-top:16px;overflow-x:auto;}
+.dash-tabs::-webkit-scrollbar{display:none;}
+.d-tab{flex-shrink:0;padding:12px 18px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);cursor:pointer;border:none;background:transparent;font-family:'DM Sans',sans-serif;border-bottom:2px solid transparent;transition:all .18s;}
+.d-tab.on{color:var(--sage);border-bottom-color:var(--sage);}
+.d-tab:hover:not(.on){color:var(--ink2);}
+.d-panel{display:none;padding:18px 22px;}
+.d-panel.on{display:block;}
+
+/* rsvp summary rows */
+.sum-row{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line2);}
+.sum-row:last-child{border-bottom:none;}
+.sum-l{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink4);padding-top:2px;flex-shrink:0;}
+.sum-v{font-size:14px;color:var(--ink);font-weight:400;text-align:right;max-width:65%;line-height:1.4;}
+.dl-pill{display:inline-flex;align-items:center;gap:6px;font-size:11px;padding:5px 12px;border-radius:20px;}
+.dl-open{background:rgba(74,122,90,.1);color:var(--sagl);border:1px solid rgba(74,122,90,.2);}
+.dl-closed{background:rgba(180,60,40,.08);color:#C07060;border:1px solid rgba(180,60,40,.15);}
+.dl-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;}
+.dl-open .dl-dot{background:var(--sagl);}
+.dl-closed .dl-dot{background:#C07060;}
+.edit-row{display:flex;gap:8px;margin-top:14px;}
+
+/* transport */
+.venue-block{background:var(--ivd);border-radius:var(--r);padding:14px 16px;margin-bottom:14px;}
+.venue-name{font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:var(--ink);margin-bottom:1px;}
+.venue-addr{font-size:12px;color:var(--ink3);font-weight:300;line-height:1.5;}
+.t-section-label{font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px;margin-top:14px;display:block;}
+
+/* reach tab */
+.reach-venue-card{background:var(--iv);border:1px solid var(--ivdd);border-radius:var(--r);overflow:hidden;}
+.reach-venue-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;}
+.reach-venue-divider{border-top:1px solid var(--ivdd);}
+.reach-venue-inner{flex:1;min-width:0;}
+.reach-venue-label{font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink4);margin-bottom:3px;}
+.reach-venue-name{font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:var(--ink);line-height:1.2;margin-bottom:2px;}
+.reach-venue-addr{font-size:11px;color:var(--ink3);font-weight:300;}
+
+.reach-nav-btn{
+  flex-shrink:0;display:flex;align-items:center;justify-content:center;gap:6px;
+  padding:10px 14px;border-radius:var(--rsm);border:none;
+  background:var(--f6);color:var(--iv);
+  font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;
+  cursor:pointer;transition:all .2s;letter-spacing:.03em;white-space:nowrap;
+}
+.reach-nav-btn:hover{background:var(--f5);transform:translateY(-1px);}
+.reach-label{font-size:10px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--ink3);margin:14px 0 8px;}
+.ride-row{display:flex;gap:8px;}
+.ride-btn{
+  flex:1;padding:11px 8px;border-radius:var(--rsm);border:1px solid var(--ivdd);
+  background:var(--iv);color:var(--ink2);font-size:13px;font-weight:500;
+  text-decoration:none;text-align:center;transition:all .18s;
+  font-family:'DM Sans',sans-serif;
+}
+.ride-btn:hover{border-color:var(--sagp);background:var(--ivd);transform:translateY(-1px);}
+.t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;}
+.t-btn{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;padding:12px 6px;border-radius:var(--rsm);border:1px solid var(--ivdd);background:var(--iv);text-decoration:none;transition:all .18s;cursor:pointer;}
+.t-btn:hover{border-color:var(--sagp);background:var(--ivd);transform:translateY(-1px);}
+.t-btn-name{font-size:12px;font-weight:500;color:var(--ink2);}
+.t-btn-type{font-size:9px;font-weight:400;color:var(--ink4);letter-spacing:.05em;text-transform:uppercase;}
+.from-link{display:flex;align-items:center;gap:8px;padding:12px 14px;border-radius:var(--rsm);border:1px solid var(--ivdd);background:var(--iv);text-decoration:none;transition:all .18s;margin-top:7px;}
+.from-link:hover{border-color:var(--sagp);background:var(--ivd);}
+.from-icon{width:28px;height:28px;border-radius:6px;background:var(--f7);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.from-icon svg{width:14px;height:14px;stroke:#fff;stroke-width:2;fill:none;stroke-linecap:round;}
+.from-text{flex:1;}
+.from-label{font-size:12px;font-weight:500;color:var(--ink2);display:block;}
+.from-sub{font-size:11px;color:var(--ink4);font-weight:300;}
+.from-arrow{font-size:14px;color:var(--ink4);}
+
+/* buttons */
+.btn-primary{width:100%;padding:14px;border-radius:var(--rsm);border:none;background:var(--f6);color:var(--iv);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:all .2s;box-shadow:0 2px 10px rgba(9,23,16,.25);}
+.btn-primary:hover{background:var(--f5);transform:translateY(-1px);}
+.btn-outline{width:100%;padding:13px;border-radius:var(--rsm);border:1.5px solid var(--ivdd);background:transparent;color:var(--ink2);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;}
+.btn-outline:hover{border-color:var(--sagp);background:var(--ivd);}
+.wa-btn{width:100%;padding:13px;border-radius:var(--rsm);border:none;background:#1A7A3E;color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;box-shadow:0 2px 8px rgba(26,122,62,.3);}
+.wa-btn:hover{background:#166832;transform:translateY(-1px);}
+.logout-btn{display:block;text-align:center;font-size:11px;color:var(--ink4);cursor:pointer;text-decoration:underline;text-underline-offset:3px;padding:8px;transition:color .18s;}
+.logout-btn:hover{color:var(--sage);}
+
+.footer{text-align:center;padding:16px 24px 20px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);font-weight:400;border-top:1px solid rgba(255,255,255,.07);margin:8px 0 0;padding:16px 16px 20px;flex-shrink:0;}
+.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--f7);color:var(--iv);border:1px solid var(--line);padding:11px 24px;border-radius:40px;font-size:13px;white-space:nowrap;transition:transform .3s ease;z-index:999;pointer-events:none;box-shadow:0 4px 20px rgba(9,23,16,.5);}
+.toast.up{transform:translateX(-50%) translateY(0);}
+@keyframes up{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="mast">
+    <div class="mast-eyebrow">An invitation from the heart</div>
+    <div class="mast-title">Ishaa Turns<br>One</div>
+    <div class="mast-hosts">If you are reading this, you are someone very<br>special to <strong>Meenakshi &amp; Vivegh</strong></div>
+    <div class="mast-when">Saturday, May 2nd · 2026</div>
+    <div class="mast-where">Radisson Hotel, HITEC City · Hyderabad</div>
+  </div>
+  <div class="hr"></div>
+
+  <div class="card-slot" id="card-slot">
+
+    <!-- CARD: Question -->
+    <div class="card" id="card-q">
+      <div class="q-inner">
+        <span class="q-label">Before we get started</span>
+        <div class="q-text">How do you know Meenu or Vivegh?</div>
+        <div class="rel-grid">
+          <div class="rel-tile" id="rel-family" onclick="pickRel('family')">
+            <span class="rel-name">Family</span>
+            <span class="rel-desc">Related to Meenu or Vivegh</span>
+          </div>
+          <div class="rel-tile" id="rel-friend" onclick="pickRel('friend')">
+            <span class="rel-name">Friends</span>
+            <span class="rel-desc">Friends of the family</span>
+          </div>
+        </div>
+
+        <div style="margin-top:20px;padding-top:18px;border-top:1px solid rgba(74,122,90,0.12);">
+          <button onclick="swapTo('login')" style="width:100%;padding:13px 16px;border-radius:8px;border:1.5px solid rgba(74,122,90,0.2);background:rgba(74,122,90,0.04);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:var(--ink2);cursor:pointer;letter-spacing:.02em;transition:all .18s;display:flex;align-items:center;justify-content:center;gap:8px;" onmouseover="this.style.borderColor='var(--sagl)';this.style.background='rgba(74,122,90,0.08)'" onmouseout="this.style.borderColor='rgba(74,122,90,0.2)';this.style.background='rgba(74,122,90,0.04)'">
+            <svg width="14" height="14" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" style="color:var(--sage)"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+            Already RSVPed? Sign in
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CARD: RSVP Form -->
+    <div class="card hidden" id="card-rsvp">
+      <div class="back-bar" onclick="goBack()">
+        <span class="back-arrow">&#8592;</span>
+        <span class="back-label">Change</span>
+        <span class="back-rel" id="back-rel-label"></span>
+      </div>
+      <div id="ev-info-wrap"></div>
+      <div class="farea">
+        <span class="fl">Will you be joining us?</span>
+        <div class="seg">
+          <button class="seg-b"     id="at-yes"   onclick="pickAtt('yes')">Yes, I will be there</button>
+          <button class="seg-b"     id="at-maybe" onclick="pickAtt('maybe')">Possibly</button>
+          <button class="seg-b"     id="at-no"    onclick="pickAtt('no')">Cannot make it</button>
+        </div>
+      </div>
+      <div id="ev-pick-area" style="display:none">
+        <div class="farea">
+          <span class="fl">I will be joining</span>
+          <div class="seg">
+            <button class="seg-b on" id="evp-both"  onclick="pickEvSel('both')">Both</button>
+            <button class="seg-b"    id="evp-homam" onclick="pickEvSel('homam')">Homam only</button>
+            <button class="seg-b"    id="evp-party" onclick="pickEvSel('party')">Party only</button>
+          </div>
+        </div>
+      </div>
+      <div id="core-fields" style="display:none"><!-- core -->
+      <div class="farea">
+        <div class="frow">
+          <div class="field">
+            <label class="fl">Your name</label>
+            <input class="fi" id="f-name" type="text" placeholder="Full name" autocomplete="name">
+          </div>
+          <div class="field">
+            <label class="fl">WhatsApp number</label>
+            <div class="phone-wrap">
+              <div class="phone-prefix">
+                <span class="phone-flag">&#127470;&#127475;</span>
+                <span class="phone-code">+91</span>
+              </div>
+              <input class="phone-inp" id="f-phone" type="tel" placeholder="98765 43210" maxlength="10" inputmode="numeric">
+            </div>
+          </div>
+        </div>
+        <div id="guests-field" style="display:none">
+        <div class="field">
+          <label class="fl">How many are coming?</label>
+          <div class="guest-row">
+            <div class="guest-box">
+              <label class="guest-label">Adults</label>
+              <input class="fi guest-inp" id="f-count" type="number" min="1" max="20" value="1">
+            </div>
+            <div class="guest-sep">+</div>
+            <div class="guest-box">
+              <label class="guest-label">Little ones <span class="fl-tip">Age 1–10</span></label>
+              <input class="fi guest-inp" id="f-kids" type="number" min="0" max="20" value="0">
+            </div>
+            <div class="guest-sep">+</div>
+            <div class="guest-box">
+              <label class="guest-label">Infants <span class="fl-tip">Under 1 yr</span></label>
+              <input class="fi guest-inp" id="f-infants" type="number" min="0" max="10" value="0">
+            </div>
+          </div>
+          <span class="field-note">Helps us plan seating, activities &amp; an infant-friendly corner</span>
+        </div>
+        </div>
+      </div>
+
+      <div id="stay-section" style="display:none">
+        <div class="farea">
+          <span class="fl" style="margin-bottom:4px">Your stay &amp; travel</span>
+          <p style="font-size:12px;color:var(--ink3);font-weight:300;line-height:1.6;margin-bottom:12px">We want your journey to be completely effortless — let us know your plans and we will make sure everything is taken care of.</p>
+          <div class="bloom-note">
+            <span>Accommodation is arranged at </span>
+            <a href="https://maps.app.goo.gl/DHhqLpeT2S1zuRAC6" target="_blank" rel="noopener" class="bloom-link">Bloom Hotel, DLF Road</a>
+            <span> — right next to the Radisson.</span>
+          </div>
+          <span class="fl" style="margin-bottom:6px;margin-top:14px;display:block">Will you be staying overnight?</span>
+          <div class="seg" style="margin-bottom:14px">
+            <button class="seg-b onm" id="st-no"    onclick="pickStay('no')">No, day visit</button>
+            <button class="seg-b"    id="st-yes"   onclick="pickStay('yes')">Yes, staying over</button>
+          </div>
+          <div class="reveal" id="stay-dates">
+            <div class="reveal-inner" style="padding-top:0;margin-bottom:14px">
+              <div class="frow">
+                <div class="field" style="margin:0">
+                  <label class="fl">Check-in</label>
+                  <div class="dt-row">
+                    <input class="fi" id="f-ci" type="date" value="2026-05-02" min="2026-05-01" max="2026-05-04">
+                    <input class="fi" id="f-ci-time" type="time" value="14:00" placeholder="Arrival time">
+                  </div>
+                </div>
+                <div class="field" style="margin:0">
+                  <label class="fl">Check-out</label>
+                  <div class="dt-row">
+                    <input class="fi" id="f-co" type="date" value="2026-05-03" min="2026-05-02" max="2026-05-06">
+                    <input class="fi" id="f-co-time" type="time" value="11:00" placeholder="Departure time">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PICKUP on arrival -->
+          <div class="pickup-section" style="display:none">
+            <div class="pickup-toggle" id="pickup-arr-tog" onclick="toggleSection('arr')">
+              <div>
+                <div class="pickup-toggle-label">Need a pickup when you arrive?</div>
+                <div class="pickup-toggle-note">So we can arrange a cab to Bloom Hotel</div>
+              </div>
+              <div class="pickup-check" id="pickup-arr-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4 8 11 1"/></svg></div>
+            </div>
+            <div class="reveal" id="arr-detail">
+              <div class="reveal-inner" style="padding-top:12px">
+                <div class="field" style="margin-bottom:10px">
+                  <label class="fl">Arriving by</label>
+                  <div class="seg">
+                    <button class="seg-b" id="arr-flight" onclick="pickArrMode('flight')">Flight</button>
+                    <button class="seg-b" id="arr-train"  onclick="pickArrMode('train')">Train</button>
+                    <button class="seg-b" id="arr-bus"    onclick="pickArrMode('bus')">Bus</button>
+                  </div>
+                </div>
+                <!-- Flight terminals -->
+                <div id="arr-flight-opts" style="display:none">
+                  <div class="field" style="margin-bottom:10px">
+                    <label class="fl">Terminal</label>
+                    <div class="ac-place-grid">
+                      <button class="place-btn" id="arr-dom" onclick="pickArrPlace('dom',this)"><span class="place-btn-name">Domestic</span><span class="place-btn-sub">RGIA Terminal 1</span></button>
+                      <button class="place-btn" id="arr-intl" onclick="pickArrPlace('intl',this)"><span class="place-btn-name">International</span><span class="place-btn-sub">RGIA Terminal 2</span></button>
+                    </div>
+                  </div>
+                </div>
+                <!-- Train stations -->
+                <div id="arr-train-opts" style="display:none">
+                  <div class="field" style="margin-bottom:10px">
+                    <label class="fl">Station</label>
+                    <div class="ac-place-grid">
+                      <button class="place-btn" onclick="pickArrPlace('Secunderabad Junction',this)"><span class="place-btn-name">Secunderabad Jn.</span><span class="place-btn-sub">SC · Main hub</span></button>
+                      <button class="place-btn" onclick="pickArrPlace('Hyderabad Deccan',this)"><span class="place-btn-name">Hyderabad Deccan</span><span class="place-btn-sub">HYB · Nampally</span></button>
+                      <button class="place-btn" onclick="pickArrPlace('Kacheguda',this)"><span class="place-btn-name">Kacheguda</span><span class="place-btn-sub">KCG</span></button>
+                      <button class="place-btn" onclick="pickArrPlace('Lingampally',this)"><span class="place-btn-name">Lingampally</span><span class="place-btn-sub">LPI · West Hyd</span></button>
+                      <button class="place-btn" onclick="pickArrPlace('Malakpet',this)"><span class="place-btn-name">Malakpet</span><span class="place-btn-sub">MKT</span></button>
+                      <button class="place-btn" onclick="pickArrPlace('Begumpet',this)"><span class="place-btn-name">Begumpet</span><span class="place-btn-sub">BMT</span></button>
+                    </div>
+                  </div>
+                </div>
+                <!-- Bus stops -->
+                <div id="arr-bus-opts" style="display:none">
+                  <div class="field" style="margin-bottom:10px">
+                    <label class="fl">Bus terminal / stop</label>
+                    <div class="ac-wrap" style="margin-bottom:8px">
+                      <input class="fi" id="arr-bus-inp" type="text" placeholder="Type to search…" autocomplete="off" oninput="busSearch(this.value,'arr')" onfocus="busSearch(this.value,'arr')">
+                      <div class="ac-dropdown" id="arr-bus-dd"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="dt-compact" style="margin-top:0">
+                  <div class="field" style="margin:0"><label class="fl">Date</label><input class="fi" id="arr-date" type="date" value="2026-05-02" min="2026-04-30" max="2026-05-03"></div>
+                  <div class="field" style="margin:0"><label class="fl">Time</label><input class="fi" id="arr-time" type="time"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DROP on departure -->
+          <div class="pickup-section" style="margin-top:10px;display:none">
+            <div class="pickup-toggle" id="drop-dep-tog" onclick="toggleSection('dep')">
+              <div>
+                <div class="pickup-toggle-label">Need a drop when you leave?</div>
+                <div class="pickup-toggle-note">So we can arrange a cab from Bloom Hotel</div>
+              </div>
+              <div class="pickup-check" id="drop-dep-check"><svg viewBox="0 0 12 10"><polyline points="1 5 4 8 11 1"/></svg></div>
+            </div>
+            <div class="reveal" id="dep-detail">
+              <div class="reveal-inner" style="padding-top:12px">
+                <div class="field" style="margin-bottom:10px">
+                  <label class="fl">Departing by</label>
+                  <div class="seg">
+                    <button class="seg-b" id="dep-flight" onclick="pickDepMode('flight')">Flight</button>
+                    <button class="seg-b" id="dep-train"  onclick="pickDepMode('train')">Train</button>
+                    <button class="seg-b" id="dep-bus"    onclick="pickDepMode('bus')">Bus</button>
+                  </div>
+                </div>
+                <div id="dep-flight-opts" style="display:none">
+                  <div class="field" style="margin-bottom:10px">
+                    <label class="fl">Terminal</label>
+                    <div class="ac-place-grid">
+                      <button class="place-btn" onclick="pickDepPlace('dom',this)"><span class="place-btn-name">Domestic</span><span class="place-btn-sub">RGIA Terminal 1</span></button>
+                      <button class="place-btn" onclick="pickDepPlace('intl',this)"><span class="place-btn-name">International</span><span class="place-btn-sub">RGIA Terminal 2</span></button>
+                    </div>
+                  </div>
+                </div>
+                <div id="dep-train-opts" style="display:none">
+                  <div class="field" style="margin-bottom:10px">
+                    <label class="fl">Station</label>
+                    <div class="ac-place-grid">
+                      <button class="place-btn" onclick="pickDepPlace('Secunderabad Junction',this)"><span class="place-btn-name">Secunderabad Jn.</span><span class="place-btn-sub">SC</span></button>
+                      <button class="place-btn" onclick="pickDepPlace('Hyderabad Deccan',this)"><span class="place-btn-name">Hyderabad Deccan</span><span class="place-btn-sub">HYB</span></button>
+                      <button class="place-btn" onclick="pickDepPlace('Kacheguda',this)"><span class="place-btn-name">Kacheguda</span><span class="place-btn-sub">KCG</span></button>
+                      <button class="place-btn" onclick="pickDepPlace('Lingampally',this)"><span class="place-btn-name">Lingampally</span><span class="place-btn-sub">LPI</span></button>
+                      <button class="place-btn" onclick="pickDepPlace('Malakpet',this)"><span class="place-btn-name">Malakpet</span><span class="place-btn-sub">MKT</span></button>
+                      <button class="place-btn" onclick="pickDepPlace('Begumpet',this)"><span class="place-btn-name">Begumpet</span><span class="place-btn-sub">BMT</span></button>
+                    </div>
+                  </div>
+                </div>
+                <div id="dep-bus-opts" style="display:none">
+                  <div class="field" style="margin-bottom:10px">
+                    <label class="fl">Bus terminal / stop</label>
+                    <div class="ac-wrap" style="margin-bottom:8px">
+                      <input class="fi" id="dep-bus-inp" type="text" placeholder="Type to search…" autocomplete="off" oninput="busSearch(this.value,'dep')" onfocus="busSearch(this.value,'dep')">
+                      <div class="ac-dropdown" id="dep-bus-dd"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="dt-compact" style="margin-top:0">
+                  <div class="field" style="margin:0"><label class="fl">Date</label><input class="fi" id="dep-date" type="date" value="2026-05-03" min="2026-05-02" max="2026-05-06"></div>
+                  <div class="field" style="margin:0"><label class="fl">Time</label><input class="fi" id="dep-time" type="time"></div>
+                </div>
+              </div>
+            </div>
+          </div>        </div>
+      </div>
+      </div><!-- end core-fields -->
+      <div class="sub-wrap">
+        <button class="sub-btn" id="sub-btn" onclick="handleSubmit()">Confirm my RSVP</button>
+        <p class="sub-note" id="sub-note"></p>
+      </div>
+    </div>
+
+    <!-- CARD: Sign In -->
+    <div class="card hidden" id="card-login">
+      <div class="login-inner">
+        <div style="margin-bottom:20px">
+          <span style="font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--sage);display:block;margin-bottom:8px">Sign in</span>
+          <div class="login-title">Welcome back</div>
+          <div class="login-sub">Enter the WhatsApp number you used when you RSVPed.</div>
+        </div>
+        <div class="login-field">
+          <label>WhatsApp number</label>
+          <div class="phone-wrap">
+            <div class="phone-prefix">
+              <span class="phone-flag">&#127470;&#127475;</span>
+              <span class="phone-code">+91</span>
+            </div>
+            <input class="phone-inp" id="login-phone" type="tel" placeholder="98765 43210" maxlength="10" inputmode="numeric" onkeydown="if(event.key==='Enter')signIn()">
+          </div>
+          <div id="login-error" style="display:none;font-size:12px;color:#C05040;font-weight:400;margin-top:8px;font-style:italic"></div>
+        </div>
+        <button class="btn-primary" id="login-btn" onclick="signIn()" style="margin-top:14px">Find my RSVP</button>
+        <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--line);text-align:center">
+          <span onclick="swapTo('q')" style="font-size:12px;color:var(--ink3);cursor:pointer;text-decoration:underline;text-underline-offset:3px;">&#8592; Back</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD: Dashboard -->
+    <div class="card hidden" id="card-dash">
+      <div class="dash-top">
+        <div class="dash-greeting" id="dash-greeting">Welcome back</div>
+        <div class="dash-sub">Ishaa's 1st Birthday · May 2, 2026</div>
+        <div class="dash-tabs">
+          <button class="d-tab on" onclick="dashTab('rsvp',this)">My RSVP</button>
+          <button class="d-tab" onclick="dashTab('reach',this)">Getting There</button>
+          <button class="d-tab" onclick="dashTab('help',this)">Need Help</button>
+        </div>
+      </div>
+
+      <!-- TAB: My RSVP -->
+      <div class="d-panel on" id="dp-rsvp">
+        <div id="rsvp-summary-rows"></div>
+        <div id="rsvp-dl-strip" style="margin:10px 0 14px"></div>
+        <div class="edit-row">
+          <button class="btn-outline" id="edit-rsvp-btn" onclick="tryEdit()">Edit RSVP</button>
+          <button class="btn-primary" onclick="showRSVPCard()" style="flex:2">View Confirmation</button>
+        </div>
+      </div>
+
+      <!-- TAB: Getting There -->
+      <div class="d-panel" id="dp-reach">
+
+        <!-- VENUE CARD — always shown, expands to full width if no stay -->
+        <div class="reach-venue-card" id="reach-venue-card">
+          <div class="reach-venue-row" id="reach-radisson">
+            <div class="reach-venue-inner">
+              <div class="reach-venue-label">Event Venue</div>
+              <div class="reach-venue-name">Radisson Hotel, HITEC City</div>
+              <div class="reach-venue-addr">Madhapur, Hyderabad</div>
+            </div>
+            <button class="reach-nav-btn" onclick="openMaps('https://maps.app.goo.gl/pi5DkLRbGiPGX6PZ6','17.4477','78.3678')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Navigate
+            </button>
+          </div>
+          <div class="reach-venue-row reach-venue-divider" id="reach-bloom" style="display:none">
+            <div class="reach-venue-inner">
+              <div class="reach-venue-label">Your Stay</div>
+              <div class="reach-venue-name">Bloom Hotel, DLF Road</div>
+              <div class="reach-venue-addr">DLF Cyber City, HITEC City</div>
+            </div>
+            <button class="reach-nav-btn" onclick="openMaps('https://maps.app.goo.gl/DHhqLpeT2S1zuRAC6','17.4463','78.3744')">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Navigate
+            </button>
+          </div>
+        </div>
+
+        <!-- FROM CITY -->
+        <div id="from-city-link" style="display:none;margin-top:10px">
+          <a class="from-link" id="from-city-btn" href="#" target="_blank" rel="noopener">
+            <div class="from-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div class="from-text">
+              <span class="from-label" id="from-city-name">Directions from your city</span>
+              <span class="from-sub">Opens Google Maps with route</span>
+            </div>
+            <span class="from-arrow">&#8594;</span>
+          </a>
+        </div>
+
+        <!-- BOOK A RIDE — destination auto-filled to Radisson -->
+        <div class="reach-label">Book a cab to Radisson</div>
+        <div class="ride-row">
+          <a class="ride-btn" id="ride-ola" href="https://book.olacabs.com/?dropLat=17.4477&dropLng=78.3678&drop_name=Radisson+Hotel+HITEC+City+Hyderabad" target="_blank" rel="noopener">Ola</a>
+          <a class="ride-btn" id="ride-uber" href="https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[latitude]=17.4477&dropoff[longitude]=78.3678&dropoff[nickname]=Radisson+Hotel+HITEC+City+Hyderabad" target="_blank" rel="noopener">Uber</a>
+          <a class="ride-btn" id="ride-rapido" href="https://www.rapido.bike/book-auto?dropLat=17.4477&dropLng=78.3678&dropName=Radisson+Hotel+HITEC+City+Hyderabad" target="_blank" rel="noopener">Rapido</a>
+        </div>
+        <div style="font-size:11px;color:var(--ink4);font-weight:300;margin-top:6px;text-align:center">Destination is pre-set to Radisson — just enter your pickup</div>
+
+      </div>
+
+      <!-- TAB: Help -->
+      <div class="d-panel" id="dp-help">
+        <p style="font-size:13px;color:var(--ink3);font-weight:300;line-height:1.7;margin-bottom:16px">
+          Have questions about the event, your stay, or anything at all?<br>Meenakshi and Vivegh are always happy to help.
+        </p>
+        <button class="wa-btn" id="help-wa" style="margin-bottom:8px">WhatsApp Meenu &amp; Vivegh</button>
+        <div style="text-align:center;font-size:12px;color:var(--ink4);font-weight:300;margin-top:4px">They'll get back to you as soon as possible</div>
+      </div>
+
+      <!-- Admin panels (hidden until admin login) -->
+      <div class="d-panel" id="dp-movement"></div>
+      <div class="d-panel" id="dp-stay"></div>
+      <div class="d-panel" id="dp-rooms">
+        <div id="room-list-inner" style="font-size:13px;color:var(--ink3);font-style:italic">No staying guests yet</div>
+      </div>
+      <div class="d-panel" id="dp-surprise">
+        <div style="background:var(--j50);border:1px solid var(--j200);border-radius:var(--r);padding:18px;margin-bottom:12px">
+          <div style="font-size:28px;margin-bottom:8px">&#128081;</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--j800);font-style:italic;margin-bottom:6px">Celebrating Mama Too!</div>
+          <p style="font-size:13px;color:var(--text2);line-height:1.6">The surprise plan for Meenu. 8 PM after cake is cut — Vivegh speech, video montage, bouquet reveal. Keep tight!</p>
+        </div>
+        <div style="font-size:13px;color:var(--text2);line-height:1.8">
+          <div>&#9989; Assign someone to distract Meenu at 7:55 PM</div>
+          <div>&#9989; Preload video montage, test at venue</div>
+          <div>&#9989; Bouquet hidden until 8 PM</div>
+          <div>&#9989; DJ briefed on song cue</div>
+          <div>&#9989; Photographer ready before cake ends</div>
+        </div>
+      </div>
+
+      <div style="padding:14px 22px 20px">
+        <span class="logout-btn" onclick="doLogout()">Sign out</span>
+      </div>
+    </div>
+
+  </div><!-- card-slot -->
+
+  <div class="footer">Ishaa M V &nbsp;·&nbsp; First Birthday &nbsp;·&nbsp; Radisson HITEC City &nbsp;·&nbsp; Hyderabad</div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+var HOST       = '918888888888'; // Replace: 91 + 10-digit number
+var HOMAM_DL   = new Date('2026-04-29T18:29:00Z');
+var PARTY_DL   = new Date('2026-05-01T18:29:00Z');
+var GMAPS_BASE  = 'https://www.google.com/maps/dir/?api=1&destination=17.4477,78.3678&travelmode=driving&origin=';
+
+// ── STORAGE via window.storage (artifact persistent storage) ──
+// Falls back to localStorage if window.storage not available
+function stGet(key, cb) {
+  if (window.storage) {
+    window.storage.get(key).then(function(r){
+      if(r) { cb(JSON.parse(r.value)); return; }
+      // not in storage — try localStorage fallback
+      try { var v=localStorage.getItem('ish_'+key); cb(v?JSON.parse(v):null); } catch(e){ cb(null); }
+    }).catch(function(){
+      try { var v=localStorage.getItem('ish_'+key); cb(v?JSON.parse(v):null); } catch(e){ cb(null); }
+    });
+  } else {
+    try { var v = localStorage.getItem('ish_'+key); cb(v ? JSON.parse(v) : null); } catch(e){ cb(null); }
+  }
+}
+function stSet(key, val, cb) {
+  if(val === null || val === undefined) {
+    // delete
+    try { localStorage.removeItem('ish_'+key); } catch(e){}
+    if(window.storage) window.storage.delete(key).catch(function(){});
+    if(cb) cb();
+    return;
+  }
+  var str = JSON.stringify(val);
+  if (window.storage) {
+    window.storage.set(key, str).then(function(){ if(cb)cb(); }).catch(function(e){
+      // fallback to localStorage on storage error
+      try { localStorage.setItem('ish_'+key, str); } catch(le){}
+      if(cb) cb();
+    });
+  } else {
+    try { localStorage.setItem('ish_'+key, str); } catch(e){}
+    if(cb) cb();
+  }
+}
+function stList(prefix, cb) {
+  if (window.storage) {
+    window.storage.list(prefix).then(function(r){ cb(r ? r.keys : []); }).catch(function(){ cb([]); });
+  } else {
+    var keys = [];
+    for (var i = 0; i < localStorage.length; i++) {
+      var k = localStorage.key(i);
+      if (k && k.indexOf('ish_'+prefix) === 0) keys.push(k.replace('ish_',''));
+    }
+    cb(keys);
+  }
+}
+
+// ── RSVP STORAGE ──
+function saveRSVP(d, cb) {
+  if (!d.id) d.id = 'r' + Date.now();
+  d.lastEdit = new Date().toISOString();
+  if (!d.createdAt) d.createdAt = d.lastEdit;
+  // Store by phone as key so sign-in lookup works
+  stSet('rsvp:' + d.phone, d, function() {
+    // Also store current user's id reference
+    stSet('myphone', d.phone, function() {
+      if (cb) cb(d, null);
+    });
+  });
+}
+
+function getRSVPByPhone(phone, cb) {
+  stGet('rsvp:' + phone, function(d) {
+    if (d) {
+      // Remember this is the current user
+      stSet('myphone', phone, function(){});
+      cb(d, null);
+    } else {
+      cb(null, 'No RSVP found for this number');
+    }
+  });
+}
+
+function myRSVP(cb) {
+  stGet('myphone', function(phone) {
+    if (!phone) { if(cb) cb(null); return; }
+    stGet('rsvp:' + phone, function(d) { if(cb) cb(d); });
+  });
+}
+
+function allRSVPs(cb) {
+  stList('rsvp:', function(keys) {
+    var results = [], done = 0;
+    if (!keys.length) { cb([]); return; }
+    keys.forEach(function(k) {
+      stGet(k, function(d) {
+        if (d) results.push(d);
+        done++;
+        if (done === keys.length) cb(results);
+      });
+    });
+  });
+}
+
+
+// ── CARD SWAP ──
+var activeCard='q';
+function swapTo(id){
+  var cur=document.getElementById('card-'+activeCard);
+  var nxt=document.getElementById('card-'+id);
+  cur.classList.add('out');
+  setTimeout(function(){
+    cur.classList.add('hidden');
+    cur.classList.remove('out');
+    nxt.classList.remove('hidden');
+    activeCard=id;
+    window.scrollTo({top:0,behavior:'smooth'});
+  },280);
+}
+
+// ── STATE ──
+var F={rel:'',evSel:'party',att:'',stay:'no',travel:'local',ticketName:''};
+var relLabels={family:'Family',friend:'Friends'};
+var evMap={both:'Ayush Homam + Birthday Party',homam:'Ayush Homam',party:'Birthday Party'};
+var travelMap={local:'Local — Hyderabad',flight:'By flight',train:'By train',car:'Driving',bus:'By bus'};
+
+// ── RELATION ──
+function pickRel(v){
+  F.rel=v;
+  ['family','friend'].forEach(function(k){var el=document.getElementById('rel-'+k);if(el)el.classList.toggle('on',k===v);});
+  setTimeout(function(){buildRSVP(v);},160);
+}
+
+function buildRSVP(rel){
+  var isFamily=rel==='family';
+  F.evSel=isFamily?'both':'party';
+  document.getElementById('back-rel-label').textContent=relLabels[rel]||'';
+  var info=document.getElementById('ev-info-wrap');
+  if(isFamily){
+    info.innerHTML='<div class="ev-rows"><div class="ev-row"><div class="ev-dot"></div><div><div class="ev-name">Ayush Homam</div><div class="ev-time">8:00 AM onwards</div><div class="ev-note">A sacred ceremony to bless Ishaa. Traditional attire preferred.</div></div></div><div class="ev-row"><div class="ev-dot"></div><div><div class="ev-name">Ishaa&#39;s 1st Birthday Party</div><div class="ev-time">6:00 PM</div><div class="ev-note">A jungle-themed celebration with family and friends.</div></div></div></div>';
+    document.getElementById('ev-pick-area').style.display=(F.att==='yes')?'block':'none';
+    document.getElementById('stay-section').style.display=(F.att==='yes')?'block':'none';
+    document.getElementById('sub-note').textContent='Edit closes · Ayush Homam: Apr 29 · Birthday Party: May 1, 11:59 PM IST';
+  }else{
+    info.innerHTML='<div class="ev-single"><div class="ev-single-eyebrow">You&#39;re invited to</div><div class="ev-single-name">Ishaa&#39;s 1st Birthday Party</div><div class="ev-single-meta">Saturday, May 2, 2026 · 6:00 PM<br>Radisson Hotel, HITEC City, Hyderabad</div></div>';
+    document.getElementById('ev-pick-area').style.display='none';
+    document.getElementById('stay-section').style.display='none';
+    document.getElementById('sub-note').textContent='Edit window open until May 1, 11:59 PM IST';
+  }
+  document.getElementById('sub-btn').textContent='Confirm my RSVP →';
+  swapTo('rsvp');
+}
+
+function goBack(){swapTo('q');}
+function pickEvSel(v){F.evSel=v;['both','homam','party'].forEach(function(k){var el=document.getElementById('evp-'+k);if(el)el.className='seg-b'+(k===v?' on':'');});}
+function pickAtt(v){
+  F.att=v;
+  var cls={yes:'on',maybe:'ona',no:'onm'};
+  ['yes','maybe','no'].forEach(function(k){
+    document.getElementById('at-'+k).className='seg-b'+(k===v?' '+cls[k]:'');
+  });
+  var isFamily = F.rel==='family';
+  // Event pick (both/homam/party) only shows on yes for family
+  var ep=document.getElementById('ev-pick-area');
+  if(ep) ep.style.display=(isFamily && v==='yes')?'block':'none';
+  // Stay & travel only on yes for family
+  var ss=document.getElementById('stay-section');
+  if(ss) ss.style.display=(isFamily && v==='yes')?'block':'none';
+  var cf2=document.getElementById('core-fields');
+  if(cf2) cf2.style.display=v?'block':'none';
+  var gf=document.getElementById('guests-field');
+  if(gf) gf.style.display=(v==='yes')?'block':'none';
+  if(v!=='yes'){ F.stay='no'; pickStay('no'); }
+}
+function pickStay(v){
+  F.stay=v;
+  var cls={no:'onm',yes:'on'};
+  ['no','yes'].forEach(function(k){
+    var el=document.getElementById('st-'+k);
+    if(el) el.className='seg-b'+(k===v?' '+cls[k]:'');
+  });
+  var showAll = v==='yes';
+  document.getElementById('stay-dates').classList.toggle('open', showAll);
+  // pickup/drop sections only shown when staying
+  var ps=document.querySelectorAll('.pickup-section');
+  ps.forEach(function(el){ el.style.display=showAll?'block':'none'; });
+  // reset toggles if switching away from yes
+  if(!showAll){
+    ARR.active=false; DEP.active=false;
+    document.getElementById('pickup-arr-tog').classList.remove('on');
+    document.getElementById('drop-dep-tog').classList.remove('on');
+    document.getElementById('arr-detail').classList.remove('open');
+    document.getElementById('dep-detail').classList.remove('open');
+  }
+}
+function pickTravel(v){ F.travel=v; }
+function handleTicket(e){var file=e.target.files[0];if(!file)return;F.ticketName=file.name;document.getElementById('tick-name').textContent=file.name;document.getElementById('ticket-drop').style.display='none';document.getElementById('ticket-done').classList.add('show');}
+function clearTicket(){F.ticketName='';document.getElementById('f-ticket').value='';document.getElementById('ticket-drop').style.display='block';document.getElementById('ticket-done').classList.remove('show');}
+// ── CITY AUTOCOMPLETE (Google Places via CORS-safe endpoint) ──
+// Uses the Places Autocomplete API. Add your key below.
+// Get a free key: console.cloud.google.com → Places API → Credentials
+var PLACES_KEY = 'YOUR_GOOGLE_PLACES_API_KEY'; // optional — works without key using fallback
+var acIndex = -1;
+var acResults = [];
+var acTimer = null;
+var selectedCity = '';
+
+// Curated Indian city fallback (no API key needed)
+var CITIES = [
+  'Agartala, Tripura','Agra, Uttar Pradesh','Ahmedabad, Gujarat',
+  'Aizawl, Mizoram','Ajmer, Rajasthan','Akola, Maharashtra',
+  'Aligarh, Uttar Pradesh','Allahabad, Uttar Pradesh','Alwar, Rajasthan',
+  'Amravati, Maharashtra','Amritsar, Punjab','Anand, Gujarat',
+  'Aurangabad, Maharashtra','Bangalore, Karnataka','Bareilly, Uttar Pradesh',
+  'Belgaum, Karnataka','Bhavnagar, Gujarat','Bhilai, Chhattisgarh',
+  'Bhilwara, Rajasthan','Bhopal, Madhya Pradesh','Bhubaneswar, Odisha',
+  'Bikaner, Rajasthan','Bilaspur, Chhattisgarh','Bokaro, Jharkhand',
+  'Chandigarh, Punjab','Chennai, Tamil Nadu','Coimbatore, Tamil Nadu',
+  'Cuttack, Odisha','Davangere, Karnataka','Dehradun, Uttarakhand',
+  'Delhi, NCR','Dhanbad, Jharkhand','Durgapur, West Bengal',
+  'Erode, Tamil Nadu','Faridabad, Haryana','Firozabad, Uttar Pradesh',
+  'Ghaziabad, Uttar Pradesh','Goa','Gorakhpur, Uttar Pradesh',
+  'Gulbarga, Karnataka','Guntur, Andhra Pradesh','Gurgaon, Haryana',
+  'Guwahati, Assam','Gwalior, Madhya Pradesh','Hubli, Karnataka',
+  'Hyderabad, Telangana','Imphal, Manipur','Indore, Madhya Pradesh',
+  'Itanagar, Arunachal Pradesh','Jabalpur, Madhya Pradesh','Jaipur, Rajasthan',
+  'Jalandhar, Punjab','Jammu, Jammu & Kashmir','Jamnagar, Gujarat',
+  'Jamshedpur, Jharkhand','Jhansi, Uttar Pradesh','Jodhpur, Rajasthan',
+  'Kakinada, Andhra Pradesh','Kalyan, Maharashtra','Kanpur, Uttar Pradesh',
+  'Kochi, Kerala','Kohima, Nagaland','Kolhapur, Maharashtra',
+  'Kolkata, West Bengal','Kota, Rajasthan','Kozhikode, Kerala',
+  'Lucknow, Uttar Pradesh','Ludhiana, Punjab','Madurai, Tamil Nadu',
+  'Mangalore, Karnataka','Meerut, Uttar Pradesh','Moradabad, Uttar Pradesh',
+  'Mumbai, Maharashtra','Mysuru, Karnataka','Nagpur, Maharashtra',
+  'Nashik, Maharashtra','Navi Mumbai, Maharashtra','Nellore, Andhra Pradesh',
+  'Noida, Uttar Pradesh','Panaji, Goa','Patna, Bihar',
+  'Pimpri-Chinchwad, Maharashtra','Pondicherry','Pune, Maharashtra',
+  'Raipur, Chhattisgarh','Rajkot, Gujarat','Ranchi, Jharkhand',
+  'Rourkela, Odisha','Salem, Tamil Nadu','Shimla, Himachal Pradesh',
+  'Siliguri, West Bengal','Solapur, Maharashtra','Srinagar, Jammu & Kashmir',
+  'Surat, Gujarat','Thane, Maharashtra','Thiruvananthapuram, Kerala',
+  'Thrissur, Kerala','Tiruchirappalli, Tamil Nadu','Tirunelveli, Tamil Nadu',
+  'Tirupati, Andhra Pradesh','Tiruppur, Tamil Nadu','Udaipur, Rajasthan',
+  'Ujjain, Madhya Pradesh','Vadodara, Gujarat','Varanasi, Uttar Pradesh',
+  'Vasai-Virar, Maharashtra','Vijayawada, Andhra Pradesh','Visakhapatnam, Andhra Pradesh',
+  'Warangal, Telangana'
+];
+
+function cityInput(val) {
+  clearTimeout(acTimer);
+  val = val.trim();
+  if (!val) { hideAC(); return; }
+  acTimer = setTimeout(function() {
+    if (PLACES_KEY && PLACES_KEY !== 'YOUR_GOOGLE_PLACES_API_KEY') {
+      fetchPlaces(val);
+    } else {
+      // Fallback: filter curated list
+      var q = val.toLowerCase();
+      acResults = CITIES.filter(function(c){ return c.toLowerCase().indexOf(q) === 0; })
+        .concat(CITIES.filter(function(c){ return c.toLowerCase().indexOf(q) > 0; }))
+        .slice(0, 6)
+        .map(function(c){ var parts=c.split(','); return {main:parts[0].trim(),sub:parts.slice(1).join(',').trim(),full:c}; });
+      renderAC();
+    }
+  }, 200);
+}
+
+function fetchPlaces(input) {
+  var url = 'https://maps.googleapis.com/maps/api/place/autocomplete/json?input='
+    + encodeURIComponent(input)
+    + '&types=(cities)&key=' + PLACES_KEY;
+  fetch(url)
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      acResults = (data.predictions||[]).slice(0,6).map(function(p){
+        return {
+          main: p.structured_formatting.main_text,
+          sub:  p.structured_formatting.secondary_text||'',
+          full: p.description
+        };
+      });
+      renderAC();
+    })
+    .catch(function(){ cityInput(document.getElementById('f-city').value); }); // fallback
+}
+
+function renderAC() {
+  var dd = document.getElementById('ac-dropdown');
+  if (!acResults.length) { hideAC(); return; }
+  acIndex = -1;
+  dd.innerHTML = acResults.map(function(r, i){
+    return '<div class="ac-item" data-idx="'+i+'" onmousedown="pickCity('+i+')" onmouseover="acHover('+i+')">'
+      +'<div class="ac-pin"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>'
+      +'<div><div class="ac-main">'+r.main+'</div><div class="ac-sub">'+r.sub+'</div></div>'
+      +'</div>';
+  }).join('') + '<div class="ac-powered">Powered by Google</div>';
+  dd.classList.add('show');
+}
+
+function acHover(i){ acIndex=i; document.querySelectorAll('.ac-item').forEach(function(el,j){el.classList.toggle('focused',j===i);}); }
+function hideAC(){ var dd=document.getElementById('ac-dropdown');if(dd){dd.classList.remove('show');dd.innerHTML='';} acIndex=-1; }
+
+function pickCity(i) {
+  var r = acResults[i];
+  if (!r) return;
+  selectedCity = r.full;
+  document.getElementById('f-city').value = r.full;
+  hideAC();
+}
+
+function cityKeydown(e) {
+  var items = document.querySelectorAll('.ac-item');
+  if (!items.length) return;
+  if (e.key === 'ArrowDown') { e.preventDefault(); acIndex=Math.min(acIndex+1,items.length-1); items.forEach(function(el,j){el.classList.toggle('focused',j===acIndex);}); }
+  else if (e.key === 'ArrowUp') { e.preventDefault(); acIndex=Math.max(acIndex-1,0); items.forEach(function(el,j){el.classList.toggle('focused',j===acIndex);}); }
+  else if (e.key === 'Enter' && acIndex >= 0) { e.preventDefault(); pickCity(acIndex); }
+  else if (e.key === 'Escape') { hideAC(); }
+}
+
+document.addEventListener('click', function(e){ if(!e.target.closest('.ac-wrap')) hideAC(); });
+
+function openCityDirections(){
+  var city=(document.getElementById('f-city').value||'').trim();
+  if(!city){toast('Enter your city first');return;}
+  var url=GMAPS_BASE+encodeURIComponent(city);
+  window.open(url,'_blank');
+}
+
+// ── SUBMIT ──
+function handleSubmit(){
+  var name=(document.getElementById('f-name').value||'').trim();
+  var phone=(document.getElementById('f-phone').value||'').trim().replace(/\D/g,'');
+  if(!F.att){toast('Please let us know if you will be joining');return;}
+  if(!name){toast('Please enter your name');document.getElementById('f-name').focus();return;}
+  if(!phone||phone.length<10){toast('Please enter a valid 10-digit WhatsApp number');document.getElementById('f-phone').focus();return;}
+  var isFamily=F.rel==='family';
+  var d={
+    rel:F.rel,evSel:F.evSel,att:F.att,name:name,phone:phone,
+    count:parseInt(document.getElementById('f-count').value)||1,
+    infants:parseInt(document.getElementById('f-infants').value)||0,
+    kids:parseInt(document.getElementById('f-kids').value)||0,
+    stay:isFamily?F.stay:'no',
+    ci:isFamily&&(F.stay==='yes'||F.stay==='maybe')?document.getElementById('f-ci').value:'',
+    ciTime:isFamily&&(F.stay==='yes'||F.stay==='maybe')?(document.getElementById('f-ci-time').value||''):'',
+    coTime:isFamily&&(F.stay==='yes'||F.stay==='maybe')?(document.getElementById('f-co-time').value||''):'',
+    co:isFamily&&(F.stay==='yes'||F.stay==='maybe')?document.getElementById('f-co').value:'',
+    transport:isFamily?collectTransport():{},
+
+    ticketName:F.ticketName||''
+  };
+  // Show loading state
+  var btn=document.getElementById('sub-btn');
+  var orig=btn.textContent;
+  btn.textContent='Saving…';btn.disabled=true;
+  saveRSVP(d, function(saved, err){
+    btn.textContent=orig;btn.disabled=false;
+    var final=saved||d;
+    showDashboard(final);
+    setTimeout(function(){ showRSVPCard(final); }, 400);
+  });
+}
+
+// ── DASHBOARD ──
+function showDashboard(d){
+  if(!d){myRSVP(function(m){if(m)showDashboard(m);});return;}
+  document.getElementById('dash-greeting').textContent='Welcome, '+d.name.split(' ')[0];
+
+  // Populate RSVP tab
+  var rows=[];
+  rows.push(['Joining',evMap[d.evSel]||'Birthday Party']);
+  rows.push(['Attending',{yes:'Confirmed',maybe:'Possibly',no:'Declined'}[d.att]||d.att]);
+  var gStr=d.count+' adult'+(d.count!==1?'s':'');
+  if(d.infants>0)gStr+=', '+d.infants+' infant'+(d.infants!==1?'s':'');
+  if(d.kids>0)gStr+=', '+d.kids+' child'+(d.kids!==1?'ren':'');
+  rows.push(['Guests',gStr]);
+  if(d.phone)rows.push(['WhatsApp','+91 '+d.phone]);
+  if(d.stay&&d.stay!=='no'){
+    var stayStr='Bloom Hotel, DLF Road';
+    if(d.ci){
+      var ciStr=d.ci+(d.ciTime?' at '+fmtTime(d.ciTime):'');
+      var coStr=d.co+(d.coTime?' at '+fmtTime(d.coTime):'');
+      stayStr+=' · '+ciStr+' — '+coStr;
+    }
+    rows.push(['Stay',stayStr]);
+  }
+  if(d.travel&&d.travel!=='local')rows.push(['Travel',travelMap[d.travel]+(d.city?' from '+d.city:'')]);
+  if(d.ticketName)rows.push(['Ticket',d.ticketName]);
+  document.getElementById('rsvp-summary-rows').innerHTML=rows.map(function(r){return '<div class="sum-row"><span class="sum-l">'+r[0]+'</span><span class="sum-v">'+r[1]+'</span></div>';}).join('');
+
+  // Deadline
+  var now=new Date(),hasHomam=d.evSel==='both'||d.evSel==='homam';
+  var editOk=hasHomam?now<HOMAM_DL:now<PARTY_DL;
+  var dlDate=hasHomam?'Apr 29':'May 1';
+  document.getElementById('rsvp-dl-strip').innerHTML=editOk
+    ?'<div class="dl-pill dl-open"><div class="dl-dot"></div>Editable until '+dlDate+', 11:59 PM IST</div>'
+    :'<div class="dl-pill dl-closed"><div class="dl-dot"></div>Edit window has closed</div>';
+  document.getElementById('edit-rsvp-btn').style.opacity=editOk?'1':'0.4';
+  document.getElementById('edit-rsvp-btn').style.pointerEvents=editOk?'auto':'none';
+
+  // From-city link in Getting There tab
+  if(d.city){
+    var url=GMAPS_BASE+encodeURIComponent(d.city);
+    document.getElementById('from-city-link').style.display='block';
+    document.getElementById('from-city-btn').href=url;
+    document.getElementById('from-city-name').textContent='From '+d.city;
+  }else{document.getElementById('from-city-link').style.display='none';}
+  // Show bloom row only if staying
+  var bloomRow=document.getElementById('reach-bloom');
+  if(bloomRow) bloomRow.style.display=(d.stay==='yes')?'flex':'none';
+
+  // WhatsApp buttons
+  var lines=['*RSVP — Ishaa Turns One · May 2, 2026*',''];
+  lines.push('Name: '+d.name);lines.push('Joining: '+(evMap[d.evSel]||'Birthday Party'));
+  lines.push('Status: '+{yes:'Confirmed',maybe:'Possibly attending',no:'Declined'}[d.att]);
+  lines.push('Guests: '+gStr);lines.push('WhatsApp: +91 '+d.phone);
+  if(d.stay==='yes'){
+    var waStay='Stay: Bloom Hotel, DLF Road';
+    if(d.ci){
+      waStay+=' (Arrive '+d.ci+(d.ciTime?' '+fmtTime(d.ciTime):'')+', Depart '+d.co+(d.coTime?' '+fmtTime(d.coTime):'')+')';
+    }
+    lines.push(waStay);
+  }
+  if(d.travel&&d.travel!=='local')lines.push('Travel: '+travelMap[d.travel]+(d.city?' from '+d.city:''));
+  if(d.ticketName)lines.push('Ticket: '+d.ticketName);
+  document.getElementById('help-wa').onclick=function(){window.open('https://wa.me/'+HOST,'_blank');};
+  window._lastRSVP=d;
+
+  swapTo('dash');
+}
+
+function dashTab(id,el){
+  document.querySelectorAll('.d-tab').forEach(function(t){t.classList.remove('on');});
+  document.querySelectorAll('.d-panel').forEach(function(p){p.classList.remove('on');});
+  if(el) el.classList.add('on');
+  var panel=document.getElementById('dp-'+id);
+  if(panel) panel.classList.add('on');
+}
+
+function tryEdit(){
+  myRSVP(function(me) {
+    if(!me) return;
+    var now=new Date(),hasHomam=me.evSel==='both'||me.evSel==='homam';
+    var editOk=hasHomam?now<HOMAM_DL:now<PARTY_DL;
+    if(!editOk){toast('The edit window for your event has closed');return;}
+    F.rel=me.rel||'friend';F.evSel=me.evSel||'party';F.att=me.att||'yes';F.stay=me.stay||'no';F.travel=me.travel||'local';
+    buildRSVP(F.rel);
+    setTimeout(function(){
+      if(me.evSel)pickEvSel(me.evSel);if(me.att)pickAtt(me.att);
+      if(me.stay)pickStay(me.stay);if(me.travel)pickTravel(me.travel);
+      document.getElementById('f-name').value=me.name||'';
+      document.getElementById('f-phone').value=me.phone||'';
+      document.getElementById('f-count').value=me.count||1;
+      document.getElementById('f-infants').value=me.infants||0;
+      document.getElementById('f-kids').value=me.kids||0;
+      var ci=document.getElementById('f-ci');if(ci&&me.ci)ci.value=me.ci;
+      var ciT=document.getElementById('f-ci-time');if(ciT&&me.ciTime)ciT.value=me.ciTime;
+      var coT=document.getElementById('f-co-time');if(coT&&me.coTime)coT.value=me.coTime;
+      var co=document.getElementById('f-co');if(co&&me.co)co.value=me.co;
+      var cy=document.getElementById('f-city');if(cy&&me.city)cy.value=me.city;
+      document.getElementById('sub-btn').textContent='Save changes';
+    },360);
+  });
+}
+
+// ── SIGN IN ──
+var ADMIN_CODE = 'Ishaa@0525'; // Type this instead of phone to access admin
+
+function signIn(){
+  var raw = (document.getElementById('login-phone').value||'').trim();
+  var err = document.getElementById('login-error');
+  if(err) err.style.display='none';
+
+  // Admin secret code
+  if(raw === ADMIN_CODE){
+    showAdminDashboard();
+    return;
+  }
+
+  var ph = raw.replace(/\D/g,'');
+  if(!ph||ph.length<10){
+    if(err){err.textContent='Please enter a valid 10-digit number.';err.style.display='block';}
+    return;
+  }
+
+  var btn=document.getElementById('login-btn');
+  btn.textContent='Looking up…';btn.disabled=true;
+  getRSVPByPhone(ph, function(rsvp, e){
+    btn.textContent='Find my RSVP';btn.disabled=false;
+    if(rsvp){
+      showDashboard(rsvp);
+    } else {
+      if(err){
+        err.textContent='No RSVP found for +91 '+ph+'. Please check the number or RSVP first.';
+        err.style.display='block';
+      }
+    }
+  });
+}
+// ── ARRIVAL / DEPARTURE STATE ──
+var ARR = {active:false, mode:'', place:'', date:'', time:''};
+var DEP = {active:false, mode:'', place:'', date:'', time:''};
+var BUS_STOPS = [
+  'Abids','Afzalgunj','Alwal','Ameerpet','Amberpet','Aramghar',
+  'AS Rao Nagar','Asifnagar','Attapur','Aziz Nagar','Bachupally',
+  'Bahadurpura','Banjara Hills Road No 1','Banjara Hills Road No 12',
+  'Banjara Hills Road No 2','Banjara Hills Road No 3','Begumpet',
+  'Bharat Nagar','BHEL Hyderabad','Boduppal','Borabanda',
+  'Chandanagar','Chanda Nagar X Roads','Charminar','Chikkadpally',
+  'Chintalkunta','Chintal','Cyber Towers','Cyberabad',
+  'Dammaiguda','Dilsukhnagar','Dundigal',
+  'ECIL X Roads','Erragadda',
+  'Film Nagar','Financial District','Gachibowli',
+  'Gachibowli Flyover','Gandhi Hospital','Gandipet','Ghatkesar',
+  'Golconda','Golconda X Roads','Gudimalkapur','Hafizpet',
+  'Hastinapuram','Hayathnagar','HITECH City',
+  'Hitech City Metro','Humayun Nagar',
+  'Ibrahimpatnam','ISB Road',
+  'JBS (Jubilee Bus Station)','Jillelguda','Jubilee Hills Checkpost',
+  'Jubilee Hills Road No 36','Jubilee Hills Road No 45',
+  'Kachiguda','Kapra','Karwan','Keesara','Khairatabad',
+  'Kokapet','Kondapur','Kondapur Main Road','Kompally','Koti',
+  'Kukatpally','Kukatpally Housing Board',
+  'LB Nagar','Lalapet','Langar House','Lingampally',
+  'Madinaguda','Madhapur','Malakpet','Malkajgiri','Manikonda',
+  'Masab Tank','Masjid Banda','Medchal','Mehdipatnam',
+  'MGBS (Imlibun Bus Stand)','Miyapur','Moula Ali','Musheerabad',
+  'Nacharam','Nagole','Nalgonda X Roads','Nampally','Narayanguda',
+  'Narsingi','Nanakramguda','Nizampet',
+  'Old City','Old MLA Quarters',
+  'Padmarao Nagar','Paradise','Patancheru','Patny',
+  'Pragathinagar','Puppalaguda',
+  'Quthbullapur',
+  'Rajendranagar','Ramachandrapuram','Ramanthapur','Raidurg',
+  'Rein Bazar','RTC X Roads',
+  'Safilguda','Sainikpuri','Saroornagar','Secunderabad Bus Stand',
+  'Shaikpet','Shamshabad','Shalibanda','Shankarpally',
+  'SR Nagar','Suchitra','Sultan Bazar',
+  'Tarnaka','Tellapur','Tolichowki','Trimulgherry',
+  'Uppal','Uppal X Roads',
+  'Vanasthalipuram','Vikrampuri','Vattepally',
+  'Warasiguda','West Marredpally',
+  'Yellareddyguda','Yousufguda',
+  'Appa Junction','Attapur X Roads',
+  'Attapur Flyover','Bandlaguda','Beeramguda',
+  'Chevella','Chitrapuri Colony','DLF Cyber City',
+  'DLF Cybercity Junction','Edulanagulapally',
+  'Hafeezpet','Hitech City MMTS','Hyderguda',
+  'Jagannadhagiri Gutta','Katedan','Kavadiguda',
+  'Korremula','Kumaraswamy Colony','LIC Colony',
+  'Macha Bollaram','Madhapur 10 Number','Manikonda Jagir',
+  'Mansoorabad','Meerpet','Miyapur MMTS',
+  'Neopolis','Nizampet X Roads','ORR Gachibowli Toll',
+  'ORR Nanakramguda','ORR Shamshabad','Patancheru Bypass',
+  'Pedda Amberpet','Peddamma Temple Road',
+  'Pragathi Nagar','Rajiv Gandhi International Airport',
+  'Saket','Sanatnagar','Sanjeeva Reddy Nagar',
+  'Shamirpet','Silicon Valley','Sultanpur',
+  'Tactical Training Center','Thumkunta',
+  'Vasavi Colony','Vivekananda Nagar',
+  'WIPRO Circle','Whitefields','Yelahanka Road'
+];
+
+function toggleSection(which) {
+  if (which === 'arr') {
+    ARR.active = !ARR.active;
+    document.getElementById('pickup-arr-tog').classList.toggle('on', ARR.active);
+    document.getElementById('pickup-arr-check').classList.toggle('on', ARR.active);
+    document.getElementById('arr-detail').classList.toggle('open', ARR.active);
+  } else {
+    DEP.active = !DEP.active;
+    document.getElementById('drop-dep-tog').classList.toggle('on', DEP.active);
+    document.getElementById('drop-dep-check').classList.toggle('on', DEP.active);
+    document.getElementById('dep-detail').classList.toggle('open', DEP.active);
+  }
+}
+
+function pickArrMode(m) {
+  ARR.mode = m; ARR.place = '';
+  ['flight','train','bus'].forEach(function(k){
+    document.getElementById('arr-'+k).className='seg-b'+(k===m?' on':'');
+    document.getElementById('arr-'+k+'-opts').style.display=(k===m)?'block':'none';
+  });
+}
+function pickDepMode(m) {
+  DEP.mode = m; DEP.place = '';
+  ['flight','train','bus'].forEach(function(k){
+    document.getElementById('dep-'+k).className='seg-b'+(k===m?' on':'');
+    document.getElementById('dep-'+k+'-opts').style.display=(k===m)?'block':'none';
+  });
+}
+function pickArrPlace(val, btn) {
+  ARR.place = val;
+  var grid = btn.closest('.ac-place-grid'); if(grid) grid.querySelectorAll('.place-btn').forEach(function(b){b.classList.remove('on');}); btn.classList.add('on');
+}
+function pickDepPlace(val, btn) {
+  DEP.place = val;
+  var grid = btn.closest('.ac-place-grid'); if(grid) grid.querySelectorAll('.place-btn').forEach(function(b){b.classList.remove('on');}); btn.classList.add('on');
+}
+
+function busSearch(val, which) {
+  var ddId = which==='arr'?'arr-bus-dd':'dep-bus-dd';
+  var dd = document.getElementById(ddId);
+  if(!val.trim()){dd.classList.remove('show');dd.innerHTML='';return;}
+  var q=val.toLowerCase();
+  var res=BUS_STOPS.filter(function(s){return s.toLowerCase().indexOf(q)>=0;}).slice(0,6);
+  if(!res.length){dd.classList.remove('show');return;}
+  dd.innerHTML=res.map(function(s){
+    var esc=s.replace(/'/g,"&#39;");
+    return '<div class="ac-item" data-val="'+esc+'" data-which="'+which+'">'+
+      '<div class="ac-pin"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>'+
+      '<div><div class="ac-main">'+s+'</div></div></div>';
+  }).join('')+'<div class="ac-powered">Hyderabad Bus Stops</div>';
+  dd.querySelectorAll('.ac-item').forEach(function(el){
+    el.addEventListener('mousedown',function(){pickBusStop(el.dataset.which,el.dataset.val);});
+  });
+  dd.classList.add('show');
+}
+function pickBusStop(which, val, el) {
+  if(which==='arr'){ARR.place=val;document.getElementById('arr-bus-inp').value=val;}
+  else{DEP.place=val;document.getElementById('dep-bus-inp').value=val;}
+  var dd=document.getElementById(which+'-bus-dd');dd.classList.remove('show');dd.innerHTML='';
+}
+
+function collectTransport() {
+  var d={};
+  if(ARR.active){
+    d.needPickup=true;
+    d.arrMode=ARR.mode;
+    d.arrPlace=(ARR.mode==='flight'?({dom:'Domestic (T1)',intl:'International (T2)'}[ARR.place]||ARR.place):ARR.place)||'';
+    d.arrDate=(document.getElementById('arr-date')||{}).value||'';
+    d.arrTime=(document.getElementById('arr-time')||{}).value||'';
+  }
+  if(DEP.active){
+    d.needDrop=true;
+    d.depMode=DEP.mode;
+    d.depPlace=(DEP.mode==='flight'?({dom:'Domestic (T1)',intl:'International (T2)'}[DEP.place]||DEP.place):DEP.place)||'';
+    d.depDate=(document.getElementById('dep-date')||{}).value||'';
+    d.depTime=(document.getElementById('dep-time')||{}).value||'';
+  }
+  return d;
+}
+
+
+function fmtTime(t){
+  if(!t)return'';
+  var p=t.split(':'),h=parseInt(p[0]),m=p[1],a=h>=12?'PM':'AM';
+  return(h%12||12)+':'+m+' '+a;
+}
+
+function showRSVPCard(d){
+  d = d || window._lastRSVP;
+  if(!d){ myRSVP(function(me){ if(me) showRSVPCard(me); }); return; }
+
+  var evM  = {both:'Ayush Homam + Birthday Party', homam:'Ayush Homam', party:'Birthday Party'};
+  var attM = {yes:'Confirmed Attending', maybe:'Possibly Attending', no:'Cannot Attend'};
+  var attColor = {yes:'#2D6B4F', maybe:'#8A6010', no:'#A32D2D'};
+  var attBg    = {yes:'rgba(45,107,79,0.1)', maybe:'rgba(201,139,10,0.1)', no:'rgba(163,45,45,0.08)'};
+
+  var rows = [];
+  rows.push(['Event',   evM[d.evSel] || 'Birthday Party']);
+  rows.push(['Status',  attM[d.att]  || d.att]);
+  var gStr = (d.count||1)+' adult'+((d.count||1)!==1?'s':'');
+  if(d.infants>0) gStr += ', '+d.infants+' infant'+(d.infants!==1?'s':'');
+  if(d.kids>0)    gStr += ', '+d.kids+' child'+(d.kids!==1?'ren':'');
+  rows.push(['Guests', gStr]);
+  if(d.phone) rows.push(['WhatsApp', '+91 '+d.phone]);
+  var showStay = d.stay && d.stay!=='no';
+  if(showStay){
+    var sStr = 'Bloom Hotel, DLF Road';
+    if(d.roomNumber) sStr += ' &bull; Room ' + d.roomNumber;
+    if(d.ci) sStr += '<br><small style="color:#9FB0A8">Check-in: '+d.ci+(d.ciTime?' at '+fmtTime(d.ciTime):'')+' &rarr; Check-out: '+d.co+(d.coTime?' at '+fmtTime(d.coTime):'')+'</small>';
+    rows.push(['Stay', sStr]);
+  }
+  var tr = d.transport||{};
+  if(tr.needPickup){
+    var ps=(tr.arrMode||'');if(tr.arrPlace)ps+=' &bull; '+tr.arrPlace;
+    if(tr.arrDate)ps+='<br><small style="color:#9FB0A8">'+tr.arrDate+(tr.arrTime?' at '+fmtTime(tr.arrTime):'')+'</small>';
+    rows.push(['Pickup', ps||'Requested']);
+  }
+  if(tr.needDrop){
+    var ds2=(tr.depMode||'');if(tr.depPlace)ds2+=' &bull; '+tr.depPlace;
+    if(tr.depDate)ds2+='<br><small style="color:#9FB0A8">'+tr.depDate+(tr.depTime?' at '+fmtTime(tr.depTime):'')+'</small>';
+    rows.push(['Drop', ds2||'Requested']);
+  }
+
+  var rowsHTML = rows.map(function(r,i){
+    return '<div style="display:flex;justify-content:space-between;align-items:flex-start;padding:10px 0;border-bottom:'+(i===rows.length-1?'none':'1px solid #EDE7DC')+'">'
+      +'<span style="font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#9FB0A8;padding-top:2px;flex-shrink:0;width:72px;font-family:DM Sans,sans-serif">'+r[0]+'</span>'
+      +'<span style="font-size:13px;color:#1A271E;text-align:right;max-width:calc(100% - 82px);line-height:1.5;font-family:DM Sans,sans-serif">'+r[1]+'</span>'
+      +'</div>';
+  }).join('');
+
+  var evIsHomam = d.evSel==='homam'||d.evSel==='both';
+  var fname = 'RSVP-Ishaa-'+(d.name||'Guest').replace(/[^a-zA-Z0-9]/g,'-')+'.html';
+
+  // Build the standalone HTML card
+  var cardHTML = '<!DOCTYPE html><html><head><meta charset="UTF-8">'
+    +'<meta name="viewport" content="width=device-width,initial-scale=1">'
+    +'<title>RSVP Confirmation - Ishaa Turns One</title>'
+    +'<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">'
+    +'<style>*{box-sizing:border-box;margin:0;padding:0}html,body{min-height:100%;background:#F4F1EB;font-family:DM Sans,sans-serif;display:flex;align-items:flex-start;justify-content:center;padding:24px 16px 40px}'
+    +'.card{width:100%;max-width:440px;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 6px rgba(13,32,24,.1),0 20px 50px rgba(13,32,24,.15)}'
+    +'.t1{height:5px;background:linear-gradient(90deg,#0D2018,#1C3D2A,#4A7A5A,#C4A060,#A8823A)}'
+    +'.hero{background:linear-gradient(150deg,#0D2018,#1C3D2A);padding:28px 24px 22px}'
+    +'.ey{font-size:8.5px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:rgba(196,160,96,.75);margin-bottom:8px}'
+    +'.nm{font-family:Cormorant Garamond,serif;font-size:38px;font-weight:300;font-style:italic;color:#fff;line-height:1;margin-bottom:4px}'
+    +'.es{font-size:12px;color:rgba(255,255,255,.45);font-weight:300}'
+    +'.badge{display:inline-flex;align-items:center;gap:7px;margin-top:14px;border-radius:20px;padding:6px 12px;background:'+(attBg[d.att]||attBg.yes)+'}'
+    +'.dot{width:7px;height:7px;border-radius:50%;background:'+(attColor[d.att]||attColor.yes)+'}'
+    +'.bl{font-size:11px;font-weight:500;color:'+(attColor[d.att]||attColor.yes)+';letter-spacing:.06em}'
+    +'.ds{background:#F7F3ED;border-left:3px solid #4A7A5A;padding:12px 16px}'
+    +'.dl{font-size:8.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#6B8578;margin-bottom:2px}'
+    +'.dv{font-family:Cormorant Garamond,serif;font-size:17px;font-style:italic;color:#1A271E}'
+    +'.dw{font-size:11px;color:#6B8578;font-weight:300;margin-top:2px}'
+    +'.body{padding:4px 20px 0}'
+    +'.sh{font-size:9px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#9FB0A8;margin:14px 0 4px}'
+    +'.vb{border:1px solid #EDE7DC;border-radius:8px;overflow:hidden;margin:10px 0 0}'
+    +'.vr{padding:10px 14px;border-bottom:1px solid #EDE7DC}'
+    +'.vr:last-child{border-bottom:none}'
+    +'.vl{font-size:9px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:#9FB0A8;margin-bottom:2px}'
+    +'.vn{font-family:Cormorant Garamond,serif;font-size:15px;font-style:italic;color:#1A271E;margin-bottom:1px}'
+    +'.va{font-size:11px;color:#6B8578;font-weight:300;margin-bottom:4px}'
+    +'.vm{font-size:11px;color:#4A7A5A;font-weight:500;text-decoration:none}'
+    +'.ft{padding:14px 20px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #EDE7DC;margin-top:10px}'
+    +'.fb{font-family:Cormorant Garamond,serif;font-size:13px;font-style:italic;color:#9FB0A8}'
+    +'.fn{font-size:10px;color:#C4D9CC}'
+    +'.t2{height:3px;background:linear-gradient(90deg,#4A7A5A,#A8823A,#4A7A5A)}'
+    +'a{color:#4A7A5A}'
+    +'@media print{body{background:#fff;padding:0}.card{box-shadow:none;max-width:100%;border-radius:0}}</style></head><body>'
+    +'<div class="card">'
+    +'<div class="t1"></div>'
+    +'<div class="hero"><div class="ey">RSVP Confirmation</div>'
+    +'<div class="nm">'+d.name+'</div>'
+    +'<div class="es">'+(evIsHomam?'Ayush Homam &amp; Birthday Celebration':'Birthday Party &bull; Jungle Theme')+'</div>'
+    +'<div class="badge"><div class="dot"></div><div class="bl">'+(attM[d.att]||d.att)+'</div></div></div>'
+    +'<div class="ds"><div class="dl">'+(evIsHomam?'Morning Ceremony':'Evening Celebration')+'</div>'
+    +'<div class="dv">'+(evIsHomam?'Saturday, May 2nd &bull; 8:00 AM':'Saturday, May 2nd &bull; 6:00 PM')+'</div>'
+    +'<div class="dw">Radisson Hotel, HITEC City &bull; Hyderabad</div></div>'
+    +'<div class="body"><div class="sh">Your Details</div>'+rowsHTML+'</div>'
+    +'<div style="padding:0 20px">'
+    +'<div class="vb">'
+    +'<div class="vr"><div class="vl">Event Venue</div><div class="vn">Radisson Hotel, HITEC City</div><div class="va">Madhapur, Hyderabad</div><a class="vm" href="https://maps.app.goo.gl/pi5DkLRbGiPGX6PZ6" target="_blank">Open in Google Maps &rarr;</a></div>'
+    +(showStay?'<div class="vr"><div class="vl">Your Stay'+(d.roomNumber?' &bull; Room '+d.roomNumber:'')+'</div><div class="vn">Bloom Hotel, DLF Road</div><div class="va">DLF Cyber City, HITEC City, Hyderabad</div><a class="vm" href="https://maps.app.goo.gl/DHhqLpeT2S1zuRAC6" target="_blank">Open in Google Maps &rarr;</a></div>':'')
+    +'</div></div>'
+    +'<div class="ft"><div class="fb">Ishaa Turns One &mdash; May 2, 2026</div><div class="fn">'+new Date().toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})+'</div></div>'
+    +'<div class="t2"></div></div>'
+    +'</body></html>';
+
+  // Try native download (works when file opened directly in browser)
+  try {
+    var blob = new Blob([cardHTML], {type:'text/html;charset=utf-8'});
+    var url  = URL.createObjectURL(blob);
+    var a    = document.createElement('a');
+    a.href = url;
+    a.download = fname;
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function(){ document.body.removeChild(a); URL.revokeObjectURL(url); }, 1500);
+    toast('RSVP saved! Open the file and use Print to save as PDF');
+  } catch(e) {
+    // Sandbox fallback — show inline card
+    _showCardOverlay(cardHTML);
+  }
+
+  // If click didn't trigger download (sandbox blocks it), show overlay after short delay
+  setTimeout(function(){
+    var test = document.createElement('a');
+    if(typeof test.download === 'undefined'){
+      _showCardOverlay(cardHTML);
+    }
+  }, 800);
+}
+
+function _showCardOverlay(cardHTML){
+  var old = document.getElementById('_rsvp_card_ov');
+  if(old) old.remove();
+  var ov = document.createElement('div');
+  ov.id = '_rsvp_card_ov';
+  ov.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(13,32,24,.75);overflow-y:auto;-webkit-overflow-scrolling:touch';
+  var parser = new DOMParser();
+  var pdoc = parser.parseFromString(cardHTML,'text/html');
+  var cardEl = pdoc.querySelector('.card');
+  var st = pdoc.querySelector('style');
+  var bar = document.createElement('div');
+  bar.style.cssText = 'background:#0D2018;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:1';
+  bar.innerHTML = '<span style="font-size:13px;font-weight:500;color:rgba(255,255,255,.85);font-family:DM Sans,sans-serif">RSVP Confirmation</span>'
+    + '<button onclick="closeRSVPCard()" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.65);border:none;border-radius:7px;padding:7px 14px;font-size:12px;cursor:pointer;font-family:DM Sans,sans-serif">Close</button>';
+  var wrap = document.createElement('div');
+  wrap.style.cssText = 'max-width:460px;margin:20px auto;padding:0 16px 40px';
+  if(st){var s2=document.createElement('style');s2.textContent=st.textContent;wrap.appendChild(s2);}
+  if(cardEl) wrap.appendChild(cardEl);
+  ov.appendChild(bar);
+  ov.appendChild(wrap);
+  document.body.appendChild(ov);
+}
+
+
+// Smart map opener — detects iOS/Android and opens native app
+// Drop coords for Radisson HITEC City
+var DROP_LAT = '17.4477';
+var DROP_LNG = '78.3678';
+var DROP_NAME = 'Radisson Hotel HITEC City Hyderabad';
+
+function initRideLinks() {
+  var ua = navigator.userAgent || '';
+  var isAndroid = /Android/i.test(ua);
+  var isIOS = /iPhone|iPad|iPod/i.test(ua);
+  var isMobile = isAndroid || isIOS;
+
+  var olaEl = document.getElementById('ride-ola');
+  var uberEl = document.getElementById('ride-uber');
+  var rapidoEl = document.getElementById('ride-rapido');
+
+  if(olaEl) {
+    // Mobile: try native app scheme, web as fallback
+    olaEl.href = isMobile
+      ? 'olacabs://book?drop_lat='+DROP_LAT+'&drop_lng='+DROP_LNG+'&drop_name='+encodeURIComponent(DROP_NAME)
+      : 'https://book.olacabs.com/?dropLat='+DROP_LAT+'&dropLng='+DROP_LNG+'&drop_name='+encodeURIComponent(DROP_NAME);
+    if(isMobile) {
+      olaEl.addEventListener('click', function(e){
+        // If app not installed, fallback to web after delay
+        setTimeout(function(){
+          window.open('https://book.olacabs.com/?dropLat='+DROP_LAT+'&dropLng='+DROP_LNG+'&drop_name='+encodeURIComponent(DROP_NAME), '_blank');
+        }, 2000);
+      });
+    }
+  }
+
+  if(uberEl) {
+    uberEl.href = 'https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[latitude]='+DROP_LAT+'&dropoff[longitude]='+DROP_LNG+'&dropoff[nickname]='+encodeURIComponent(DROP_NAME);
+  }
+
+  if(rapidoEl) {
+    rapidoEl.href = isMobile
+      ? 'in.rapido.app://ride?dropLat='+DROP_LAT+'&dropLng='+DROP_LNG+'&dropName='+encodeURIComponent(DROP_NAME)
+      : 'https://www.rapido.bike/book-auto?dropLat='+DROP_LAT+'&dropLng='+DROP_LNG+'&dropName='+encodeURIComponent(DROP_NAME);
+    if(isMobile) {
+      rapidoEl.addEventListener('click', function(){
+        setTimeout(function(){ window.open('https://www.rapido.bike/book-auto?dropLat='+DROP_LAT+'&dropLng='+DROP_LNG+'&dropName='+encodeURIComponent(DROP_NAME),'_blank'); }, 2000);
+      });
+    }
+  }
+}
+
+function openMaps(pinUrl, lat, lng, query) {
+  var ua = navigator.userAgent || '';
+  var isIOS     = /iPhone|iPad|iPod/i.test(ua);
+  var isAndroid = /Android/i.test(ua);
+
+  if (isIOS) {
+    // Try Apple Maps first (native on iPhone)
+    window.location.href = 'maps://?daddr='+lat+','+lng+'&dirflg=d';
+    // Fallback to Google Maps pin after short delay if Apple Maps doesn't open
+    setTimeout(function(){ window.open(pinUrl,'_blank'); }, 500);
+  } else if (isAndroid) {
+    // Open Google Maps app via intent, fallback to pin URL
+    window.location.href = 'google.navigation:q='+lat+','+lng;
+    setTimeout(function(){ window.open(pinUrl,'_blank'); }, 500);
+  } else {
+    // Desktop — open pin URL directly
+    window.open(pinUrl,'_blank');
+  }
+}
+
+function closeRSVPCard(){var o=document.getElementById("_rsvp_card_ov");if(o)o.remove();}
+
+function toggleAdminRow(el){var s=el.nextSibling;if(s)s.style.display=s.style.display==="block"?"none":"block";}
+
+function renderAdminDashboard(){
+  allRSVPs(function(all){
+    if(!all) all=[];
+    var att=all.filter(function(r){return r.att==='yes';});
+    var guests=att.reduce(function(s,r){return s+(parseInt(r.count)||1);},0);
+    var staying=all.filter(function(r){return r.stay==='yes';});
+    var maybes=all.filter(function(r){return r.att==='maybe';});
+
+    // ── RSVPs panel ──
+    var html='<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:14px">'
+      +'<div style="background:var(--iv);border:1px solid var(--ivdd);border-radius:10px;padding:12px;text-align:center"><div style="font-family:Cormorant Garamond,serif;font-size:28px;color:var(--sage)">'+all.length+'</div><div style="font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-top:2px">Total RSVPs</div></div>'
+      +'<div style="background:var(--iv);border:1px solid var(--ivdd);border-radius:10px;padding:12px;text-align:center"><div style="font-family:Cormorant Garamond,serif;font-size:28px;color:var(--sage)">'+guests+'</div><div style="font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-top:2px">Attending</div></div>'
+      +'<div style="background:var(--iv);border:1px solid var(--ivdd);border-radius:10px;padding:12px;text-align:center"><div style="font-family:Cormorant Garamond,serif;font-size:28px;color:var(--sage)">'+staying.length+'</div><div style="font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-top:2px">Staying</div></div>'
+      +'<div style="background:var(--iv);border:1px solid var(--ivdd);border-radius:10px;padding:12px;text-align:center"><div style="font-family:Cormorant Garamond,serif;font-size:28px;color:var(--gold)">'+maybes.length+'</div><div style="font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-top:2px">Pending</div></div>'
+      +'</div>';
+
+    if(!all.length){html+='<div style="font-size:13px;color:var(--ink3);font-style:italic;padding:8px 0">No RSVPs yet</div>';}
+    else{
+      html+=all.map(function(r,i){
+        var attC=r.att==='yes'?'background:rgba(74,122,90,0.12);color:#2D6B4F':r.att==='maybe'?'background:rgba(201,139,10,0.12);color:#8A6010':'background:rgba(192,57,43,0.1);color:#A32D2D';
+        var evC=r.evSel==='both'?'Both':r.evSel==='homam'?'Homam':'Party';
+        var attL=r.att==='yes'?'Attending':r.att==='maybe'?'Maybe':'Declined';
+        var gStr=(r.count||1)+(r.infants>0?' +'+r.infants+'inf':'')+(r.kids>0?' +'+r.kids+'kids':'');
+        return '<div style="background:var(--iv);border:1px solid var(--ivdd);border-radius:10px;margin-bottom:8px;overflow:hidden">'
+          +'<div style="padding:11px 14px;display:flex;align-items:center;gap:10px;cursor:pointer" onclick="toggleAdminRow(this)">'
+          +'<div style="width:34px;height:34px;border-radius:50%;background:rgba(74,122,90,0.12);display:flex;align-items:center;justify-content:center;font-family:Cormorant Garamond,serif;font-size:16px;color:var(--sage);flex-shrink:0">'+r.name[0].toUpperCase()+'</div>'
+          +'<div style="flex:1"><div style="font-size:14px;font-weight:500;color:var(--ink)">'+r.name+'</div><div style="font-size:11px;color:var(--ink3);margin-top:1px">'+gStr+' &bull; '+evC+'</div></div>'
+          +'<span style="font-size:10px;font-weight:600;padding:3px 8px;border-radius:6px;'+attC+'">'+attL+'</span></div>'
+          +'<div style="display:none;padding:10px 14px 14px;border-top:1px solid var(--ivdd);background:rgba(247,243,237,0.5);font-size:12px;color:var(--ink2);line-height:1.7">'
+          +(r.phone?'<div><b>WhatsApp:</b> +91 '+r.phone+'</div>':'')
+          +(r.stay&&r.stay!=='no'?'<div><b>Stay:</b> Bloom Hotel'+(r.ci?' ('+r.ci+' to '+r.co+')':'')+'</div>':'')
+          +(r.transport&&r.transport.needPickup?'<div><b>Pickup:</b> '+(r.transport.arrMode||'')+' '+(r.transport.arrPlace||'')+' '+( r.transport.arrDate||'')+'</div>':'')
+          +(r.transport&&r.transport.needDrop?'<div><b>Drop:</b> '+(r.transport.depMode||'')+' '+(r.transport.depPlace||'')+' '+(r.transport.depDate||'')+'</div>':'')
+          +(r.roomNumber?'<div><b>Room:</b> '+r.roomNumber+'</div>':'')
+          +'</div></div>';
+      }).join('');
+    }
+    document.getElementById('dp-rsvp').innerHTML=html;
+
+    // ── Movement panel ──
+    var cm={flight:[],train:[],car:[],bus:[],local:[]};
+    var cities={};
+    all.forEach(function(r){
+      var t=r.transport||{};
+      if(t.arrMode&&cm[t.arrMode])cm[t.arrMode].push(r.name);
+      if(t.arrPlace&&t.arrMode!=='local'){cities[t.arrPlace]=cities[t.arrPlace]||[];cities[t.arrPlace].push(r.name);}
+    });
+    var cmLabels={flight:'Flight',train:'Train',car:'Driving',bus:'Bus',local:'Local'};
+    var mHtml='<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--sage);margin-bottom:10px">Arrival by</div>';
+    var anyTravel=false;
+    Object.keys(cm).forEach(function(k){if(cm[k].length){anyTravel=true;mHtml+='<div style="display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--ivdd);font-size:13px"><div style="flex:1"><div style="font-weight:500;color:var(--ink)">'+cmLabels[k]+'</div><div style="font-size:11px;color:var(--ink3)">'+cm[k].join(', ')+'</div></div><div style="font-family:Cormorant Garamond,serif;font-size:20px;color:var(--sage)">'+cm[k].length+'</div></div>';}});
+    if(!anyTravel)mHtml+='<div style="font-size:13px;color:var(--ink3);font-style:italic">No travel data yet</div>';
+    if(maybes.length){
+      mHtml+='<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin:14px 0 8px">Needs follow-up</div>';
+      mHtml+=maybes.map(function(r){return '<div style="font-size:13px;padding:7px 0;border-bottom:1px solid var(--ivdd);color:var(--ink)">'+r.name+(r.phone?' &bull; +91 '+r.phone:'')+'</div>';}).join('');
+    }
+    document.getElementById('dp-movement').innerHTML=mHtml;
+
+    // ── Stay panel ──
+    var sHtml='<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--sage);margin-bottom:10px">Staying at Bloom Hotel ('+staying.length+')</div>';
+    if(!staying.length){sHtml+='<div style="font-size:13px;color:var(--ink3);font-style:italic">No stay requests yet</div>';}
+    else sHtml+=staying.map(function(r){
+      var nights=0;
+      if(r.ci&&r.co){try{nights=Math.round((new Date(r.co)-new Date(r.ci))/86400000);}catch(e){}}
+      return '<div style="background:var(--iv);border:1px solid var(--ivdd);border-radius:10px;padding:12px 14px;margin-bottom:8px">'
+        +'<div style="font-size:14px;font-weight:500;color:var(--ink);margin-bottom:3px">'+r.name+(r.roomNumber?' &bull; Room '+r.roomNumber:'')+'</div>'
+        +'<div style="font-size:12px;color:var(--ink3)">'+( r.ci||'TBC')+' &rarr; '+(r.co||'TBC')+(nights?' &bull; '+nights+' night'+(nights!==1?'s':''):'')+'</div>'
+        +(r.phone?'<div style="font-size:11px;color:var(--ink4);margin-top:2px">+91 '+r.phone+'</div>':'')
+        +'</div>';
+    }).join('');
+    document.getElementById('dp-stay').innerHTML=sHtml;
+
+    // ── Rooms panel ──
+    renderRooms(all);
+  });
+}
+
+function renderRooms(allData){
+  if(allData){_renderRoomsData(allData);return;}
+  allRSVPs(function(all){_renderRoomsData(all||[]);});
+}
+function _renderRoomsData(all){
+  var staying=all.filter(function(r){return r.stay==='yes';});
+  var el=document.getElementById('dp-rooms')||document.getElementById('room-list-inner');
+  if(!el)return;
+  if(!staying.length){el.innerHTML='<div style="font-size:13px;color:var(--ink3);font-style:italic">No confirmed overnight guests yet</div>';return;}
+  el.innerHTML=staying.map(function(r){
+    return '<div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--ivdd)">'
+      +'<div style="flex:1"><div style="font-size:14px;font-weight:500;color:var(--ink)">'+r.name+'</div>'
+      +'<div style="font-size:11px;color:var(--ink3)">'+(r.phone?'+91 '+r.phone+' &bull; ':'')+( r.ci||'')+' &rarr; '+(r.co||'')+'</div></div>'
+      +'<input class="room-inp" data-phone="'+r.phone+'" type="text" placeholder="Room no." value="'+(r.roomNumber||'')+'" '
+      +'style="width:86px;padding:7px 10px;border:1.5px solid var(--ivdd);border-radius:6px;font-size:13px;outline:none">'
+      +'<button class="room-save-btn" data-phone="'+r.phone+'" '
+      +'style="padding:7px 12px;border-radius:6px;border:none;background:#1C3D2A;color:#fff;font-size:12px;font-weight:500;cursor:pointer">Save</button>'
+      +'</div>';
+  }).join('');
+  // Event delegation for save buttons
+  el.querySelectorAll('.room-save-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){saveRoom(btn.dataset.phone);});
+  });
+}
+
+function closePDF(){var f=document.getElementById("_pdf_frame");if(f)f.remove();}
+function doLogout(){
+  stSet('myphone', null, function(){});
+  swapTo('q');
+  toast('Signed out');
+}
+
+// ── TOAST ──
+function toast(msg){var el=document.getElementById('toast');el.textContent=msg;el.classList.add('up');clearTimeout(window._t);window._t=setTimeout(function(){el.classList.remove('up');},3000);}
+
+// ── INIT ──
+(function(){
+  initRideLinks();
+  myRSVP(function(me) {
+    if (me && !me.cancelled) {
+      document.getElementById('card-q').classList.add('hidden');
+      activeCard = 'dash';
+      document.getElementById('card-dash').classList.remove('hidden');
+      showDashboard(me);
+    }
+  });
+})();
+</script>
+</body>
+</html>
