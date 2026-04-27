@@ -19,22 +19,22 @@
   --r:12px;--rsm:8px;
 }
 html{-webkit-font-smoothing:antialiased;min-height:100%;}
-body{font-family:'DM Sans',sans-serif;background:var(--f8);color:var(--iv);min-height:100dvh;overflow-x:hidden;}
+body{font-family:DM Sans,sans-serif;background:var(--f8);color:var(--iv);min-height:100dvh;overflow-x:hidden;}
 body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 160% 70% at -10% -5%,rgba(21,48,30,.9) 0%,transparent 55%),radial-gradient(ellipse 90% 80% at 110% 10%,rgba(15,30,20,.7) 0%,transparent 50%),radial-gradient(ellipse 90% 100% at 50% 110%,rgba(10,24,16,.9) 0%,transparent 55%);}
 body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.35;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");}
 
-.page{position:relative;z-index:1;max-width:640px;margin:0 auto;min-height:100dvh;display:flex;flex-direction:column;}
+.page{position:relative;z-index:1;max-width:720px;margin:0 auto;min-height:100dvh;display:flex;flex-direction:column;}
 
 /* MASTHEAD */
 .mast{padding:24px 24px 0;text-align:center;flex-shrink:0;}
 .mast-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--goldl);margin-bottom:12px;opacity:0;animation:up .7s .1s ease forwards;}
 .mast-eyebrow::before,.mast-eyebrow::after{content:'';display:block;width:30px;height:1px;background:linear-gradient(90deg,transparent,var(--gold));opacity:.5;}
 .mast-eyebrow::after{transform:scaleX(-1);}
-.mast-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,9vw,48px);font-weight:300;font-style:italic;color:#fff;line-height:1.05;margin-bottom:8px;opacity:0;animation:up .7s .2s ease forwards;}
+.mast-title{font-family:Cormorant Garamond,serif;font-size:clamp(36px,9vw,48px);font-weight:300;font-style:italic;color:#fff;line-height:1.05;margin-bottom:8px;opacity:0;animation:up .7s .2s ease forwards;}
 .mast-hosts{font-size:12px;font-weight:300;color:var(--ink4);letter-spacing:.04em;line-height:1.55;opacity:0;animation:up .7s .3s ease forwards;}
 .mast-hosts strong{color:var(--sagp);font-weight:400;}
-.mast-personal{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:300;font-style:italic;color:rgba(196,217,204,.65);line-height:1.6;margin-top:8px;opacity:0;animation:up .7s .36s ease forwards;}
-.mast-when{display:inline-flex;align-items:center;gap:10px;font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--goldl);margin-top:12px;opacity:0;animation:up .7s .42s ease forwards;}
+.mast-personal{font-family:Cormorant Garamond,serif;font-size:14px;font-weight:300;font-style:italic;color:rgba(196,217,204,.65);line-height:1.6;margin-top:8px;opacity:0;animation:up .7s .36s ease forwards;}
+.mast-when{display:inline-flex;align-items:center;gap:10px;font-family:Cormorant Garamond,serif;font-size:15px;color:var(--goldl);margin-top:12px;opacity:0;animation:up .7s .42s ease forwards;}
 .mast-when::before,.mast-when::after{content:'—';color:var(--gold);opacity:.4;}
 .mast-where{font-size:11px;color:var(--ink3);font-weight:300;letter-spacing:.07em;margin-top:3px;opacity:0;animation:up .7s .48s ease forwards;}
 .hr{height:1px;margin:14px 24px;background:linear-gradient(90deg,transparent,var(--line),transparent);opacity:0;animation:up .5s .52s ease forwards;flex-shrink:0;}
@@ -46,7 +46,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opac
   flex:1;
   display:flex;
   flex-direction:column;
-  justify-content:center;
+  justify-content:flex-start;
   opacity:0;
   animation:up .8s .58s ease forwards;
   padding:8px 12px;
@@ -58,12 +58,12 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opac
 /* QUESTION CARD */
 .q-inner{padding:28px 28px 32px;}
 .q-label{font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--sage);margin-bottom:10px;display:block;}
-.q-text{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;font-style:italic;color:var(--ink);line-height:1.3;margin-bottom:20px;}
+.q-text{font-family:Cormorant Garamond,serif;font-size:22px;font-weight:400;font-style:italic;color:var(--ink);line-height:1.3;margin-bottom:20px;}
 .rel-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
 .rel-tile{border:1px solid var(--ivdd);border-radius:var(--r);padding:16px 12px;cursor:pointer;transition:all .2s;background:var(--iv);}
 .rel-tile:hover{border-color:var(--sagp);background:var(--ivd);}
 .rel-tile.on{border-color:var(--sage);background:var(--f8);box-shadow:0 2px 12px rgba(9,23,16,.2);}
-.rel-name{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:500;color:var(--ink);display:block;margin-bottom:2px;transition:color .2s;line-height:1.2;}
+.rel-name{font-family:Cormorant Garamond,serif;font-size:16px;font-weight:500;color:var(--ink);display:block;margin-bottom:2px;transition:color .2s;line-height:1.2;}
 .rel-desc{font-size:11px;color:var(--ink3);font-weight:300;transition:color .2s;}
 .rel-tile.on .rel-name{color:var(--iv);}
 .rel-tile.on .rel-desc{color:var(--sagl);}
@@ -79,12 +79,12 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opac
 .ev-row{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);}
 .ev-row:last-child{border-bottom:none;}
 .ev-dot{width:5px;height:5px;border-radius:50%;background:var(--sage);flex-shrink:0;margin-top:7px;}
-.ev-name{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:500;color:var(--ink);font-style:italic;}
+.ev-name{font-family:Cormorant Garamond,serif;font-size:16px;font-weight:500;color:var(--ink);font-style:italic;}
 .ev-time{font-size:11px;color:var(--sage);font-weight:500;letter-spacing:.04em;margin-top:2px;}
 .ev-note{font-size:12px;color:var(--ink3);font-weight:300;margin-top:3px;line-height:1.5;}
 .ev-single{padding:16px 22px;border-bottom:1px solid var(--line);}
 .ev-single-eyebrow{font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);margin-bottom:4px;}
-.ev-single-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;font-style:italic;color:var(--ink);}
+.ev-single-name{font-family:Cormorant Garamond,serif;font-size:20px;font-weight:400;font-style:italic;color:var(--ink);}
 .ev-single-meta{font-size:12px;color:var(--ink3);font-weight:300;margin-top:3px;line-height:1.5;}
 
 .farea{padding:16px 22px;border-bottom:1px solid var(--line);}
@@ -92,7 +92,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opac
 .fl{display:block;font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);margin-bottom:6px;}
 .fl-tip{font-size:9px;font-weight:400;letter-spacing:.1em;color:var(--ink4);text-transform:none;}
 .field-note{display:block;font-size:11px;color:var(--ink4);font-weight:300;margin-top:5px;font-style:italic;line-height:1.45;}
-.fi{width:100%;padding:12px 16px;border:1px solid var(--ivdd);border-radius:var(--rsm);font-size:15px;font-family:'DM Sans',sans-serif;font-weight:400;color:var(--ink);background:var(--iv);outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;}
+.fi{width:100%;padding:12px 16px;border:1px solid var(--ivdd);border-radius:var(--rsm);font-size:15px;font-family:DM Sans,sans-serif;font-weight:400;color:var(--ink);background:var(--iv);outline:none;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;}
 .fi::placeholder{color:var(--ink4);}
 .fi:focus{border-color:var(--sage);box-shadow:0 0 0 3px rgba(74,122,90,.1);}
 .fi.sel{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%236B8578' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;}
@@ -107,7 +107,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opac
 .phone-prefix{display:flex;align-items:center;gap:6px;padding:12px 12px 12px 14px;background:var(--ivd);border-right:1px solid var(--ivdd);font-size:14px;font-weight:500;color:var(--ink2);white-space:nowrap;flex-shrink:0;}
 .phone-flag{font-size:16px;}
 .phone-code{font-size:13px;font-weight:500;color:var(--ink3);}
-.phone-inp{flex:1;padding:12px 14px;border:none;font-size:15px;font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--iv);outline:none;min-width:0;}
+.phone-inp{flex:1;padding:12px 14px;border:none;font-size:15px;font-family:DM Sans,sans-serif;color:var(--ink);background:var(--iv);outline:none;min-width:0;}
 .phone-inp::placeholder{color:var(--ink4);}
 
 /* city with map icon */
@@ -131,6 +131,16 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opac
 }
 .bloom-link{color:var(--sage);font-weight:500;text-decoration:underline;text-underline-offset:3px;}
 .bloom-link:hover{color:var(--sagl);}
+.ishaa-tile{background:var(--iv);border:1px solid var(--ivdd);border-radius:var(--r);padding:12px 12px 10px;cursor:pointer;transition:all .18s;text-align:center;}
+.ishaa-tile:hover{border-color:var(--sagp);background:var(--ivd);transform:translateY(-1px);}
+.ishaa-tile.active{border-color:var(--sage);background:var(--f8);}
+.ishaa-tile.active .ishaa-tile-name{color:var(--iv);}
+.ishaa-tile.active .ishaa-tile-sub{color:var(--sagl);}
+.ishaa-tile-icon{font-size:22px;margin-bottom:5px;}
+.ishaa-tile-name{font-size:12px;font-weight:600;color:var(--ink);margin-bottom:2px;line-height:1.2;}
+.ishaa-tile-sub{font-size:10px;color:var(--ink3);font-weight:300;}
+.shop-pill{padding:7px 12px;border-radius:20px;border:1px solid var(--ivdd);background:var(--iv);font-family:'DM Sans',sans-serif;font-size:12px;color:var(--ink2);cursor:pointer;transition:all .15s;}
+.shop-pill:hover{border-color:var(--sagp);background:var(--ivd);color:var(--sage);}
 .ac-wrap{position:relative;}
 
 /* transport detail sub-sections */
@@ -147,7 +157,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opac
 .place-btn{
   border:1.5px solid var(--ivdd);border-radius:var(--rsm);padding:10px 12px;
   background:var(--iv);cursor:pointer;text-align:left;transition:all .18s;
-  font-family:'DM Sans',sans-serif;
+  font-family:DM Sans,sans-serif;
 }
 .place-btn:hover{border-color:var(--sagp);background:var(--ivd);}
 .place-btn.on{border-color:var(--sage);background:var(--f8);}
@@ -192,7 +202,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opac
 .ac-powered{padding:8px 14px;font-size:10px;color:var(--ink4);text-align:right;letter-spacing:.03em;}
 
 .seg{display:flex;background:var(--ivd);border:1px solid var(--ivdd);border-radius:var(--rsm);padding:3px;gap:2px;}
-.seg-b{flex:1;padding:10px 6px;border:none;border-radius:6px;font-size:12px;font-weight:400;font-family:'DM Sans',sans-serif;color:var(--ink3);background:transparent;cursor:pointer;transition:all .18s;text-align:center;line-height:1.2;}
+.seg-b{flex:1;padding:10px 6px;border:none;border-radius:6px;font-size:12px;font-weight:400;font-family:DM Sans,sans-serif;color:var(--ink3);background:transparent;cursor:pointer;transition:all .18s;text-align:center;line-height:1.2;}
 .seg-b:hover:not(.on):not(.ona):not(.onm){background:rgba(74,122,90,.07);color:var(--ink2);}
 .seg-b.on{background:var(--f7);color:var(--iv);box-shadow:0 1px 5px rgba(9,23,16,.25);}
 .seg-b.ona{background:var(--goldp);color:var(--gold);box-shadow:0 1px 4px rgba(168,130,58,.15);}
@@ -228,7 +238,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opac
 .tick-rm{font-size:11px;color:var(--ink4);cursor:pointer;text-decoration:underline;text-underline-offset:3px;}
 
 .sub-wrap{padding:18px 22px;}
-.sub-btn{width:100%;padding:15px 24px;border-radius:var(--rsm);border:none;background:var(--f6);color:var(--iv);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;transition:all .22s;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 2px 12px rgba(9,23,16,.3);}
+.sub-btn{width:100%;padding:15px 24px;border-radius:var(--rsm);border:none;background:var(--f6);color:var(--iv);font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;transition:all .22s;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 2px 12px rgba(9,23,16,.3);}
 .sub-btn::after{content:'→';font-size:16px;transition:transform .18s;}
 .sub-btn:hover{background:var(--f5);transform:translateY(-1px);box-shadow:0 4px 20px rgba(9,23,16,.4);}
 .sub-btn:hover::after{transform:translateX(3px);}
@@ -236,7 +246,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opac
 
 /* ── LOGIN CARD ── */
 .login-inner{padding:28px 28px 32px;}
-.login-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;font-style:italic;color:var(--ink);margin-bottom:6px;}
+.login-title{font-family:Cormorant Garamond,serif;font-size:22px;font-weight:400;font-style:italic;color:var(--ink);margin-bottom:6px;}
 .login-sub{font-size:13px;color:var(--ink3);font-weight:300;line-height:1.6;margin-bottom:22px;}
 .login-field{margin-bottom:14px;}
 .login-field label{display:block;font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);margin-bottom:6px;}
@@ -248,13 +258,13 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opac
 
 /* ── DASHBOARD CARD ── */
 .dash-top{padding:20px 22px 0;}
-.dash-greeting{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;font-style:italic;color:var(--ink);margin-bottom:2px;}
+.dash-greeting{font-family:Cormorant Garamond,serif;font-size:22px;font-weight:400;font-style:italic;color:var(--ink);margin-bottom:2px;}
 .dash-sub{font-size:12px;color:var(--ink3);font-weight:300;}
 
 /* tabs */
 .dash-tabs{display:flex;border-bottom:1px solid var(--line);margin-top:16px;overflow-x:auto;}
 .dash-tabs::-webkit-scrollbar{display:none;}
-.d-tab{flex-shrink:0;padding:12px 18px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);cursor:pointer;border:none;background:transparent;font-family:'DM Sans',sans-serif;border-bottom:2px solid transparent;transition:all .18s;}
+.d-tab{flex-shrink:0;padding:12px 18px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);cursor:pointer;border:none;background:transparent;font-family:DM Sans,sans-serif;border-bottom:2px solid transparent;transition:all .18s;}
 .d-tab.on{color:var(--sage);border-bottom-color:var(--sage);}
 .d-tab:hover:not(.on){color:var(--ink2);}
 .d-panel{display:none;padding:18px 22px;}
@@ -275,7 +285,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opac
 
 /* transport */
 .venue-block{background:var(--ivd);border-radius:var(--r);padding:14px 16px;margin-bottom:14px;}
-.venue-name{font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:var(--ink);margin-bottom:1px;}
+.venue-name{font-family:Cormorant Garamond,serif;font-size:17px;font-style:italic;color:var(--ink);margin-bottom:1px;}
 .venue-addr{font-size:12px;color:var(--ink3);font-weight:300;line-height:1.5;}
 .t-section-label{font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px;margin-top:14px;display:block;}
 
@@ -285,14 +295,14 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opac
 .reach-venue-divider{border-top:1px solid var(--ivdd);}
 .reach-venue-inner{flex:1;min-width:0;}
 .reach-venue-label{font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink4);margin-bottom:3px;}
-.reach-venue-name{font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:var(--ink);line-height:1.2;margin-bottom:2px;}
+.reach-venue-name{font-family:Cormorant Garamond,serif;font-size:17px;font-style:italic;color:var(--ink);line-height:1.2;margin-bottom:2px;}
 .reach-venue-addr{font-size:11px;color:var(--ink3);font-weight:300;}
 
 .reach-nav-btn{
   flex-shrink:0;display:flex;align-items:center;justify-content:center;gap:6px;
   padding:10px 14px;border-radius:var(--rsm);border:none;
   background:var(--f6);color:var(--iv);
-  font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;
+  font-family:DM Sans,sans-serif;font-size:12px;font-weight:500;
   cursor:pointer;transition:all .2s;letter-spacing:.03em;white-space:nowrap;
 }
 .reach-nav-btn:hover{background:var(--f5);transform:translateY(-1px);}
@@ -302,7 +312,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opac
   flex:1;padding:11px 8px;border-radius:var(--rsm);border:1px solid var(--ivdd);
   background:var(--iv);color:var(--ink2);font-size:13px;font-weight:500;
   text-decoration:none;text-align:center;transition:all .18s;
-  font-family:'DM Sans',sans-serif;
+  font-family:DM Sans,sans-serif;
 }
 .ride-btn:hover{border-color:var(--sagp);background:var(--ivd);transform:translateY(-1px);}
 .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;}
@@ -320,11 +330,11 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opac
 .from-arrow{font-size:14px;color:var(--ink4);}
 
 /* buttons */
-.btn-primary{width:100%;padding:14px;border-radius:var(--rsm);border:none;background:var(--f6);color:var(--iv);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:all .2s;box-shadow:0 2px 10px rgba(9,23,16,.25);}
+.btn-primary{width:100%;padding:14px;border-radius:var(--rsm);border:none;background:var(--f6);color:var(--iv);font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:all .2s;box-shadow:0 2px 10px rgba(9,23,16,.25);}
 .btn-primary:hover{background:var(--f5);transform:translateY(-1px);}
-.btn-outline{width:100%;padding:13px;border-radius:var(--rsm);border:1.5px solid var(--ivdd);background:transparent;color:var(--ink2);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;}
+.btn-outline{width:100%;padding:13px;border-radius:var(--rsm);border:1.5px solid var(--ivdd);background:transparent;color:var(--ink2);font-family:DM Sans,sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;}
 .btn-outline:hover{border-color:var(--sagp);background:var(--ivd);}
-.wa-btn{width:100%;padding:13px;border-radius:var(--rsm);border:none;background:#1A7A3E;color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;box-shadow:0 2px 8px rgba(26,122,62,.3);}
+.wa-btn{width:100%;padding:13px;border-radius:var(--rsm);border:none;background:#1A7A3E;color:#fff;font-family:DM Sans,sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;box-shadow:0 2px 8px rgba(26,122,62,.3);}
 .wa-btn:hover{background:#166832;transform:translateY(-1px);}
 .logout-btn{display:block;text-align:center;font-size:11px;color:var(--ink4);cursor:pointer;text-decoration:underline;text-underline-offset:3px;padding:8px;transition:color .18s;}
 .logout-btn:hover{color:var(--sage);}
@@ -336,6 +346,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opac
 </style>
 </head>
 <body>
+
 
 <div class="page">
   <div class="mast">
@@ -366,7 +377,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opac
         </div>
 
         <div style="margin-top:20px;padding-top:18px;border-top:1px solid rgba(74,122,90,0.12);">
-          <button onclick="swapTo('login')" style="width:100%;padding:13px 16px;border-radius:8px;border:1.5px solid rgba(74,122,90,0.2);background:rgba(74,122,90,0.04);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:var(--ink2);cursor:pointer;letter-spacing:.02em;transition:all .18s;display:flex;align-items:center;justify-content:center;gap:8px;" onmouseover="this.style.borderColor='var(--sagl)';this.style.background='rgba(74,122,90,0.08)'" onmouseout="this.style.borderColor='rgba(74,122,90,0.2)';this.style.background='rgba(74,122,90,0.04)'">
+          <button onclick="swapTo('login')" style="width:100%;padding:13px 16px;border-radius:8px;border:1.5px solid rgba(74,122,90,0.2);background:rgba(74,122,90,0.04);font-family:DM Sans,sans-serif;font-size:13px;font-weight:500;color:var(--ink2);cursor:pointer;letter-spacing:.02em;transition:all .18s;display:flex;align-items:center;justify-content:center;gap:8px;" onmouseover="this.style.borderColor='var(--sagl)';this.style.background='rgba(74,122,90,0.08)'" onmouseout="this.style.borderColor='rgba(74,122,90,0.2)';this.style.background='rgba(74,122,90,0.04)'">
             <svg width="14" height="14" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" style="color:var(--sage)"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
             Already RSVPed? Sign in
           </button>
@@ -633,23 +644,37 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opac
     <!-- CARD: Dashboard -->
     <div class="card hidden" id="card-dash">
       <div class="dash-top">
-        <div class="dash-greeting" id="dash-greeting">Welcome back</div>
-        <div class="dash-sub">Ishaa's 1st Birthday · May 2, 2026</div>
-        <div class="dash-tabs">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px">
+          <div style="flex:1;min-width:0">
+            <div class="dash-greeting" id="dash-greeting">Welcome back</div>
+            <div class="dash-sub" id="dash-sub">Ishaa's 1st Birthday · May 2, 2026</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;flex-shrink:0;margin-top:2px">
+            <button onclick="downloadItinerary()" style="background:var(--f6);border:none;border-radius:8px;padding:7px 11px;cursor:pointer;display:flex;align-items:center;gap:5px;transition:background .18s;white-space:nowrap" onmouseover="this.style.background='var(--f5)'" onmouseout="this.style.background='var(--f6)'">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--iv)" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span style="font-size:11px;font-weight:500;color:var(--iv);font-family:DM Sans,sans-serif">Itinerary</span>
+            </button>
+            <button onclick="openNotifPanel()" id="notif-bell" style="position:relative;background:none;border:none;cursor:pointer;padding:4px">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--ink3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              <div id="notif-badge" style="display:none;position:absolute;top:-2px;right:-2px;width:16px;height:16px;border-radius:50%;background:#E05040;font-size:9px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center;line-height:1">0</div>
+            </button>
+          </div>
+        </div>
+        <div class="dash-tabs" id="guest-tab-bar">
           <button class="d-tab on" onclick="dashTab('rsvp',this)">My RSVP</button>
+          <button class="d-tab" onclick="dashTab('events',this);renderEvents()">Schedule</button>
           <button class="d-tab" onclick="dashTab('reach',this)">Getting There</button>
-          <button class="d-tab" onclick="dashTab('help',this)">Need Help</button>
+          <button id="gstay-tab" class="d-tab" style="display:none" onclick="dashTab('gstay',this);renderGuestStay()">My Stay</button>
+          <button class="d-tab" onclick="dashTab('photos',this);renderGuestPhotos()">Photos</button>
+          <button class="d-tab" onclick="dashTab('help',this);renderGiftShops()">Gift Ideas</button>
         </div>
       </div>
 
       <!-- TAB: My RSVP -->
       <div class="d-panel on" id="dp-rsvp">
         <div id="rsvp-summary-rows"></div>
-        <div id="rsvp-dl-strip" style="margin:10px 0 14px"></div>
-        <div class="edit-row">
-          <button class="btn-outline" id="edit-rsvp-btn" onclick="tryEdit()">Edit RSVP</button>
-          <button class="btn-primary" onclick="showRSVPCard()" style="flex:2">View Confirmation</button>
-        </div>
+        <div id="rsvp-dl-strip" style="margin:10px 0 10px"></div>
+        <button id="edit-rsvp-btn" onclick="tryEdit()" style="width:100%;padding:10px 12px;border-radius:var(--rsm);border:1.5px solid var(--ivdd);background:transparent;font-family:DM Sans,sans-serif;font-size:12px;font-weight:500;color:var(--ink2);cursor:pointer;transition:all .18s">Edit RSVP</button>
       </div>
 
       <!-- TAB: Getting There -->
@@ -663,10 +688,10 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opac
               <div class="reach-venue-name">Radisson Hotel, HITEC City</div>
               <div class="reach-venue-addr">Madhapur, Hyderabad</div>
             </div>
-            <button class="reach-nav-btn" onclick="openMaps('https://maps.app.goo.gl/pi5DkLRbGiPGX6PZ6','17.4477','78.3678')">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <a href="https://maps.app.goo.gl/pi5DkLRbGiPGX6PZ6" target="_blank" rel="noopener" style="flex-shrink:0;display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:var(--rsm);background:var(--f6);color:var(--iv);font-family:DM Sans,sans-serif;font-size:12px;font-weight:500;text-decoration:none;white-space:nowrap">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               Navigate
-            </button>
+            </a>
           </div>
           <div class="reach-venue-row reach-venue-divider" id="reach-bloom" style="display:none">
             <div class="reach-venue-inner">
@@ -674,10 +699,10 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opac
               <div class="reach-venue-name">Bloom Hotel, DLF Road</div>
               <div class="reach-venue-addr">DLF Cyber City, HITEC City</div>
             </div>
-            <button class="reach-nav-btn" onclick="openMaps('https://maps.app.goo.gl/DHhqLpeT2S1zuRAC6','17.4463','78.3744')">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <a href="https://maps.app.goo.gl/DHhqLpeT2S1zuRAC6" target="_blank" rel="noopener" style="flex-shrink:0;display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:var(--rsm);background:var(--f6);color:var(--iv);font-family:DM Sans,sans-serif;font-size:12px;font-weight:500;text-decoration:none;white-space:nowrap">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
               Navigate
-            </button>
+            </a>
           </div>
         </div>
 
@@ -693,27 +718,106 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opac
           </a>
         </div>
 
-        <!-- BOOK A RIDE — destination auto-filled to Radisson -->
-        <div class="reach-label">Book a cab to Radisson</div>
-        <div class="ride-row">
-          <a class="ride-btn" id="ride-ola" href="https://book.olacabs.com/?dropLat=17.4477&dropLng=78.3678&drop_name=Radisson+Hotel+HITEC+City+Hyderabad" target="_blank" rel="noopener">Ola</a>
-          <a class="ride-btn" id="ride-uber" href="https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[latitude]=17.4477&dropoff[longitude]=78.3678&dropoff[nickname]=Radisson+Hotel+HITEC+City+Hyderabad" target="_blank" rel="noopener">Uber</a>
-          <a class="ride-btn" id="ride-rapido" href="https://www.rapido.bike/book-auto?dropLat=17.4477&dropLng=78.3678&dropName=Radisson+Hotel+HITEC+City+Hyderabad" target="_blank" rel="noopener">Rapido</a>
-        </div>
-        <div style="font-size:11px;color:var(--ink4);font-weight:300;margin-top:6px;text-align:center">Destination is pre-set to Radisson — just enter your pickup</div>
+
 
       </div>
 
-      <!-- TAB: Help -->
+      <!-- TAB: My Stay -->
+      <div class="d-panel" id="dp-gstay"><div id="gstay-content" style="padding:18px 22px"></div></div>
+
+      <!-- TAB: Schedule -->
+      <div class="d-panel" id="dp-events" style="padding:0">
+        <div id="events-content" style="padding:18px 22px"></div>
+      </div>
+
+      <!-- TAB: Photos -->
+      <div class="d-panel" id="dp-photos">
+        <div style="text-align:center;padding:32px 16px">
+          <div style="font-size:40px;margin-bottom:12px">📸</div>
+          <div style="font-family:Cormorant Garamond,serif;font-size:20px;font-style:italic;color:var(--ink);margin-bottom:8px">Photos coming soon</div>
+          <div style="font-size:13px;color:var(--ink3);font-weight:300;line-height:1.6">We will share beautiful moments from Ishaa&#39;s big day here. Check back after May 2nd!</div>
+        </div>
+      </div>
+
+      <!-- TAB: Photos -->
+      <div class="d-panel" id="dp-photos">
+        <div id="photos-content" style="padding:18px 22px"></div>
+      </div>
+
+      <!-- TAB: Help & Gifts -->
+
       <div class="d-panel" id="dp-help">
-        <p style="font-size:13px;color:var(--ink3);font-weight:300;line-height:1.7;margin-bottom:16px">
-          Have questions about the event, your stay, or anything at all?<br>Meenakshi and Vivegh are always happy to help.
-        </p>
-        <button class="wa-btn" id="help-wa" style="margin-bottom:8px">WhatsApp Meenu &amp; Vivegh</button>
-        <div style="text-align:center;font-size:12px;color:var(--ink4);font-weight:300;margin-top:4px">They'll get back to you as soon as possible</div>
+        <div style="font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:10px">What does Ishaa love?</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">
+          <div class="ishaa-tile" id="itile-1" onclick="giftAnswer('animal soft toys')">
+            <div class="ishaa-tile-icon">🐘</div>
+            <div class="ishaa-tile-name">Animal soft toys</div>
+            <div class="ishaa-tile-sub">Elephants, lions, giraffes</div>
+          </div>
+          <div class="ishaa-tile" id="itile-2" onclick="giftAnswer('toys with lights and movement')">
+            <div class="ishaa-tile-icon">✨</div>
+            <div class="ishaa-tile-name">Lights &amp; movement</div>
+            <div class="ishaa-tile-sub">Toys that move and glow</div>
+          </div>
+          <div class="ishaa-tile" id="itile-3" onclick="giftAnswer('sound touch toys')">
+            <div class="ishaa-tile-icon">🎵</div>
+            <div class="ishaa-tile-name">Sound on touch</div>
+            <div class="ishaa-tile-sub">Press it, it plays!</div>
+          </div>
+          <div class="ishaa-tile" id="itile-4" onclick="giftAnswer('light sound balls')">
+            <div class="ishaa-tile-icon">⚽</div>
+            <div class="ishaa-tile-name">Sound &amp; light balls</div>
+            <div class="ishaa-tile-sub">Roll, bounce, light up</div>
+          </div>
+          <div class="ishaa-tile" id="itile-5" onclick="giftAnswer('touch feel sound books')">
+            <div class="ishaa-tile-icon">📖</div>
+            <div class="ishaa-tile-name">Touch-feel books</div>
+            <div class="ishaa-tile-sub">Sound, texture, lift-flap</div>
+          </div>
+          <div class="ishaa-tile" id="itile-6" onclick="giftAnswer('shiny rich colour dresses')">
+            <div class="ishaa-tile-icon">👗</div>
+            <div class="ishaa-tile-name">Shiny dresses</div>
+            <div class="ishaa-tile-sub">Rich colours, bling!</div>
+          </div>
+          <div class="ishaa-tile" id="itile-7" onclick="giftAnswer('remote shape teethers')">
+            <div class="ishaa-tile-icon">🦷</div>
+            <div class="ishaa-tile-name">Teethers</div>
+            <div class="ishaa-tile-sub">Remote-shape, fun grips</div>
+          </div>
+          <div class="ishaa-tile" id="itile-8" onclick="giftAnswer('interactive toys')">
+            <div class="ishaa-tile-icon">🎲</div>
+            <div class="ishaa-tile-name">Interactive toys</div>
+            <div class="ishaa-tile-sub">Push, press, explore!</div>
+          </div>
+        </div>
+        <div id="gift-suggestion-area" style="margin-bottom:12px"></div>
+        <div style="font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:8px">Chat for suggestions</div>
+        <div style="background:var(--iv);border:1px solid var(--ivdd);border-radius:var(--r);overflow:hidden">
+          <div id="chat-msgs" style="max-height:220px;overflow-y:auto;padding:12px 14px;display:flex;flex-direction:column;gap:8px;min-height:52px">
+            <div style="background:var(--ivd);padding:8px 11px;border-radius:10px;font-size:12px;color:var(--ink2);align-self:flex-start;max-width:90%">Hi! Tell me your budget and I will suggest the perfect gift for Ishaa &#127881;</div>
+          </div>
+          <div style="display:flex;border-top:1px solid var(--ivdd)">
+            <input id="chat-inp" type="text" placeholder="e.g. budget 800, she loves animals…" style="flex:1;padding:11px 14px;border:none;font-size:13px;font-family:DM Sans,sans-serif;color:var(--ink);background:var(--iv);outline:none">
+            <button onclick="sendChat()" style="padding:11px 16px;border:none;background:var(--f6);color:var(--iv);font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">Send</button>
+          </div>
+        </div>
       </div>
 
       <!-- Admin panels (hidden until admin login) -->
+      <div class="d-panel" id="dp-adm-overview" style="padding:18px 22px"></div>
+      <div class="d-panel" id="dp-food" style="padding:0"></div>
+      <div class="d-panel" id="dp-adm-photos" style="padding:18px 22px"></div>
+      <div class="d-panel" id="dp-admPhotos" style="padding:18px 22px"></div>
+      <div class="d-panel" id="dp-admevents" style="padding:18px 22px"><div id="admin-events-wrap"></div></div>
+      <!-- Notification panel overlay inside dash card -->
+      <div id="notif-panel" style="display:none;position:absolute;top:0;left:0;right:0;bottom:0;background:var(--iv);z-index:10;overflow-y:auto;border-radius:20px">
+        <div style="padding:16px 18px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:var(--ink)">Notifications</div>
+          <button onclick="closeNotifPanel()" style="background:none;border:none;font-size:20px;color:var(--ink3);cursor:pointer">&times;</button>
+        </div>
+        <div id="notif-list" style="padding:12px 18px"></div>
+      </div>
+
       <div class="d-panel" id="dp-movement"></div>
       <div class="d-panel" id="dp-stay"></div>
       <div class="d-panel" id="dp-rooms">
@@ -722,7 +826,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opac
       <div class="d-panel" id="dp-surprise">
         <div style="background:var(--j50);border:1px solid var(--j200);border-radius:var(--r);padding:18px;margin-bottom:12px">
           <div style="font-size:28px;margin-bottom:8px">&#128081;</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--j800);font-style:italic;margin-bottom:6px">Celebrating Mama Too!</div>
+          <div style="font-family:Cormorant Garamond,serif;font-size:18px;color:var(--j800);font-style:italic;margin-bottom:6px">Celebrating Mama Too!</div>
           <p style="font-size:13px;color:var(--text2);line-height:1.6">The surprise plan for Meenu. 8 PM after cake is cut — Vivegh speech, video montage, bouquet reveal. Keep tight!</p>
         </div>
         <div style="font-size:13px;color:var(--text2);line-height:1.8">
@@ -1166,8 +1270,14 @@ function showDashboard(d){
   }
   if(d.travel&&d.travel!=='local')lines.push('Travel: '+travelMap[d.travel]+(d.city?' from '+d.city:''));
   if(d.ticketName)lines.push('Ticket: '+d.ticketName);
-  document.getElementById('help-wa').onclick=function(){window.open('https://wa.me/'+HOST,'_blank');};
   window._lastRSVP=d;
+
+  // Show My Stay tab only if guest is staying
+  var stayTab = document.getElementById('gstay-tab');
+  if(stayTab) stayTab.style.display = (d.stay==='yes') ? 'flex' : 'none';
+
+  // Notifications
+  if(d.phone){ setMyPhone(d.phone); checkNotifications(d); }
 
   swapTo('dash');
 }
@@ -1391,6 +1501,127 @@ function fmtTime(t){
   return(h%12||12)+':'+m+' '+a;
 }
 
+
+function downloadItinerary(){
+  myRSVP(function(d){
+    if(!d){ toast('No RSVP found'); return; }
+    var evM  = {both:'Ayush Homam + Birthday Party', homam:'Ayush Homam', party:'Birthday Party'};
+    var attM = {yes:'Confirmed Attending', maybe:'Possibly Attending', no:'Cannot Attend'};
+    var isHomam = d.evSel==='homam'||d.evSel==='both';
+    var isParty = d.evSel==='party'||d.evSel==='both';
+    var showStay = d.stay==='yes';
+
+    // Build RSVP rows
+    var rsvpRows = [
+      {l:'Event',    v: evM[d.evSel]||'Birthday Party'},
+      {l:'Status',   v: attM[d.att]||d.att},
+      {l:'Guests',   v: (d.count||1)+' adult'+((d.count||1)!==1?'s':'')+(d.infants>0?', '+d.infants+' infant'+(d.infants!==1?'s':''):'')+(d.kids>0?', '+d.kids+' child'+(d.kids!==1?'ren':''):'')},
+      {l:'WhatsApp', v: d.phone?'+91 '+d.phone:''}
+    ];
+    if(showStay){
+      rsvpRows.push({l:'Stay', v:'Bloom Hotel, DLF Road'+(d.roomNumber?' &bull; Room '+d.roomNumber:'')});
+      if(d.ci) rsvpRows.push({l:'Check-in', v:d.ci+(d.ciTime?' at '+fmtTime(d.ciTime):'')});
+      if(d.co) rsvpRows.push({l:'Check-out', v:d.co+(d.coTime?' at '+fmtTime(d.coTime):'')});
+    }
+    var tr=d.transport||{};
+    if(tr.needPickup){
+      var ps=(tr.arrMode||'');if(tr.arrPlace)ps+=' &bull; '+tr.arrPlace;if(tr.arrDate)ps+=' &bull; '+tr.arrDate+(tr.arrTime?' at '+fmtTime(tr.arrTime):'');
+      rsvpRows.push({l:'Pickup',v:ps||'Arranged'});
+    }
+    if(tr.needDrop){
+      var ds2=(tr.depMode||'');if(tr.depPlace)ds2+=' &bull; '+tr.depPlace;if(tr.depDate)ds2+=' &bull; '+tr.depDate+(tr.depTime?' at '+fmtTime(tr.depTime):'');
+      rsvpRows.push({l:'Drop',v:ds2||'Arranged'});
+    }
+
+    // Build schedule rows
+    var scheduleHTML = '';
+    if(isHomam){
+      scheduleHTML += '<div style="font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#A8823A;margin:16px 0 8px">Morning — Ayush Homam</div>';
+      EVENTS_HOMAM.forEach(function(e){
+        scheduleHTML += '<div style="display:flex;justify-content:space-between;align-items:flex-start;padding:7px 0;border-bottom:1px solid #F0EAE0">'
+          +'<div><div style="font-family:Cormorant Garamond,serif;font-size:14px;font-style:italic;color:#1A271E">'+e.title+'</div>'
+          +'<div style="font-size:10px;color:#6B8578;font-weight:300;margin-top:1px">'+e.note+'</div></div>'
+          +'<div style="font-size:11px;font-weight:500;color:#6B8578;white-space:nowrap;margin-left:10px;padding-top:2px">'+e.time+'&ndash;'+e.end+'</div>'
+          +'</div>';
+      });
+    }
+    if(isParty){
+      scheduleHTML += '<div style="font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#4A7A5A;margin:16px 0 8px">Evening — Birthday Party</div>';
+      EVENTS_PARTY.forEach(function(e){
+        scheduleHTML += '<div style="display:flex;justify-content:space-between;align-items:flex-start;padding:7px 0;border-bottom:1px solid #F0EAE0">'
+          +'<div><div style="font-family:Cormorant Garamond,serif;font-size:14px;font-style:italic;color:#1A271E">'+e.title+'</div>'
+          +'<div style="font-size:10px;color:#6B8578;font-weight:300;margin-top:1px">'+e.note+'</div></div>'
+          +'<div style="font-size:11px;font-weight:500;color:#6B8578;white-space:nowrap;margin-left:10px;padding-top:2px">'+e.time+'&ndash;'+e.end+'</div>'
+          +'</div>';
+      });
+    }
+
+    var W = '<!DOCTYPE html><html><head><meta charset="UTF-8">'
+      +'<meta name="viewport" content="width=device-width,initial-scale=1">'
+      +'<title>Itinerary &mdash; Ishaa Turns One</title>'
+      +'<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">'
+      +'<style>*{box-sizing:border-box;margin:0;padding:0}html,body{min-height:100%;background:#F4F1EB;font-family:DM Sans,sans-serif;display:flex;align-items:flex-start;justify-content:center;padding:20px 16px 40px}'
+      +'.card{width:100%;max-width:480px;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 40px rgba(13,32,24,.15)}'
+      +'.t1{height:5px;background:linear-gradient(90deg,#0D2018,#1C3D2A,#4A7A5A,#C4A060,#A8823A)}'
+      +'.hero{background:linear-gradient(150deg,#0D2018,#1C3D2A);padding:24px 24px 20px}'
+      +'.ey{font-size:8.5px;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:rgba(196,160,96,.75);margin-bottom:6px}'
+      +'.nm{font-family:Cormorant Garamond,serif;font-size:36px;font-weight:300;font-style:italic;color:#fff;line-height:1;margin-bottom:3px}'
+      +'.es{font-size:12px;color:rgba(255,255,255,.45);font-weight:300}'
+      +'.sect{padding:0 22px}'
+      +'.sh{font-size:9px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#9FB0A8;margin:16px 0 8px}'
+      +'.rrow{display:flex;justify-content:space-between;align-items:flex-start;padding:8px 0;border-bottom:1px solid #EDE7DC;font-size:13px}'
+      +'.rl{color:#9FB0A8;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding-top:2px;flex-shrink:0;width:72px}'
+      +'.rv{color:#1A271E;text-align:right;max-width:calc(100% - 82px);line-height:1.5}'
+      +'.vbox{border:1px solid #EDE7DC;border-radius:8px;overflow:hidden;margin:8px 0 0}'
+      +'.vr{padding:10px 13px;border-bottom:1px solid #EDE7DC}'
+      +'.vr:last-child{border-bottom:none}'
+      +'.vlbl{font-size:9px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:#9FB0A8;margin-bottom:3px}'
+      +'.vname{font-family:Cormorant Garamond,serif;font-size:15px;font-style:italic;color:#1A271E;margin-bottom:2px}'
+      +'.vaddr{font-size:11px;color:#6B8578;font-weight:300;margin-bottom:5px}'
+      +'.vlink{font-size:11px;color:#4A7A5A;font-weight:500;text-decoration:none}'
+      +'.ft{padding:14px 22px;display:flex;justify-content:space-between;border-top:1px solid #EDE7DC;margin-top:12px}'
+      +'.fb{font-family:Cormorant Garamond,serif;font-size:13px;font-style:italic;color:#9FB0A8}'
+      +'.fn{font-size:10px;color:#C4D9CC}'
+      +'.t2{height:3px;background:linear-gradient(90deg,#4A7A5A,#A8823A,#4A7A5A)}'
+      +'@media print{body{background:#fff;padding:0}.card{max-width:100%;box-shadow:none;border-radius:0}}'
+      +'</style></head><body><div class="card">'
+      +'<div class="t1"></div>'
+      +'<div class="hero"><div class="ey">Your Itinerary</div>'
+      +'<div class="nm">'+(d.name||'Guest')+'</div>'
+      +'<div class="es">Ishaa Turns One &bull; Saturday, May 2, 2026</div>'
+      +'</div>'
+      +'<div class="sect">'
+      +'<div class="sh">Your RSVP</div>'
+      +rsvpRows.filter(function(r){return r.v;}).map(function(r){
+        return '<div class="rrow"><span class="rl">'+r.l+'</span><span class="rv">'+r.v+'</span></div>';
+      }).join('')
+      +'<div class="sh">Your Schedule</div>'
+      +scheduleHTML
+      +'<div class="sh">Venues</div>'
+      +'<div class="vbox">'
+      +'<div class="vr"><div class="vlbl">Event Venue</div><div class="vname">Radisson Hotel, HITEC City</div><div class="vaddr">Madhapur, Hyderabad &mdash; 500081</div><a class="vlink" href="https://maps.app.goo.gl/pi5DkLRbGiPGX6PZ6" target="_blank">Open in Google Maps &rarr;</a></div>'
+      +(showStay?'<div class="vr"><div class="vlbl">Your Stay'+(d.roomNumber?' &bull; Room '+d.roomNumber:'')+'</div><div class="vname">Bloom Hotel, DLF Road</div><div class="vaddr">DLF Cyber City, HITEC City, Hyderabad</div><a class="vlink" href="https://maps.app.goo.gl/DHhqLpeT2S1zuRAC6" target="_blank">Open in Google Maps &rarr;</a></div>':'')
+      +'</div>'
+      +'</div>'
+      +'<div class="ft"><div class="fb">Ishaa Turns One &mdash; May 2, 2026</div><div class="fn">'+new Date().toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})+'</div></div>'
+      +'<div class="t2"></div>'
+      +'</div></body></html>';
+
+    // Download
+    try {
+      var blob = new Blob([W],{type:'text/html;charset=utf-8'});
+      var url  = URL.createObjectURL(blob);
+      var a    = document.createElement('a');
+      a.href=url; a.download='Itinerary-Ishaa-'+(d.name||'Guest').replace(/[^a-zA-Z0-9]/g,'-')+'.html';
+      a.style.display='none'; document.body.appendChild(a); a.click();
+      setTimeout(function(){document.body.removeChild(a);URL.revokeObjectURL(url);},1000);
+      toast('Itinerary downloaded! Open the file in a browser to print as PDF.');
+    } catch(e){
+      _showCardOverlay(W);
+    }
+  });
+}
+
 function showRSVPCard(d){
   d = d || window._lastRSVP;
   if(!d){ myRSVP(function(me){ if(me) showRSVPCard(me); }); return; }
@@ -1546,45 +1777,118 @@ var DROP_LAT = '17.4477';
 var DROP_LNG = '78.3678';
 var DROP_NAME = 'Radisson Hotel HITEC City Hyderabad';
 
-function initRideLinks() {
-  var ua = navigator.userAgent || '';
-  var isAndroid = /Android/i.test(ua);
+
+// ── UBER DIRTY HACK ──
+// Uber India blocks web referrers on m.uber.com universal link
+// Hack: use a hidden link element with rel="noreferrer" so no referrer is sent
+// Combined with uber:// scheme fallback for native app
+function openUber(){
+  var lat = '17.4477', lng = '78.3678';
+  var nick = 'Radisson+Hotel+HITEC+City';
+  var addr = 'Madhapur,+Hyderabad+500081';
+
+  // Build the universal link
+  var url = 'https://m.uber.com/ul/?action=setPickup&pickup=my_location'
+    + '&dropoff[latitude]='+lat
+    + '&dropoff[longitude]='+lng
+    + '&dropoff[nickname]='+nick
+    + '&dropoff[formatted_address]='+addr;
+
+  var ua = navigator.userAgent||'';
   var isIOS = /iPhone|iPad|iPod/i.test(ua);
-  var isMobile = isAndroid || isIOS;
+  var isAndroid = /Android/i.test(ua);
 
-  var olaEl = document.getElementById('ride-ola');
-  var uberEl = document.getElementById('ride-uber');
-  var rapidoEl = document.getElementById('ride-rapido');
+  if(isIOS){
+    // iOS: try uber:// first, fallback to universal link with no referrer
+    var a = document.createElement('a');
+    a.href = 'uber://?action=setPickup&pickup=my_location'
+      +'&dropoff[latitude]='+lat+'&dropoff[longitude]='+lng
+      +'&dropoff[nickname]='+nick+'&dropoff[formatted_address]='+addr;
+    a.rel = 'noreferrer noopener';
+    a.style.display='none';
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function(){
+      document.body.removeChild(a);
+      // Fallback: open universal link with no referrer header
+      var b=document.createElement('a');
+      b.href=url;b.rel='noreferrer noopener';b.target='_blank';
+      b.style.display='none';document.body.appendChild(b);b.click();
+      setTimeout(function(){document.body.removeChild(b);},500);
+    },1200);
 
-  if(olaEl) {
-    // Mobile: try native app scheme, web as fallback
-    olaEl.href = isMobile
-      ? 'olacabs://book?drop_lat='+DROP_LAT+'&drop_lng='+DROP_LNG+'&drop_name='+encodeURIComponent(DROP_NAME)
-      : 'https://book.olacabs.com/?dropLat='+DROP_LAT+'&dropLng='+DROP_LNG+'&drop_name='+encodeURIComponent(DROP_NAME);
-    if(isMobile) {
-      olaEl.addEventListener('click', function(e){
-        // If app not installed, fallback to web after delay
-        setTimeout(function(){
-          window.open('https://book.olacabs.com/?dropLat='+DROP_LAT+'&dropLng='+DROP_LNG+'&drop_name='+encodeURIComponent(DROP_NAME), '_blank');
-        }, 2000);
+  } else if(isAndroid){
+    // Android: use intent:// with Uber package — bypasses web redirect entirely
+    var intentUrl = 'intent://ul/?action=setPickup&pickup=my_location'
+      +'&dropoff[latitude]='+lat+'&dropoff[longitude]='+lng
+      +'&dropoff[nickname]='+nick+'&dropoff[formatted_address]='+addr
+      +'#Intent;scheme=https;host=m.uber.com;package=com.ubercab'
+      +';S.browser_fallback_url='+encodeURIComponent(url)+';end';
+    window.location.href = intentUrl;
+
+  } else {
+    // Desktop: open with no referrer
+    var a=document.createElement('a');
+    a.href=url;a.rel='noreferrer noopener';a.target='_blank';
+    a.style.display='none';document.body.appendChild(a);a.click();
+    setTimeout(function(){document.body.removeChild(a);},500);
+  }
+}
+
+// ── RAPIDO DIRTY HACK ──
+// Rapido has no public deep link API
+// Hack: copy the address to clipboard silently, then open Rapido
+// When they land on the search screen, address is ready to paste
+function openRapido(){
+  var addr = 'Radisson Hotel HITEC City, Madhapur, Hyderabad';
+  var ua = navigator.userAgent||'';
+  var isIOS = /iPhone|iPad|iPod/i.test(ua);
+  var isAndroid = /Android/i.test(ua);
+  var hint = document.getElementById('ride-hint');
+
+  // Try clipboard copy
+  var copied = false;
+  try {
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(addr).then(function(){
+        if(hint){
+          hint.textContent = 'Destination copied! Paste in Rapido drop field';
+          hint.style.display='block';
+          hint.style.color='var(--sage)';
+        }
       });
+      copied = true;
+    } else {
+      // Older clipboard API
+      var t=document.createElement('textarea');
+      t.value=addr;t.style.position='fixed';t.style.opacity='0';
+      document.body.appendChild(t);t.select();
+      document.execCommand('copy');
+      document.body.removeChild(t);
+      copied = true;
     }
+  } catch(e){ copied=false; }
+
+  if(copied && hint){
+    hint.textContent='Radisson address copied! Open Rapido and paste in the drop field';
+    hint.style.display='block';
+    hint.style.color='var(--sage)';
   }
 
-  if(uberEl) {
-    uberEl.href = 'https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[latitude]='+DROP_LAT+'&dropoff[longitude]='+DROP_LNG+'&dropoff[nickname]='+encodeURIComponent(DROP_NAME);
-  }
-
-  if(rapidoEl) {
-    rapidoEl.href = isMobile
-      ? 'in.rapido.app://ride?dropLat='+DROP_LAT+'&dropLng='+DROP_LNG+'&dropName='+encodeURIComponent(DROP_NAME)
-      : 'https://www.rapido.bike/book-auto?dropLat='+DROP_LAT+'&dropLng='+DROP_LNG+'&dropName='+encodeURIComponent(DROP_NAME);
-    if(isMobile) {
-      rapidoEl.addEventListener('click', function(){
-        setTimeout(function(){ window.open('https://www.rapido.bike/book-auto?dropLat='+DROP_LAT+'&dropLng='+DROP_LNG+'&dropName='+encodeURIComponent(DROP_NAME),'_blank'); }, 2000);
-      });
+  // Open Rapido
+  setTimeout(function(){
+    if(isAndroid){
+      // Try Rapido app intent
+      var rapIntent = 'intent://home#Intent;scheme=in.rapido.app;package=com.rapido.passenger'
+        +';S.browser_fallback_url='+encodeURIComponent('https://rapido.bike/')+';end';
+      window.location.href = rapIntent;
+    } else if(isIOS){
+      window.location.href = 'in.rapido.app://';
+      setTimeout(function(){ window.location.href='https://rapido.bike/'; },1500);
+    } else {
+      window.open('https://rapido.bike/','_blank');
     }
-  }
+  }, copied ? 600 : 0);
 }
 
 function openMaps(pinUrl, lat, lng, query) {
@@ -1607,113 +1911,1700 @@ function openMaps(pinUrl, lat, lng, query) {
   }
 }
 
+// ── NOTIFICATION PANEL ──
+var NOTIFS = []; // {text, time, link} array
+
+
+// ── PUSH NOTIFICATION TO A SPECIFIC GUEST ──
+// Use this from admin actions instead of stGet/stSet directly
+function pushGuestNotif(phone, text, link){
+  if(!phone) return;
+  stGet('notifs_'+phone, function(notifs){
+    var arr = notifs||[];
+    arr.unshift({
+      text: text,
+      time: new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'}),
+      link: link||'rsvp',
+      read: false
+    });
+    stSet('notifs_'+phone, arr.slice(0,30), function(){});
+  });
+}
+
+function addNotif(text, link){
+  NOTIFS.unshift({text:text, time:new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'}), link:link||null});
+  updateNotifBadge();
+  stSet('notifs_'+myPhone, NOTIFS.slice(0,20), function(){});
+}
+
+var myPhone = '';
+function setMyPhone(ph){ myPhone=ph; loadNotifs(); }
+
+function loadNotifs(){
+  if(!myPhone) return;
+  stGet('notifs_'+myPhone, function(d){
+    if(d) NOTIFS=d;
+    updateNotifBadge();
+  });
+}
+
+function updateNotifBadge(){
+  var badge = document.getElementById('notif-badge');
+  if(!badge) return;
+  var unread = NOTIFS.filter(function(n){return !n.read;}).length;
+  badge.style.display = unread>0 ? 'flex' : 'none';
+  badge.textContent = unread > 9 ? '9+' : unread;
+}
+
+function openNotifPanel(){
+  var panel = document.getElementById('notif-panel');
+  if(!panel) return;
+  // Mark all read
+  NOTIFS.forEach(function(n){n.read=true;});
+  updateNotifBadge();
+  stSet('notifs_'+myPhone, NOTIFS, function(){});
+
+  var list = document.getElementById('notif-list');
+  if(!list) return;
+  if(!NOTIFS.length){
+    list.innerHTML='<div style="font-size:13px;color:var(--ink3);font-style:italic;padding:8px 0">No notifications yet</div>';
+  } else {
+    list.innerHTML = NOTIFS.map(function(n){
+      var clickAttr = n.link ? 'onclick="closeNotifPanel();goToTab(\''+n.link+'\')"' : '';
+      return '<div style="padding:11px 0;border-bottom:1px solid var(--line);cursor:'+(n.link?'pointer':'default')+'" '+clickAttr+' >'
+        +'<div style="font-size:13px;color:var(--ink);line-height:1.5;margin-bottom:3px">'+n.text+'</div>'
+        +'<div style="font-size:10px;color:var(--ink4)">'+n.time+'</div>'
+        +'</div>';
+    }).join('');
+  }
+  panel.style.display='block';
+}
+
+function goToTab(tabId){
+  var map = {
+    'rsvp':'My RSVP', 'events':'Schedule', 'reach':'Getting There',
+    'gstay':'My Stay', 'photos':'Photos', 'help':'Gift Ideas'
+  };
+  var label = map[tabId]||tabId;
+  var tabs = document.querySelectorAll('.d-tab');
+  tabs.forEach(function(t){
+    if(t.textContent.trim()===label){ t.click(); }
+  });
+}
+function closeNotifPanel(){
+  var panel=document.getElementById('notif-panel');
+  if(panel) panel.style.display='none';
+}
+
+// Override showNotifBanner to ALSO add to notif panel
+function showNotifBanner(msg, link){
+  addNotif(msg, link);
+  // Show banner too
+  var old=document.getElementById('_notif_banner');if(old)old.remove();
+  var b=document.createElement('div');
+  b.id='_notif_banner';
+  b.style.cssText='position:fixed;top:0;left:0;right:0;z-index:9998;background:#0D2018;color:#fff;padding:12px 16px;display:flex;align-items:center;gap:10px;font-family:DM Sans,sans-serif;font-size:13px;box-shadow:0 2px 12px rgba(9,23,16,.4)';
+  b.innerHTML='<span style="font-size:18px">🔔</span><span style="flex:1">'+msg+'</span><button onclick="closeNotif()" style="background:none;border:none;color:rgba(255,255,255,.6);font-size:18px;cursor:pointer;padding:0 4px">&times;</button>';
+  document.body.prepend(b);
+  setTimeout(function(){closeNotif();},5000);
+}
+
 function closeRSVPCard(){var o=document.getElementById("_rsvp_card_ov");if(o)o.remove();}
 
 function toggleAdminRow(el){var s=el.nextSibling;if(s)s.style.display=s.style.display==="block"?"none":"block";}
 
+function showAdminDashboard(){
+  var cur = document.getElementById('card-'+activeCard);
+  var nxt = document.getElementById('card-dash');
+  if(cur) cur.classList.add('hidden');
+  if(nxt) nxt.classList.remove('hidden');
+  activeCard = 'dash';
+  var gr = document.getElementById('dash-greeting');
+  var sb = document.getElementById('dash-sub');
+  if(gr) gr.textContent = 'Admin Panel';
+  if(sb) sb.textContent = 'Ishaa 1st Birthday · May 2, 2026';
+
+  var tabBar = document.querySelector('.dash-tabs');
+  if(tabBar){
+    tabBar.innerHTML = '';
+    var adminTabs = [
+      {id:'at0', label:'Overview',  fn: function(b){ dashTab('adm-overview', b); renderAdminOverview(); }},
+      {id:'at1', label:'RSVPs',     fn: function(b){ dashTab('rsvp',         b); renderAdminRSVPs(); }},
+      {id:'at2', label:'Movement',  fn: function(b){ dashTab('movement',     b); renderAdminMovement(); }},
+      {id:'at3', label:'Stay',      fn: function(b){ dashTab('stay',         b); renderAdminStay(); }},
+      {id:'at4', label:'Events',    fn: function(b){ dashTab('admevents',    b); renderAdminEventsPanel(); }},
+      {id:'at5', label:'Photos',    fn: function(b){ dashTab('adm-photos',   b); renderAdminPhotosNew(); }}
+    ];
+    adminTabs.forEach(function(t, i){
+      var b = document.createElement('button');
+      b.id = t.id;
+      b.className = 'd-tab' + (i===0 ? ' on' : '');
+      b.textContent = t.label;
+      b.addEventListener('click', function(){ t.fn(b); });
+      tabBar.appendChild(b);
+    });
+  }
+  // Show Overview first
+  renderAdminOverview();
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+
+function adminGoTab(id){
+  var tabs=document.querySelectorAll('.d-tab');
+  var fnMap={rsvp:renderAdminRSVPs,movement:renderAdminMovement,stay:renderAdminStay};
+  tabs.forEach(function(t){
+    var on=false;
+    if(id==='rsvp'&&(t.textContent==='RSVPs'))on=true;
+    if(id==='movement'&&t.textContent==='Movement')on=true;
+    if(id==='stay'&&t.textContent==='Stay')on=true;
+    if(on){t.click();}
+  });
+}
+
+function renderAdminOverview(){
+  var el = document.getElementById('dp-adm-overview');
+  if(!el) return;
+  allRSVPs(function(all){
+    if(!all) all = [];
+
+    // PAX counts — count actual people not RSVPs
+    function pax(arr){ return arr.reduce(function(s,r){ return s+(parseInt(r.count)||1)+(parseInt(r.kids)||0)+(parseInt(r.infants)||0); },0); }
+    function paxAdult(arr){ return arr.reduce(function(s,r){ return s+(parseInt(r.count)||1); },0); }
+
+    var att      = all.filter(function(r){ return r.att==='yes'; });
+    var maybe    = all.filter(function(r){ return r.att==='maybe'; });
+    var declined = all.filter(function(r){ return r.att==='no'; });
+    var homam    = all.filter(function(r){ return r.att==='yes'&&(r.evSel==='homam'||r.evSel==='both'); });
+    var party    = all.filter(function(r){ return r.att==='yes'&&(r.evSel==='party'||r.evSel==='both'); });
+    var staying  = all.filter(function(r){ return r.stay==='yes'; });
+    var stayPax  = pax(staying);
+    var roomDone = staying.filter(function(r){ return r.roomNumber; });
+    var roomPend = staying.filter(function(r){ return !r.roomNumber; });
+    var pickup   = all.filter(function(r){ return r.transport&&r.transport.needPickup; });
+    var drop     = all.filter(function(r){ return r.transport&&r.transport.needDrop; });
+    var puDone   = pickup.filter(function(r){ return r['driver_pickup_'+r.phone]; });
+    var drDone   = drop.filter(function(r){ return r['driver_drop_'+r.phone]; });
+
+    var totalInvPax = pax(all);
+    var totalAttPax = pax(att);
+    var homamPax    = pax(homam);
+    var partyPax    = pax(party);
+
+    function section(title,tab){ return '<div style="font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink3);margin:18px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between">'  +title+(tab?'<span onclick="adminGoTab(\''+tab+'\')" style="font-size:9px;color:var(--sage);cursor:pointer;font-weight:600;letter-spacing:.06em;text-transform:none">View &rarr;</span>':'')+'</div>'; }
+    function statRow(label, val, sub, color){
+      return '<div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(216,207,192,.4)">'
+        +'<div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:500;color:var(--ink)">'+label+'</div>'+(sub?'<div style="font-size:10px;color:var(--ink4);font-weight:300;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+sub+'</div>':'')+'</div>'
+        +'<div style="text-align:right;flex-shrink:0;margin-left:12px"><div style="font-size:15px;font-weight:600;color:'+(color||'var(--ink)')+'">'+val+'</div></div>'
+        +'</div>';
+    }
+
+    var html = '';
+
+    // ── Invitation ──
+    html += '<div style="font-family:Cormorant Garamond,serif;font-size:22px;font-style:italic;color:var(--ink);margin-bottom:14px">Ishaa Turns One &mdash; May 2, 2026</div>';
+
+    html += section('Invitations','rsvp');
+    html += statRow('Total Invited', all.length+' RSVPs &bull; '+totalInvPax+' pax', 'Families / individuals who responded', 'var(--ink)');
+    html += statRow('Confirmed', att.length+' RSVPs &bull; '+totalAttPax+' pax', all.length-att.length+' not confirmed', '#2D6B4F');
+    html += statRow('Declined', declined.length+' RSVPs', 'Cannot attend', '#C07060');
+    html += statRow('Possibly', maybe.length+' RSVPs', 'Yet to confirm', 'var(--gold)');
+
+    // ── Attending ──
+    html += section('Who is Attending','rsvp');
+    html += statRow('Ayush Homam', homam.length+' RSVPs &bull; '+homamPax+' pax', 'Morning ceremony', 'var(--gold)');
+    html += statRow('Birthday Party', party.length+' RSVPs &bull; '+partyPax+' pax', 'Evening celebration', 'var(--sage)');
+
+    // ── Staying ──
+    html += section('Who is Staying With Us','stay');
+    html += statRow('Total Staying', staying.length+' RSVPs &bull; '+stayPax+' pax', 'At Bloom Hotel, DLF Road', 'var(--sage)');
+    html += statRow('Rooms Allotted', roomDone.length+' rooms assigned', roomDone.map(function(r){return r.name;}).join(', ')||'None yet', '#2D6B4F');
+    html += statRow('Rooms Pending', roomPend.length+' guests need rooms', roomPend.map(function(r){return r.name;}).join(', ')||'All done!', roomPend.length?'#C07060':'var(--sage)');
+
+    // ── Pickup / Drop ──
+    html += section('Who Needs Pickup &amp; Drop','movement');
+    html += statRow('Need Pickup', pickup.length+' pax', 'On arrival', 'var(--ink2)');
+    html += statRow('Pickup Allotted', puDone.length+' assigned', pickup.length-puDone.length+' still pending', '#2D6B4F');
+    html += statRow('Need Drop', drop.length+' pax', 'On departure', 'var(--ink2)');
+    html += statRow('Drop Allotted', drDone.length+' assigned', drop.length-drDone.length+' still pending', '#2D6B4F');
+
+    // ── Chat ──
+    html += section('Ask About Your Guests');
+    html += '<div style="background:var(--iv);border:1px solid var(--ivdd);border-radius:var(--r);overflow:hidden">'
+      +'<div id="admin-chat-msgs" style="max-height:200px;overflow-y:auto;padding:12px 14px;display:flex;flex-direction:column;gap:8px;min-height:48px">'
+      +'<div style="font-size:12px;color:var(--ink3);font-style:italic">e.g. "Who still needs a room?" or "How many infants for breakfast?"</div>'
+      +'</div>'
+      +'<div style="display:flex;border-top:1px solid var(--ivdd)">'
+      +'<input id="admin-chat-inp" type="text" placeholder="Ask anything…" style="flex:1;padding:10px 13px;border:none;font-size:13px;font-family:DM Sans,sans-serif;color:var(--ink);background:var(--iv);outline:none">'
+      +'<button onclick="sendAdminChat()" style="padding:10px 14px;border:none;background:var(--f6);color:var(--iv);font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">Ask</button>'
+      +'</div></div>';
+
+    el.innerHTML = html;
+  });
+}
+
+
+// ═══════════════════════════════════════════════════════
+// ADMIN — RSVPs (Homam tab + Party tab + download)
+// ═══════════════════════════════════════════════════════
+function renderAdminRSVPs(){
+  allRSVPs(function(all){
+    if(!all) all=[];
+    var homam = all.filter(function(r){return r.att==='yes'&&(r.evSel==='homam'||r.evSel==='both');});
+    var party = all.filter(function(r){return r.att==='yes'&&(r.evSel==='party'||r.evSel==='both');});
+
+    var el = document.getElementById('dp-rsvp');
+    if(!el) return;
+
+    // Sub-tab bar
+    var html='<div style="display:flex;gap:6px;margin-bottom:14px">'
+      +'<button id="rsvp-sub-homam" onclick="showRSVPSubTab(\'homam\')" style="flex:1;padding:9px 12px;border-radius:var(--rsm);border:none;background:var(--f6);color:var(--iv);font-family:DM Sans,sans-serif;font-size:12px;font-weight:600;cursor:pointer">Ayush Homam ('+homam.length+')</button>'
+      +'<button id="rsvp-sub-party" onclick="showRSVPSubTab(\'party\')" style="flex:1;padding:9px 12px;border-radius:var(--rsm);border:1.5px solid var(--ivdd);background:transparent;color:var(--ink2);font-family:DM Sans,sans-serif;font-size:12px;font-weight:600;cursor:pointer">Birthday Party ('+party.length+')</button>'
+      +'</div>';
+
+    // Homam table
+    html += '<div id="rsvp-sub-homam-content">';
+    html += '<button onclick="downloadEventCSV(\'homam\')" style="width:100%;padding:9px;border-radius:var(--rsm);border:1.5px solid rgba(74,122,90,0.25);background:rgba(74,122,90,0.05);color:var(--sage);font-family:DM Sans,sans-serif;font-size:12px;font-weight:600;cursor:pointer;margin-bottom:10px">&#8595; Download Homam List as Excel</button>';
+    html += buildRSVPTable(homam);
+    html += '</div>';
+
+    // Party table (hidden)
+    html += '<div id="rsvp-sub-party-content" style="display:none">';
+    html += '<button onclick="downloadEventCSV(\'party\')" style="width:100%;padding:9px;border-radius:var(--rsm);border:1.5px solid rgba(74,122,90,0.25);background:rgba(74,122,90,0.05);color:var(--sage);font-family:DM Sans,sans-serif;font-size:12px;font-weight:600;cursor:pointer;margin-bottom:10px">&#8595; Download Party List as Excel</button>';
+    html += buildRSVPTable(party);
+    html += '</div>';
+
+    el.innerHTML = html;
+    window._rsvpData = {homam:homam, party:party};
+  });
+}
+
+function showRSVPSubTab(which){
+  var hBtn = document.getElementById('rsvp-sub-homam');
+  var pBtn = document.getElementById('rsvp-sub-party');
+  var hC   = document.getElementById('rsvp-sub-homam-content');
+  var pC   = document.getElementById('rsvp-sub-party-content');
+  var isH  = which==='homam';
+  if(hBtn){ hBtn.style.background=isH?'var(--f6)':'transparent'; hBtn.style.color=isH?'var(--iv)':'var(--ink2)'; hBtn.style.border=isH?'none':'1.5px solid var(--ivdd)'; }
+  if(pBtn){ pBtn.style.background=!isH?'var(--f6)':'transparent'; pBtn.style.color=!isH?'var(--iv)':'var(--ink2)'; pBtn.style.border=!isH?'none':'1.5px solid var(--ivdd)'; }
+  if(hC) hC.style.display=isH?'block':'none';
+  if(pC) pC.style.display=!isH?'block':'none';
+}
+
+function buildRSVPTable(rows){
+  if(!rows.length) return '<div style="font-size:13px;color:var(--ink3);font-style:italic;padding:8px 0">No records</div>';
+  var html='<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:12px">';
+  html+='<thead><tr style="background:var(--f8);color:var(--iv)">';
+  ['Name','Phone','Guests','Adults','Kids','Inf','Stay','Pickup','Drop'].forEach(function(h){
+    html+='<th style="padding:7px 9px;text-align:left;font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap">'+h+'</th>';
+  });
+  html+='</tr></thead><tbody>';
+  rows.forEach(function(r,i){
+    var tr=r.transport||{};
+    var total=(parseInt(r.count)||1)+(parseInt(r.kids)||0)+(parseInt(r.infants)||0);
+    html+='<tr style="background:'+(i%2===0?'var(--iv)':'rgba(247,243,237,.5)')+';border-bottom:1px solid var(--ivdd)">'
+      +'<td style="padding:7px 9px;font-weight:500;color:var(--ink);white-space:nowrap">'+(r.name||'-')+'</td>'
+      +'<td style="padding:7px 9px;color:var(--ink3);white-space:nowrap">'+(r.phone?'+91 '+r.phone:'-')+'</td>'
+      +'<td style="padding:7px 9px;text-align:center;font-weight:600;color:var(--sage)">'+total+'</td>'
+      +'<td style="padding:7px 9px;text-align:center;color:var(--ink2)">'+(r.count||1)+'</td>'
+      +'<td style="padding:7px 9px;text-align:center;color:var(--ink2)">'+(r.kids||0)+'</td>'
+      +'<td style="padding:7px 9px;text-align:center;color:var(--ink2)">'+(r.infants||0)+'</td>'
+      +'<td style="padding:7px 9px;color:var(--ink2)">'+(r.stay==='yes'?'&#10003; Bloom':'—')+'</td>'
+      +'<td style="padding:7px 9px;color:var(--ink2)">'+(tr.needPickup?(tr.arrMode||'Yes'):'—')+'</td>'
+      +'<td style="padding:7px 9px;color:var(--ink2)">'+(tr.needDrop?(tr.depMode||'Yes'):'—')+'</td>'
+      +'</tr>';
+  });
+  html+='</tbody></table></div>';
+  return html;
+}
+
+function downloadEventCSV(event){
+  var data = window._rsvpData;
+  if(!data) return;
+  var rows = event==='homam' ? data.homam : data.party;
+  var headers=['Name','Phone','Adults','Kids','Infants','Total Guests','Stay','Room','Pickup Mode','Pickup From','Arrival Date','Arrival Time','Drop Mode','Drop To','Departure Date','Departure Time'];
+  var csv=[headers];
+  rows.forEach(function(r){
+    var tr=r.transport||{};
+    csv.push([
+      r.name||'',r.phone?'+91 '+r.phone:'',
+      r.count||1,r.kids||0,r.infants||0,
+      (parseInt(r.count)||1)+(parseInt(r.kids)||0)+(parseInt(r.infants)||0),
+      r.stay==='yes'?'Bloom Hotel':'No',
+      r.roomNumber||'Not assigned',
+      tr.arrMode||'',tr.arrPlace||'',tr.arrDate||'',tr.arrTime?fmtTime(tr.arrTime):'',
+      tr.depMode||'',tr.depPlace||'',tr.depDate||'',tr.depTime?fmtTime(tr.depTime):''
+    ]);
+  });
+  var label = event==='homam'?'Homam':'Party';
+  var csvStr=csv.map(function(r){return r.map(function(v){var s=String(v).replace(/"/g,'""');return s.indexOf(',')>=0?'"'+s+'"':s;}).join(',');}).join('\n');
+  try{
+    var blob=new Blob(['\uFEFF'+csvStr],{type:'text/csv;charset=utf-8'});
+    var url=URL.createObjectURL(blob);
+    var a=document.createElement('a');
+    a.href=url;a.download='Ishaa-'+label+'-Guests.csv';
+    a.style.display='none';document.body.appendChild(a);a.click();
+    setTimeout(function(){document.body.removeChild(a);URL.revokeObjectURL(url);},1000);
+    toast('Downloaded '+label+' guest list');
+  }catch(e){toast('Open in a real browser to download');}
+}
+
+// ═══════════════════════════════════════════════════════
+// ADMIN — STAY with smart room splitting
+// ═══════════════════════════════════════════════════════
+function renderAdminStay(){
+  allRSVPs(function(all){
+    if(!all) all=[];
+    var staying=all.filter(function(r){return r.stay==='yes';});
+    var el=document.getElementById('dp-stay');
+    if(!el)return;
+    if(!staying.length){el.innerHTML='<div style="padding:18px;font-size:13px;color:var(--ink3);font-style:italic">No confirmed overnight guests yet</div>';return;}
+
+    var html='<div style="padding:18px 22px">';
+    html+='<div style="font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:12px">Bloom Hotel — Room Assignments</div>';
+
+    staying.forEach(function(r){
+      var ph=r.phone||'nophone';
+      var totalPax=(parseInt(r.count)||1)+(parseInt(r.kids)||0)+(parseInt(r.infants)||0);
+      var needsRooms=Math.ceil(totalPax/2); // 1 room per 2 pax, rounded up
+
+      html+='<div style="background:var(--iv);border:1px solid var(--ivdd);border-radius:var(--r);padding:13px 14px;margin-bottom:10px">';
+      html+='<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">';
+      html+='<div><div style="font-size:14px;font-weight:500;color:var(--ink)">'+r.name+'</div>';
+      html+='<div style="font-size:11px;color:var(--ink3);margin-top:1px">'+(r.phone?'+91 '+r.phone:'')+' &bull; '+totalPax+' guests &bull; '+(r.ci||'?')+' &rarr; '+(r.co||'?')+'</div>';
+      if(needsRooms>1) html+='<div style="font-size:10px;color:var(--gold);font-weight:600;margin-top:2px">&#9888; '+totalPax+' guests — '+needsRooms+' rooms recommended</div>';
+      html+='</div>';
+      html+='<div style="font-family:Cormorant Garamond,serif;font-size:20px;color:'+(r.roomNumber?'var(--sage)':'var(--ink4)')+'">'+(r.roomNumber||'—')+'</div>';
+      html+='</div>';
+
+      // Room inputs — one per recommended room
+      if(needsRooms>1) html+='<div style="font-size:10px;color:var(--ink4);margin-bottom:6px;font-style:italic">'+needsRooms+' rooms for '+totalPax+' guests (1 room per 2 pax)</div>';
+      html+='<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:4px">';
+      for(var ri=1;ri<=needsRooms;ri++){
+        var savedVal = ri===1?(r.roomNumber||''):(r['roomNumber'+ri]||'');
+        html+='<input id="room_'+ph+'_'+ri+'" type="text" placeholder="Room '+ri+'" value="'+savedVal+'" style="flex:1;min-width:70px;padding:8px 10px;border:1.5px solid var(--ivdd);border-radius:6px;font-size:13px;font-family:DM Sans,sans-serif;color:var(--ink);outline:none">';
+      }
+      html+='<button data-ph="'+ph+'" data-count="'+needsRooms+'" class="room-save-btn" style="padding:8px 14px;border-radius:6px;border:none;background:var(--f6);color:var(--iv);font-size:12px;font-weight:600;cursor:pointer;flex-shrink:0">Save</button>';
+      html+='</div>';
+      html+='</div>';
+    });
+    html+='</div>';
+    el.innerHTML=html;
+
+    // Wire up save buttons
+    el.querySelectorAll('.room-save-btn').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var ph=btn.dataset.ph;
+        var count=parseInt(btn.dataset.count)||1;
+        var rooms=[];
+        for(var ri=1;ri<=count;ri++){
+          var v=(document.getElementById('room_'+ph+'_'+ri)||{}).value||'';
+          if(v) rooms.push(v);
+        }
+        stGet('rsvp:'+ph,function(d){
+          if(!d)return;
+          d.roomNumber=rooms[0]||'';
+          for(var ri2=2;ri2<=rooms.length;ri2++) d['roomNumber'+ri2]=rooms[ri2-1];
+          stSet('rsvp:'+ph,d,function(){
+            var roomLabel=rooms.length>1?'Rooms '+rooms.join(' & '):'Room '+rooms[0];
+            pushGuestNotif(ph,'🏨 Your room at Bloom Hotel has been assigned: '+roomLabel,'gstay');
+            toast(roomLabel+' saved for '+d.name+' — guest notified!');
+          });
+        });
+      });
+    });
+  });
+}
+
+// ════════════════════════════════════════════════════
+// ADMIN — PHOTOS (upload + tag guests)
+// ═══════════════════════════════════════════════════════
+function renderAdminPhotosNew(){
+  var el=document.getElementById('dp-adm-photos');
+  if(!el)return;
+
+  allRSVPs(function(all){
+    if(!all)all=[];
+    var guests=all.filter(function(r){return r.att==='yes';});
+    window._photoGuests=guests;
+
+    stGet('admin_photos',function(savedPhotos){
+      var photos=savedPhotos||[];
+      el.innerHTML='';
+
+      // ── Header ──
+      var hdr=document.createElement('div');
+      hdr.style.cssText='font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:10px';
+      hdr.textContent='Upload & Tag Photos';
+      el.appendChild(hdr);
+
+      // ── Upload zone ──
+      var zone=document.createElement('div');
+      zone.style.cssText='border:2px dashed rgba(74,122,90,0.3);border-radius:var(--r);padding:20px;text-align:center;margin-bottom:14px;background:rgba(74,122,90,0.03)';
+
+      var fileInp=document.createElement('input');
+      fileInp.type='file'; fileInp.accept='image/*'; fileInp.multiple=true;
+      fileInp.style.display='none';
+      fileInp.addEventListener('change', handlePhotoUpload);
+
+      var chooseBtn=document.createElement('button');
+      chooseBtn.textContent='Choose Photos';
+      chooseBtn.style.cssText='padding:10px 20px;border-radius:var(--rsm);border:none;background:var(--f6);color:var(--iv);font-family:DM Sans,sans-serif;font-size:13px;font-weight:500;cursor:pointer;display:block;margin:0 auto 8px';
+      chooseBtn.addEventListener('click',function(){ fileInp.click(); });
+
+      var hint=document.createElement('div');
+      hint.style.cssText='font-size:11px;color:var(--ink4);font-weight:300';
+      hint.textContent='Select one or more photos. Tag guests, then save.';
+
+      zone.appendChild(fileInp);
+      zone.appendChild(chooseBtn);
+      zone.appendChild(hint);
+      el.appendChild(zone);
+
+      // ── Pending area ──
+      var pending=document.createElement('div');
+      pending.id='photo-pending-area';
+      el.appendChild(pending);
+
+      // ── Saved photos grid ──
+      if(photos.length){
+        var savedHdr=document.createElement('div');
+        savedHdr.style.cssText='font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin:14px 0 10px';
+        savedHdr.textContent='Saved Photos ('+photos.length+')';
+        el.appendChild(savedHdr);
+
+        var grid=document.createElement('div');
+        grid.style.cssText='display:grid;grid-template-columns:repeat(3,1fr);gap:8px';
+        photos.forEach(function(p,i){
+          var cell=document.createElement('div');
+          cell.style.cssText='position:relative;border-radius:8px;overflow:hidden;border:1px solid var(--ivdd)';
+
+          var img=document.createElement('img');
+          img.src=p.data;
+          img.style.cssText='width:100%;aspect-ratio:1;object-fit:cover';
+          img.loading='lazy';
+
+          var tag=document.createElement('div');
+          tag.style.cssText='position:absolute;bottom:0;left:0;right:0;background:rgba(13,32,24,.75);padding:4px 6px;font-size:9px;color:#fff;line-height:1.3';
+          tag.textContent=(p.tags||[]).join(', ');
+
+          var del=document.createElement('button');
+          del.textContent='×';
+          del.style.cssText='position:absolute;top:4px;right:4px;background:rgba(192,80,70,.9);color:#fff;border:none;border-radius:50%;width:20px;height:20px;font-size:12px;cursor:pointer;line-height:1;display:flex;align-items:center;justify-content:center';
+          del.addEventListener('click',function(){ removePhoto(i); });
+
+          cell.appendChild(img); cell.appendChild(tag); cell.appendChild(del);
+          grid.appendChild(cell);
+        });
+        el.appendChild(grid);
+      }
+    });
+  });
+}
+
+window._pendingPhotos=[];
+
+function handlePhotoUpload(e){
+  var files=Array.from(e.target.files);
+  if(!files.length)return;
+  var guests=window._photoGuests||[];
+  var area=document.getElementById('photo-pending-area');
+  if(!area)return;
+
+  var total=files.length, done=0;
+  files.forEach(function(file,fi){
+    var reader=new FileReader();
+    reader.onload=function(ev){
+      var dataUrl=ev.target.result;
+      var pid='pend_'+Date.now()+'_'+fi;
+      window._pendingPhotos.push({id:pid,data:dataUrl,tags:[],tagPhones:[]});
+
+      // Card
+      var wrap=document.createElement('div');
+      wrap.id=pid;
+      wrap.style.cssText='background:var(--iv);border:1px solid var(--ivdd);border-radius:var(--r);padding:12px;margin-bottom:10px;display:flex;gap:12px;align-items:flex-start';
+
+      // Thumbnail
+      var img=document.createElement('img');
+      img.src=dataUrl;
+      img.style.cssText='width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:1px solid var(--ivdd)';
+      wrap.appendChild(img);
+
+      // Right content
+      var right=document.createElement('div');
+      right.style.cssText='flex:1;min-width:0';
+
+      var fname=document.createElement('div');
+      fname.style.cssText='font-size:12px;font-weight:500;color:var(--ink);margin-bottom:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis';
+      fname.textContent=file.name;
+      right.appendChild(fname);
+
+      var lbl=document.createElement('div');
+      lbl.style.cssText='font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);margin-bottom:6px';
+      lbl.textContent='Who is in this photo?';
+      right.appendChild(lbl);
+
+      // Scrollable checkbox list (acts as multi-select dropdown)
+      var listWrap=document.createElement('div');
+      listWrap.style.cssText='border:1.5px solid var(--ivdd);border-radius:8px;overflow:hidden;max-height:140px;overflow-y:auto;background:var(--iv)';
+
+      if(!guests.length){
+        var none=document.createElement('div');
+        none.style.cssText='padding:10px 12px;font-size:12px;color:var(--ink3);font-style:italic';
+        none.textContent='No confirmed guests yet';
+        listWrap.appendChild(none);
+      } else {
+        guests.forEach(function(g,gi){
+          var row=document.createElement('label');
+          row.style.cssText='display:flex;align-items:center;gap:10px;padding:8px 12px;cursor:pointer;background:'+(gi%2===0?'var(--iv)':'var(--ivd)')+';border-bottom:1px solid rgba(216,207,192,.35)';
+
+          var cb=document.createElement('input');
+          cb.type='checkbox';
+          cb.style.cssText='width:15px;height:15px;accent-color:var(--sage);cursor:pointer;flex-shrink:0';
+
+          var nameSpan=document.createElement('span');
+          nameSpan.style.cssText='font-size:13px;font-weight:500;color:var(--ink);flex:1';
+          nameSpan.textContent=g.name||'Guest';
+
+          var phoneSpan=document.createElement('span');
+          phoneSpan.style.cssText='font-size:10px;color:var(--ink4);font-weight:300';
+          phoneSpan.textContent=g.phone?'+91 '+g.phone:'';
+
+          cb.addEventListener('change',function(){
+            var p=window._pendingPhotos.find(function(x){return x.id===pid;});
+            if(!p)return;
+            if(cb.checked){
+              if(p.tags.indexOf(g.name)<0){p.tags.push(g.name);p.tagPhones.push(g.phone);}
+            } else {
+              var ti=p.tags.indexOf(g.name);
+              if(ti>=0){p.tags.splice(ti,1);p.tagPhones.splice(ti,1);}
+            }
+            countLbl.textContent=p.tags.length
+              ? p.tags.length+' guest'+(p.tags.length!==1?'s':'')+' tagged: '+p.tags.join(', ')
+              : 'No guests tagged yet';
+          });
+
+          row.appendChild(cb);row.appendChild(nameSpan);row.appendChild(phoneSpan);
+          listWrap.appendChild(row);
+        });
+      }
+      right.appendChild(listWrap);
+
+      // Count label
+      var countLbl=document.createElement('div');
+      countLbl.style.cssText='font-size:11px;color:var(--ink4);margin-top:5px;font-style:italic';
+      countLbl.textContent='No guests tagged yet';
+      right.appendChild(countLbl);
+
+      // Save button
+      var saveBtn=document.createElement('button');
+      saveBtn.textContent='Save Photo';
+      saveBtn.style.cssText='margin-top:10px;width:100%;padding:9px 14px;border-radius:var(--rsm);border:none;background:var(--f6);color:var(--iv);font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif';
+      saveBtn.addEventListener('click',function(){saveTaggedPhoto(pid);});
+      right.appendChild(saveBtn);
+
+      wrap.appendChild(right);
+      area.appendChild(wrap);
+
+      done++;
+      if(done===total) e.target.value='';
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+
+
+function saveTaggedPhoto(pendingId){
+  var p=window._pendingPhotos.find(function(x){return x.id===pendingId;});
+  if(!p){toast('Photo not found');return;}
+  if(!p.tags||!p.tags.length){toast('Tag at least one guest');return;}
+
+  stGet('admin_photos',function(saved){
+    var photos=saved||[];
+    photos.push({data:p.data,tags:p.tags,tagPhones:p.tagPhones||[],savedAt:new Date().toISOString()});
+    stSet('admin_photos',photos,function(){
+      // Add photo to each tagged guest's storage
+      (p.tagPhones||[]).forEach(function(phone){
+        stGet('guest_photos_'+phone,function(gp){
+          var arr=gp||[];
+          arr.push({data:p.data,savedAt:new Date().toISOString()});
+          stSet('guest_photos_'+phone,arr.slice(0,50),function(){
+            // Notify guest
+            pushGuestNotif(phone, '📸 A photo from the celebration has been added to your Photos tab!', 'photos');
+          });
+        });
+      });
+      // Remove from pending
+      window._pendingPhotos=window._pendingPhotos.filter(function(x){return x.id!==pendingId;});
+      var div=document.getElementById(pendingId);if(div)div.remove();
+      toast('Photo saved for: '+p.tags.join(', '));
+      renderAdminPhotosNew(); // refresh
+    });
+  });
+}
+
+function removePhoto(idx){
+  stGet('admin_photos',function(photos){
+    if(!photos)return;
+    photos.splice(idx,1);
+    stSet('admin_photos',photos,function(){
+      toast('Photo removed');
+      renderAdminPhotosNew();
+    });
+  });
+}
+
 function renderAdminDashboard(){
   allRSVPs(function(all){
     if(!all) all=[];
-    var att=all.filter(function(r){return r.att==='yes';});
-    var guests=att.reduce(function(s,r){return s+(parseInt(r.count)||1);},0);
-    var staying=all.filter(function(r){return r.stay==='yes';});
-    var maybes=all.filter(function(r){return r.att==='maybe';});
+    var att      = all.filter(function(r){return r.att==='yes';});
+    var maybe    = all.filter(function(r){return r.att==='maybe';});
+    var declined = all.filter(function(r){return r.att==='no';});
+    var staying  = all.filter(function(r){return r.stay==='yes';});
+    var homam    = all.filter(function(r){return r.att==='yes'&&(r.evSel==='homam'||r.evSel==='both');});
+    var party    = all.filter(function(r){return r.att==='yes'&&(r.evSel==='party'||r.evSel==='both');});
+    var needPickup=all.filter(function(r){return r.transport&&r.transport.needPickup;});
+    var needDrop  =all.filter(function(r){return r.transport&&r.transport.needDrop;});
+    var totalGuests=att.reduce(function(s,r){return s+(parseInt(r.count)||1);},0);
 
-    // ── RSVPs panel ──
-    var html='<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:14px">'
-      +'<div style="background:var(--iv);border:1px solid var(--ivdd);border-radius:10px;padding:12px;text-align:center"><div style="font-family:Cormorant Garamond,serif;font-size:28px;color:var(--sage)">'+all.length+'</div><div style="font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-top:2px">Total RSVPs</div></div>'
-      +'<div style="background:var(--iv);border:1px solid var(--ivdd);border-radius:10px;padding:12px;text-align:center"><div style="font-family:Cormorant Garamond,serif;font-size:28px;color:var(--sage)">'+guests+'</div><div style="font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-top:2px">Attending</div></div>'
-      +'<div style="background:var(--iv);border:1px solid var(--ivdd);border-radius:10px;padding:12px;text-align:center"><div style="font-family:Cormorant Garamond,serif;font-size:28px;color:var(--sage)">'+staying.length+'</div><div style="font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-top:2px">Staying</div></div>'
-      +'<div style="background:var(--iv);border:1px solid var(--ivdd);border-radius:10px;padding:12px;text-align:center"><div style="font-family:Cormorant Garamond,serif;font-size:28px;color:var(--gold)">'+maybes.length+'</div><div style="font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-top:2px">Pending</div></div>'
-      +'</div>';
+    // ── STATS GRID ──
+    var stats=[
+      {label:'Total RSVPs',   val:all.length,       sub:'invited'},
+      {label:'Attending',     val:att.length,        sub:totalGuests+' guests total', color:'var(--sage)'},
+      {label:'Morning Homam', val:homam.length,      sub:'attending ceremony', color:'var(--gold)'},
+      {label:'Evening Party', val:party.length,      sub:'attending party', color:'var(--sage)'},
+      {label:'Staying Over',  val:staying.length,    sub:'at Bloom Hotel', color:'var(--sage)'},
+      {label:'Possibly',      val:maybe.length,      sub:'yet to confirm', color:'var(--gold)'},
+      {label:'Not Attending', val:declined.length,   sub:'cannot make it', color:'#C07060'},
+      {label:'Need Pickup',   val:needPickup.length, sub:'on arrival', color:'var(--ink2)'},
+      {label:'Need Drop',     val:needDrop.length,   sub:'on departure', color:'var(--ink2)'}
+    ];
 
-    if(!all.length){html+='<div style="font-size:13px;color:var(--ink3);font-style:italic;padding:8px 0">No RSVPs yet</div>';}
-    else{
-      html+=all.map(function(r,i){
-        var attC=r.att==='yes'?'background:rgba(74,122,90,0.12);color:#2D6B4F':r.att==='maybe'?'background:rgba(201,139,10,0.12);color:#8A6010':'background:rgba(192,57,43,0.1);color:#A32D2D';
-        var evC=r.evSel==='both'?'Both':r.evSel==='homam'?'Homam':'Party';
-        var attL=r.att==='yes'?'Attending':r.att==='maybe'?'Maybe':'Declined';
-        var gStr=(r.count||1)+(r.infants>0?' +'+r.infants+'inf':'')+(r.kids>0?' +'+r.kids+'kids':'');
-        return '<div style="background:var(--iv);border:1px solid var(--ivdd);border-radius:10px;margin-bottom:8px;overflow:hidden">'
-          +'<div style="padding:11px 14px;display:flex;align-items:center;gap:10px;cursor:pointer" onclick="toggleAdminRow(this)">'
-          +'<div style="width:34px;height:34px;border-radius:50%;background:rgba(74,122,90,0.12);display:flex;align-items:center;justify-content:center;font-family:Cormorant Garamond,serif;font-size:16px;color:var(--sage);flex-shrink:0">'+r.name[0].toUpperCase()+'</div>'
-          +'<div style="flex:1"><div style="font-size:14px;font-weight:500;color:var(--ink)">'+r.name+'</div><div style="font-size:11px;color:var(--ink3);margin-top:1px">'+gStr+' &bull; '+evC+'</div></div>'
-          +'<span style="font-size:10px;font-weight:600;padding:3px 8px;border-radius:6px;'+attC+'">'+attL+'</span></div>'
-          +'<div style="display:none;padding:10px 14px 14px;border-top:1px solid var(--ivdd);background:rgba(247,243,237,0.5);font-size:12px;color:var(--ink2);line-height:1.7">'
-          +(r.phone?'<div><b>WhatsApp:</b> +91 '+r.phone+'</div>':'')
-          +(r.stay&&r.stay!=='no'?'<div><b>Stay:</b> Bloom Hotel'+(r.ci?' ('+r.ci+' to '+r.co+')':'')+'</div>':'')
-          +(r.transport&&r.transport.needPickup?'<div><b>Pickup:</b> '+(r.transport.arrMode||'')+' '+(r.transport.arrPlace||'')+' '+( r.transport.arrDate||'')+'</div>':'')
-          +(r.transport&&r.transport.needDrop?'<div><b>Drop:</b> '+(r.transport.depMode||'')+' '+(r.transport.depPlace||'')+' '+(r.transport.depDate||'')+'</div>':'')
-          +(r.roomNumber?'<div><b>Room:</b> '+r.roomNumber+'</div>':'')
-          +'</div></div>';
-      }).join('');
-    }
-    document.getElementById('dp-rsvp').innerHTML=html;
-
-    // ── Movement panel ──
-    var cm={flight:[],train:[],car:[],bus:[],local:[]};
-    var cities={};
-    all.forEach(function(r){
-      var t=r.transport||{};
-      if(t.arrMode&&cm[t.arrMode])cm[t.arrMode].push(r.name);
-      if(t.arrPlace&&t.arrMode!=='local'){cities[t.arrPlace]=cities[t.arrPlace]||[];cities[t.arrPlace].push(r.name);}
-    });
-    var cmLabels={flight:'Flight',train:'Train',car:'Driving',bus:'Bus',local:'Local'};
-    var mHtml='<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--sage);margin-bottom:10px">Arrival by</div>';
-    var anyTravel=false;
-    Object.keys(cm).forEach(function(k){if(cm[k].length){anyTravel=true;mHtml+='<div style="display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--ivdd);font-size:13px"><div style="flex:1"><div style="font-weight:500;color:var(--ink)">'+cmLabels[k]+'</div><div style="font-size:11px;color:var(--ink3)">'+cm[k].join(', ')+'</div></div><div style="font-family:Cormorant Garamond,serif;font-size:20px;color:var(--sage)">'+cm[k].length+'</div></div>';}});
-    if(!anyTravel)mHtml+='<div style="font-size:13px;color:var(--ink3);font-style:italic">No travel data yet</div>';
-    if(maybes.length){
-      mHtml+='<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin:14px 0 8px">Needs follow-up</div>';
-      mHtml+=maybes.map(function(r){return '<div style="font-size:13px;padding:7px 0;border-bottom:1px solid var(--ivdd);color:var(--ink)">'+r.name+(r.phone?' &bull; +91 '+r.phone:'')+'</div>';}).join('');
-    }
-    document.getElementById('dp-movement').innerHTML=mHtml;
-
-    // ── Stay panel ──
-    var sHtml='<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--sage);margin-bottom:10px">Staying at Bloom Hotel ('+staying.length+')</div>';
-    if(!staying.length){sHtml+='<div style="font-size:13px;color:var(--ink3);font-style:italic">No stay requests yet</div>';}
-    else sHtml+=staying.map(function(r){
-      var nights=0;
-      if(r.ci&&r.co){try{nights=Math.round((new Date(r.co)-new Date(r.ci))/86400000);}catch(e){}}
-      return '<div style="background:var(--iv);border:1px solid var(--ivdd);border-radius:10px;padding:12px 14px;margin-bottom:8px">'
-        +'<div style="font-size:14px;font-weight:500;color:var(--ink);margin-bottom:3px">'+r.name+(r.roomNumber?' &bull; Room '+r.roomNumber:'')+'</div>'
-        +'<div style="font-size:12px;color:var(--ink3)">'+( r.ci||'TBC')+' &rarr; '+(r.co||'TBC')+(nights?' &bull; '+nights+' night'+(nights!==1?'s':''):'')+'</div>'
-        +(r.phone?'<div style="font-size:11px;color:var(--ink4);margin-top:2px">+91 '+r.phone+'</div>':'')
+    var html='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px">';
+    html+=stats.map(function(s){
+      return '<div style="background:var(--iv);border:1px solid var(--ivdd);border-radius:10px;padding:10px 10px 8px;text-align:center">'
+        +'<div style="font-family:Cormorant Garamond,serif;font-size:26px;font-weight:400;color:'+(s.color||'var(--ink)')+'">'+s.val+'</div>'
+        +'<div style="font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-top:2px;line-height:1.3">'+s.label+'</div>'
+        +'<div style="font-size:9px;color:var(--ink4);font-weight:300;margin-top:1px">'+s.sub+'</div>'
         +'</div>';
     }).join('');
-    document.getElementById('dp-stay').innerHTML=sHtml;
+    html+='</div>';
 
-    // ── Rooms panel ──
-    renderRooms(all);
+    // ── FILTER BAR ──
+    html+='<div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap">';
+    var filters=[
+      {id:'f-all',    label:'All',      fn:'filterRSVPs("all")'},
+      {id:'f-yes',    label:'Attending',fn:'filterRSVPs("yes")'},
+      {id:'f-homam',  label:'Homam',    fn:'filterRSVPs("homam")'},
+      {id:'f-party',  label:'Party',    fn:'filterRSVPs("party")'},
+      {id:'f-stay',   label:'Staying',  fn:'filterRSVPs("stay")'},
+      {id:'f-maybe',  label:'Maybe',    fn:'filterRSVPs("maybe")'},
+      {id:'f-no',     label:'Declined', fn:'filterRSVPs("no")'},
+      {id:'f-pickup', label:'Pickup',   fn:'filterRSVPs("pickup")'},
+      {id:'f-drop',   label:'Drop',     fn:'filterRSVPs("drop")'}
+    ];
+    html+=filters.map(function(f,i){
+      return '<button id="'+f.id+'" onclick="'+f.fn+'" style="padding:5px 10px;border-radius:20px;border:1px solid var(--ivdd);background:'+(i===0?'var(--f7)':'var(--iv)')+';color:'+(i===0?'var(--iv)':'var(--ink3)')+';font-size:11px;font-weight:500;cursor:pointer;font-family:DM Sans,sans-serif;transition:all .15s">'+f.label+'</button>';
+    }).join('');
+    html+='</div>';
+
+    // ── DOWNLOAD BUTTON ──
+    html+='<button onclick="downloadRSVPExcel()" style="width:100%;padding:9px;border-radius:var(--rsm);border:1.5px solid rgba(74,122,90,0.25);background:rgba(74,122,90,0.05);color:var(--sage);font-family:DM Sans,sans-serif;font-size:12px;font-weight:600;cursor:pointer;margin-bottom:12px;letter-spacing:.04em">&#8595; Download as Excel / CSV</button>';
+
+    // ── TABLE ──
+    html+='<div style="overflow-x:auto;-webkit-overflow-scrolling:touch">';
+    html+='<table id="admin-rsvp-table" style="width:100%;border-collapse:collapse;font-size:12px">';
+    html+='<thead><tr style="background:var(--f8);color:var(--iv)">';
+    ['Name','Phone','Relation','Event','Status','Guests','Stay','Room','Pickup','Drop'].forEach(function(h){
+      html+='<th style="padding:8px 10px;text-align:left;font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap">'+h+'</th>';
+    });
+    html+='</tr></thead><tbody id="admin-rsvp-tbody">';
+
+    if(!all.length){
+      html+='<tr><td colspan="10" style="padding:16px;text-align:center;color:var(--ink3);font-style:italic">No RSVPs yet</td></tr>';
+    } else {
+      html+=renderRSVPRows(all);
+    }
+    html+='</tbody></table></div>';
+
+    // AI chat for admin
+    html += '<div style="margin-top:16px">';
+    html += '<div style="font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:8px">Chat with your RSVP data</div>';
+    html += '<div style="background:var(--iv);border:1px solid var(--ivdd);border-radius:var(--r);overflow:hidden">'
+      +'<div id="admin-chat-msgs" style="max-height:180px;overflow-y:auto;padding:12px 14px;display:flex;flex-direction:column;gap:8px;min-height:60px"><div style="font-size:12px;color:var(--ink3);font-style:italic">Ask anything about your guests — e.g. "Who still needs a room?" or "How many infants are coming?"</div></div>'
+      +'<div style="display:flex;border-top:1px solid var(--ivdd)">'
+      +'<input id="admin-chat-inp" type="text" placeholder="Ask about your guests…" style="flex:1;padding:10px 13px;border:none;font-size:13px;font-family:DM Sans,sans-serif;color:var(--ink);background:var(--iv);outline:none">'
+      +'<button onclick="sendAdminChat()" style="padding:10px 14px;border:none;background:var(--f6);color:var(--iv);font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">Ask</button>'
+      +'</div></div>';
+    html += '</div>';
+    document.getElementById('dp-rsvp').innerHTML=html;
+    window._allRSVPs=all;
   });
 }
 
-function renderRooms(allData){
-  if(allData){_renderRoomsData(allData);return;}
-  allRSVPs(function(all){_renderRoomsData(all||[]);});
+function renderRSVPRows(rows){
+  var evM={both:'Homam+Party',homam:'Homam',party:'Party'};
+  var attM={yes:'✓ Confirmed',maybe:'? Maybe',no:'✗ Declined'};
+  var attC={yes:'color:#2D6B4F',maybe:'color:#8A6010',no:'color:#A32D2D'};
+  return rows.map(function(r,idx){
+    var bg=idx%2===0?'var(--iv)':'rgba(247,243,237,0.5)';
+    var tr=r.transport||{};
+    return '<tr style="background:'+bg+';border-bottom:1px solid var(--ivdd)">'
+      +'<td style="padding:8px 10px;font-weight:500;color:var(--ink);white-space:nowrap">'+( r.name||'-')+'</td>'
+      +'<td style="padding:8px 10px;color:var(--ink2);white-space:nowrap">'+(r.phone?'+91 '+r.phone:'-')+'</td>'
+      +'<td style="padding:8px 10px;color:var(--ink3)">'+( r.rel||'-')+'</td>'
+      +'<td style="padding:8px 10px;color:var(--ink2)">'+( evM[r.evSel]||r.evSel||'-')+'</td>'
+      +'<td style="padding:8px 10px;font-weight:500;'+(attC[r.att]||'')+'">'+( attM[r.att]||r.att||'-')+'</td>'
+      +'<td style="padding:8px 10px;color:var(--ink2);text-align:center">'+( (r.count||1)+(r.infants>0?'+'+r.infants+'i':'')+(r.kids>0?'+'+r.kids+'k':''))+'</td>'
+      +'<td style="padding:8px 10px;color:var(--ink2)">'+( r.stay==='yes'?'Bloom':(r.stay==='maybe'?'Maybe':'No'))+'</td>'
+      +'<td style="padding:8px 10px;color:var(--ink2)">'+( r.roomNumber||'—')+'</td>'
+      +'<td style="padding:8px 10px;color:var(--ink2)">'+( tr.needPickup?(tr.arrMode||'Yes'):'—')+'</td>'
+      +'<td style="padding:8px 10px;color:var(--ink2)">'+( tr.needDrop?(tr.depMode||'Yes'):'—')+'</td>'
+      +'</tr>';
+  }).join('');
 }
-function _renderRoomsData(all){
-  var staying=all.filter(function(r){return r.stay==='yes';});
-  var el=document.getElementById('dp-rooms')||document.getElementById('room-list-inner');
-  if(!el)return;
-  if(!staying.length){el.innerHTML='<div style="font-size:13px;color:var(--ink3);font-style:italic">No confirmed overnight guests yet</div>';return;}
-  el.innerHTML=staying.map(function(r){
-    return '<div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--ivdd)">'
-      +'<div style="flex:1"><div style="font-size:14px;font-weight:500;color:var(--ink)">'+r.name+'</div>'
-      +'<div style="font-size:11px;color:var(--ink3)">'+(r.phone?'+91 '+r.phone+' &bull; ':'')+( r.ci||'')+' &rarr; '+(r.co||'')+'</div></div>'
-      +'<input class="room-inp" data-phone="'+r.phone+'" type="text" placeholder="Room no." value="'+(r.roomNumber||'')+'" '
-      +'style="width:86px;padding:7px 10px;border:1.5px solid var(--ivdd);border-radius:6px;font-size:13px;outline:none">'
-      +'<button class="room-save-btn" data-phone="'+r.phone+'" '
-      +'style="padding:7px 12px;border-radius:6px;border:none;background:#1C3D2A;color:#fff;font-size:12px;font-weight:500;cursor:pointer">Save</button>'
+
+var _activeFilter='all';
+function filterRSVPs(f){
+  _activeFilter=f;
+  // Update button styles
+  document.querySelectorAll('[id^="f-"]').forEach(function(b){
+    var isActive = b.id==='f-'+f;
+    b.style.background=isActive?'var(--f7)':'var(--iv)';
+    b.style.color=isActive?'var(--iv)':'var(--ink3)';
+    b.style.borderColor=isActive?'var(--f7)':'var(--ivdd)';
+  });
+  var all=window._allRSVPs||[];
+  var filtered;
+  if(f==='all')          filtered=all;
+  else if(f==='yes')     filtered=all.filter(function(r){return r.att==='yes';});
+  else if(f==='homam')   filtered=all.filter(function(r){return r.att==='yes'&&(r.evSel==='homam'||r.evSel==='both');});
+  else if(f==='party')   filtered=all.filter(function(r){return r.att==='yes'&&(r.evSel==='party'||r.evSel==='both');});
+  else if(f==='stay')    filtered=all.filter(function(r){return r.stay==='yes';});
+  else if(f==='maybe')   filtered=all.filter(function(r){return r.att==='maybe';});
+  else if(f==='no')      filtered=all.filter(function(r){return r.att==='no';});
+  else if(f==='pickup')  filtered=all.filter(function(r){return r.transport&&r.transport.needPickup;});
+  else if(f==='drop')    filtered=all.filter(function(r){return r.transport&&r.transport.needDrop;});
+  else filtered=all;
+  var tbody=document.getElementById('admin-rsvp-tbody');
+  if(tbody) tbody.innerHTML=filtered.length?renderRSVPRows(filtered):'<tr><td colspan="10" style="padding:16px;text-align:center;color:var(--ink3);font-style:italic">No results</td></tr>';
+}
+
+
+function renderAdminEventsPanel(){
+  var el=document.getElementById('admin-events-wrap');
+  if(el) el.innerHTML=renderAdminEvents();
+}
+function renderAdminEvents(){
+  var html='<div style="margin-bottom:10px;display:flex;align-items:center;justify-content:space-between">'
+    +'<div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--sage)">Event Schedule</div>'
+    +'<div style="font-size:10px;color:var(--ink4)">Changes notify guests on next login</div>'
+    +'</div>';
+
+  html+='<div style="font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Morning Ceremony</div>';
+  html+=EVENTS_HOMAM.map(function(e,i){return makeAdminEventRow('homam',i,e);}).join('');
+  html+='<div style="font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);margin:12px 0 8px">Evening Party</div>';
+  html+=EVENTS_PARTY.map(function(e,i){return makeAdminEventRow('party',i,e);}).join('');
+
+  html+='<button onclick="saveAdminEvents()" style="width:100%;margin-top:14px;padding:12px;border-radius:var(--rsm);border:none;background:var(--f6);color:var(--iv);font-family:DM Sans,sans-serif;font-size:13px;font-weight:500;cursor:pointer">Save &amp; Notify Guests</button>';
+  return html;
+}
+
+function makeAdminEventRow(type,i,e){
+  var id='aer_'+type+'_'+i;
+  return '<div style="background:var(--iv);border:1px solid var(--ivdd);border-radius:var(--rsm);padding:10px 12px;margin-bottom:7px" data-type="'+type+'" data-i="'+i+'">'
+    +'<input type="text" class="aev-title" value="'+e.title.replace(/"/g,'&quot;')+'" style="width:100%;padding:6px 8px;border:1px solid var(--ivdd);border-radius:5px;font-size:13px;margin-bottom:6px;font-family:DM Sans,sans-serif;color:var(--ink);outline:none">'
+    +'<div style="display:flex;gap:6px">'
+    +'<input type="time" class="aev-start" value="'+timeToInput(e.time)+'" style="flex:1;padding:6px 8px;border:1px solid var(--ivdd);border-radius:5px;font-size:12px;font-family:DM Sans,sans-serif;color:var(--ink);outline:none">'
+    +'<input type="time" class="aev-end" value="'+timeToInput(e.end)+'" style="flex:1;padding:6px 8px;border:1px solid var(--ivdd);border-radius:5px;font-size:12px;font-family:DM Sans,sans-serif;color:var(--ink);outline:none">'
+    +'</div>'
+    +'</div>';
+}
+
+function timeToInput(t){
+  if(!t)return'';
+  var m=t.match(/(\d+):(\d+)\s*(AM|PM)/i);
+  if(!m)return'';
+  var h=parseInt(m[1]),min=m[2],ampm=m[3].toUpperCase();
+  if(ampm==='PM'&&h!==12)h+=12;
+  if(ampm==='AM'&&h===12)h=0;
+  return String(h).padStart(2,'0')+':'+min;
+}
+
+function updateEvent(type,i,field,val){
+  if(type==='homam')EVENTS_HOMAM[i][field]=val;
+  else EVENTS_PARTY[i][field]=val;
+}
+
+function saveAdminEvents(){
+  // Collect values from DOM inputs
+  document.querySelectorAll('[data-type][data-i]').forEach(function(row){
+    var t=row.dataset.type, i=parseInt(row.dataset.i);
+    var title=row.querySelector('.aev-title');
+    var start=row.querySelector('.aev-start');
+    var end=row.querySelector('.aev-end');
+    if(title&&start&&end){
+      var arr=t==='homam'?EVENTS_HOMAM:EVENTS_PARTY;
+      if(arr[i]){
+        arr[i].title=title.value;
+        arr[i].time=fmtTime(start.value)||arr[i].time;
+        arr[i].end=fmtTime(end.value)||arr[i].end;
+      }
+    }
+  });
+  // old code below
+    EVENT_VERSION++;
+  // Save to storage so guests see update
+  stSet('event_version',EVENT_VERSION,function(){
+    stSet('events_homam',EVENTS_HOMAM,function(){
+      stSet('events_party',EVENTS_PARTY,function(){
+        toast('Schedule saved! Guests will be notified on next login');
+      });
+    });
+  });
+}
+
+// Load events from storage on startup
+stGet('events_homam',function(d){if(d)EVENTS_HOMAM=d;});
+stGet('events_party',function(d){if(d)EVENTS_PARTY=d;});
+stGet('event_version',function(v){if(v)EVENT_VERSION=v;});
+
+
+// ═══════════════════════════════════════════════════════════
+// ADMIN — FOOD COUNTS
+// ═══════════════════════════════════════════════════════════
+function renderAdminFood(){
+  allRSVPs(function(all){
+    if(!all) all=[];
+    var att = all.filter(function(r){return r.att==='yes';});
+    var homam = att.filter(function(r){return r.evSel==='homam'||r.evSel==='both';});
+    var party = att.filter(function(r){return r.evSel==='party'||r.evSel==='both';});
+
+    function guestCount(arr){
+      return arr.reduce(function(s,r){return s+(parseInt(r.count)||1)+(parseInt(r.kids)||0)+(parseInt(r.infants)||0);},0);
+    }
+
+    var breakfast = guestCount(homam);
+    var lunch     = guestCount(homam);
+    var hiTea     = guestCount(homam);
+    var dinner    = guestCount(party);
+    var partyCount= guestCount(party);
+
+    var html = '<div style="padding:18px 22px">';
+    html += '<div style="font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:10px">Morning Events</div>';
+    var morning=[
+      {meal:'Breakfast',time:'7:30 – 9:30 AM',count:breakfast,note:'All Homam guests'},
+      {meal:'Ayush Homam',time:'8:30 AM – 12:30 PM',count:homam.length,note:'Ceremony headcount'},
+      {meal:'Lunch',time:'12:30 – 2:30 PM',count:lunch,note:'Post-Homam lunch'},
+      {meal:'Hi-Tea',time:'4:30 – 5:30 PM',count:hiTea,note:'Pre-party refreshments'}
+    ];
+    html+=morning.map(function(m){return makeFoodRow(m,'morning');}).join('');
+
+    html += '<div style="font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin:14px 0 10px">Evening Events</div>';
+    var evening=[
+      {meal:'Birthday Party',time:'6:00 – 8:30 PM',count:partyCount,note:'All party guests'},
+      {meal:'Dinner',time:'7:30 – 10:30 PM',count:dinner,note:'Full party guest count'}
+    ];
+    html+=evening.map(function(m){return makeFoodRow(m,'evening');}).join('');
+
+    html+='<div style="font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);margin:14px 0 10px">Guest Breakdown</div>';
+    html+='<table style="width:100%;border-collapse:collapse;font-size:12px">';
+    html+='<thead><tr style="background:var(--f8);color:var(--iv)"><th style="padding:7px 10px;text-align:left;font-size:9px;letter-spacing:.1em;text-transform:uppercase">Name</th><th style="padding:7px 10px;text-align:left;font-size:9px;letter-spacing:.1em;text-transform:uppercase">Event</th><th style="padding:7px 10px;text-align:center;font-size:9px;letter-spacing:.1em;text-transform:uppercase">Adults</th><th style="padding:7px 10px;text-align:center;font-size:9px;letter-spacing:.1em;text-transform:uppercase">Kids</th><th style="padding:7px 10px;text-align:center;font-size:9px;letter-spacing:.1em;text-transform:uppercase">Infants</th></tr></thead><tbody>';
+    att.forEach(function(r,i){
+      var evM={both:'Homam+Party',homam:'Homam',party:'Party'};
+      html+='<tr style="background:'+(i%2===0?'var(--iv)':'rgba(247,243,237,.5)')+';border-bottom:1px solid var(--ivdd)">'
+        +'<td style="padding:7px 10px;font-weight:500;color:var(--ink)">'+r.name+'</td>'
+        +'<td style="padding:7px 10px;color:var(--ink2)">'+evM[r.evSel]+'</td>'
+        +'<td style="padding:7px 10px;text-align:center;color:var(--ink2)">'+( r.count||1)+'</td>'
+        +'<td style="padding:7px 10px;text-align:center;color:var(--ink2)">'+( r.kids||0)+'</td>'
+        +'<td style="padding:7px 10px;text-align:center;color:var(--ink2)">'+( r.infants||0)+'</td>'
+        +'</tr>';
+    });
+    html+='</tbody></table></div>';
+    document.getElementById('dp-food').innerHTML=html;
+  });
+}
+
+function makeFoodRow(m, type){
+  var bg=type==='morning'?'rgba(168,130,58,0.07)':'rgba(74,122,90,0.07)';
+  var border=type==='morning'?'rgba(168,130,58,0.2)':'rgba(74,122,90,0.2)';
+  return '<div style="display:flex;align-items:center;justify-content:space-between;background:'+bg+';border:1px solid '+border+';border-radius:var(--rsm);padding:11px 14px;margin-bottom:7px">'
+    +'<div><div style="font-size:13px;font-weight:500;color:var(--ink)">'+m.meal+'</div>'
+    +'<div style="font-size:11px;color:var(--ink3);margin-top:1px">'+m.time+' &bull; '+m.note+'</div></div>'
+    +'<div style="text-align:right"><div style="font-family:Cormorant Garamond,serif;font-size:28px;font-weight:400;color:var(--ink)">'+m.count+'</div>'
+    +'<div style="font-size:9px;color:var(--ink4);text-transform:uppercase;letter-spacing:.08em">covers</div></div>'
+    +'</div>';
+}
+
+// ═══════════════════════════════════════════════════════════
+// ADMIN — MOVEMENT (pickup / drop + assign driver)
+// ═══════════════════════════════════════════════════════════
+function renderAdminMovement(){
+  allRSVPs(function(all){
+    if(!all) all=[];
+    var pickups = all.filter(function(r){return r.transport&&r.transport.needPickup;});
+    var drops   = all.filter(function(r){return r.transport&&r.transport.needDrop;});
+
+    var html='<div style="padding:18px 22px">';
+    html+='<div style="font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:10px">Arrivals — Need Pickup ('+pickups.length+')</div>';
+    if(!pickups.length) html+='<div style="font-size:13px;color:var(--ink3);font-style:italic;margin-bottom:14px">No pickup requests</div>';
+    else html+=pickups.map(function(r){return makeMovementCard(r,'pickup');}).join('');
+
+    html+='<div style="font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:14px 0 10px">Departures — Need Drop ('+drops.length+')</div>';
+    if(!drops.length) html+='<div style="font-size:13px;color:var(--ink3);font-style:italic">No drop requests</div>';
+    else html+=drops.map(function(r){return makeMovementCard(r,'drop');}).join('');
+    html+='</div>';
+    document.getElementById('dp-movement').innerHTML=html;
+  });
+}
+
+function makeMovementCard(r, type){
+  var tr=r.transport||{};
+  var isPickup=type==='pickup';
+  var mode=isPickup?(tr.arrMode||''):(tr.depMode||'');
+  var place=isPickup?(tr.arrPlace||''):(tr.depPlace||'');
+  var date=isPickup?(tr.arrDate||''):(tr.depDate||'');
+  var time=isPickup?(tr.arrTime?fmtTime(tr.arrTime):''):(tr.depTime?fmtTime(tr.depTime):'');
+  var driverKey='driver_'+(isPickup?'pickup':'drop')+'_'+r.phone;
+  var savedDriver=r[driverKey]||'';
+  var ph=r.phone||'';
+
+  return '<div style="background:var(--iv);border:1px solid var(--ivdd);border-radius:var(--r);padding:13px 14px;margin-bottom:10px">'
+    +'<div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px">'
+    +'<div><div style="font-size:14px;font-weight:500;color:var(--ink)">'+r.name+'</div>'
+    +'<div style="font-size:11px;color:var(--ink3);margin-top:2px">'
+    +(mode?mode.charAt(0).toUpperCase()+mode.slice(1)+' &bull; ':'')+( place||'')+( date?' &bull; '+date:'')+( time?' at '+time:'')
+    +'</div></div>'
+    +'<div style="font-size:11px;color:var(--ink4)">'+(ph?'+91 '+ph:'')+'</div>'
+    +'</div>'
+    +'<div style="display:flex;gap:7px;align-items:center">'
+    +'<input id="drv_'+ph+'_'+type+'" type="text" placeholder="Driver name &amp; number (e.g. Raju 9876543210)" value="'+savedDriver+'" style="flex:1;padding:8px 10px;border:1.5px solid var(--ivdd);border-radius:6px;font-size:12px;font-family:DM Sans,sans-serif;color:var(--ink);outline:none">'
+    +'<button onclick="assignDriver(\''+ph+'\',\''+type+'\')" style="padding:8px 12px;border-radius:6px;border:none;background:var(--f6);color:var(--iv);font-size:11px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif;white-space:nowrap">Assign &amp; Notify</button>'
+    +'</div></div>';
+}
+
+function assignDriver(phone, type){
+  var inp=document.getElementById('drv_'+phone+'_'+type);
+  if(!inp)return;
+  var driverInfo=inp.value.trim();
+  if(!driverInfo){toast('Enter driver name and number');return;}
+  var key='driver_'+(type==='pickup'?'pickup':'drop')+'_'+phone;
+  stGet('rsvp:'+phone,function(d){
+    if(!d)return;
+    d[key]=driverInfo;
+    stSet('rsvp:'+phone,d,function(){
+      // Notify guest
+      var msg=(type==='pickup'?'Pickup':'Drop')+' arranged: '+driverInfo+'. They will be waiting for you!';
+      // Store notification for the guest
+      stGet('notifs_'+phone,function(notifs){
+        var arr=notifs||[];
+        arr.unshift({text:msg,time:new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'}),link:'reach',read:false});
+        stSet('notifs_'+phone,arr.slice(0,20),function(){
+          toast('Driver assigned & guest notified!');
+        });
+      });
+    });
+  });
+}
+
+// ═══════════════════════════════════════════════════════════
+// ADMIN — STAY (room assignment)
+// ═══════════════════════════════════════════════════════════
+function renderAdminStay(){
+  allRSVPs(function(all){
+    if(!all) all=[];
+    var staying=all.filter(function(r){return r.stay==='yes';});
+    var el=document.getElementById('dp-stay');
+    if(!el)return;
+    if(!staying.length){el.innerHTML='<div style="padding:22px;font-size:13px;color:var(--ink3);font-style:italic">No confirmed overnight guests yet</div>';return;}
+    var html='<div style="padding:18px 22px">';
+    html+='<div style="font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:10px">Bloom Hotel — Room Assignments</div>';
+    html+=staying.map(function(r){
+      var ph=r.phone||'nophone';
+      return '<div style="background:var(--iv);border:1px solid var(--ivdd);border-radius:var(--r);padding:12px 14px;margin-bottom:8px">'
+        +'<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:7px">'
+        +'<div><div style="font-size:14px;font-weight:500;color:var(--ink)">'+r.name+'</div>'
+        +'<div style="font-size:11px;color:var(--ink3);margin-top:1px">'+(r.phone?'+91 '+r.phone:'')+' &bull; '+( r.ci||'?')+' &rarr; '+(r.co||'?')+'</div></div>'
+        +'<div style="font-family:Cormorant Garamond,serif;font-size:18px;color:'+(r.roomNumber?'var(--sage)':'var(--ink4)')+'">'+( r.roomNumber||'No room')+'</div>'
+        +'</div>'
+        +'<div style="display:flex;gap:7px">'
+        +'<input id="room_'+ph+'" type="text" placeholder="Room number" value="'+(r.roomNumber||'')+'" style="flex:1;padding:8px 10px;border:1.5px solid var(--ivdd);border-radius:6px;font-size:13px;font-family:DM Sans,sans-serif;color:var(--ink);outline:none">'
+        +'<button onclick="saveRoom(\''+ph+'\')" style="padding:8px 14px;border-radius:6px;border:none;background:var(--f6);color:var(--iv);font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">Save</button>'
+        +'</div></div>';
+    }).join('');
+    html+='</div>';
+    el.innerHTML=html;
+  });
+}
+
+// ═══════════════════════════════════════════════════════════
+// ADMIN — PHOTOS
+// ═══════════════════════════════════════════════════════════
+function renderAdminPhotos(){
+  stGet('photo_cloud_url',function(url){
+    stGet('photos_active',function(active){
+      var el=document.getElementById('dp-admPhotos');
+      if(!el)return;
+      var html='<div style="font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:10px">Photos Configuration</div>';
+
+      html+='<div style="background:rgba(74,122,90,0.06);border:1px solid rgba(74,122,90,0.15);border-radius:var(--r);padding:14px 16px;margin-bottom:14px">'
+        +'<div style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:4px">Cloud folder link</div>'
+        +'<div style="font-size:12px;color:var(--ink3);font-weight:300;margin-bottom:10px">Paste your Google Drive or Dropbox folder link. Guests will see a button to view their photos here.</div>'
+        +'<input id="photo-url-inp" type="url" value="'+(url||'')+'" placeholder="https://drive.google.com/drive/folders/..." style="width:100%;padding:10px 12px;border:1.5px solid var(--ivdd);border-radius:6px;font-size:13px;font-family:DM Sans,sans-serif;color:var(--ink);outline:none;margin-bottom:8px">'
+        +'<div style="display:flex;gap:8px;align-items:center">'
+        +'<button onclick="savePhotoConfig()" style="padding:9px 16px;border-radius:6px;border:none;background:var(--f6);color:var(--iv);font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">Save link</button>'
+        +'<label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:13px;color:var(--ink2)">'
+        +'<input type="checkbox" id="photos-active-cb" '+(active?'checked':'')+' onchange="togglePhotosActive(this.checked)" style="width:16px;height:16px;accent-color:var(--sage)">'
+        +'Show photos to guests</label>'
+        +'</div>'
+        +'</div>';
+
+      html+='<div style="font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px">Current Status</div>';
+      html+='<div style="background:var(--iv);border:1px solid var(--ivdd);border-radius:var(--rsm);padding:12px 14px;font-size:13px;color:var(--ink2)">';
+      html+=active&&url
+        ? '✅ Photos are LIVE — guests can see the link in their Photos tab'
+        : '⏳ Photos are hidden — guests see a surprise banner until you enable';
+      html+='</div>';
+      el.innerHTML=html;
+    });
+  });
+}
+
+function savePhotoConfig(){
+  var url=(document.getElementById('photo-url-inp').value||'').trim();
+  stSet('photo_cloud_url',url,function(){toast('Photo link saved!');renderAdminPhotos();});
+}
+function togglePhotosActive(val){
+  stSet('photos_active',val,function(){toast(val?'Photos are now visible to guests':'Photos hidden — guests see surprise banner');renderAdminPhotos();});
+}
+
+// ═══════════════════════════════════════════════════════════
+// ADMIN — OVERVIEW CHAT
+// ═══════════════════════════════════════════════════════════
+// (chat is appended to the existing stats in renderAdminDashboard)
+
+
+// ── ADMIN CHAT ──
+var ADMIN_CHAT_HISTORY = [];
+
+function sendAdminChat(){
+  var inp=document.getElementById('admin-chat-inp');
+  var msg=(inp.value||'').trim();
+  if(!msg)return;
+  inp.value='';
+  addAdminChatMsg(msg,'user');
+  ADMIN_CHAT_HISTORY.push({role:'user',content:msg});
+
+  // Build RSVP context
+  var all=window._allRSVPs||[];
+  var summary='Total RSVPs: '+all.length+'. ';
+  var att=all.filter(function(r){return r.att==='yes';});
+  summary+='Attending: '+att.length+'. ';
+  summary+='Staying: '+all.filter(function(r){return r.stay==='yes';}).length+'. ';
+  summary+='Pickup needed: '+all.filter(function(r){return r.transport&&r.transport.needPickup;}).length+'. ';
+  summary+='Drop needed: '+all.filter(function(r){return r.transport&&r.transport.needDrop;}).length+'. ';
+  var noRoom=all.filter(function(r){return r.stay==='yes'&&!r.roomNumber;});
+  var noRoomStr=noRoom.length?(' ('+noRoom.map(function(r){return r.name;}).join(', ')+')'):'';
+summary+='No room assigned: '+noRoom.length+noRoomStr+'. ';
+  summary+='RSVP list: ';
+  all.forEach(function(r){
+    summary+=r.name+' | '+(r.att==='yes'?'Attending':'Not confirmed')+' | '+(r.evSel||'?')+' | stay:'+(r.stay||'no')+' | room:'+(r.roomNumber||'none')+'; ';
+  });
+
+  addAdminChatMsg('...','bot','admin-typing');
+
+  fetch('https://api.anthropic.com/v1/messages',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({
+      model:'claude-sonnet-4-20250514',
+      max_tokens:500,
+      system:'You are an event management assistant for Ishaa&#39;s 1st birthday. You have access to RSVP data. Here is the current data:\n'+summary+'\nAnswer questions about the guests concisely and helpfully. Be specific with names when relevant.',
+      messages:ADMIN_CHAT_HISTORY
+    })
+  })
+  .then(function(r){return r.json();})
+  .then(function(data){
+    var reply=(data.content&&data.content[0]&&data.content[0].text)||'Try again!';
+    removeAdminTyping();
+    addAdminChatMsg(reply,'bot');
+    ADMIN_CHAT_HISTORY.push({role:'assistant',content:reply});
+  })
+  .catch(function(){
+    removeAdminTyping();
+    addAdminChatMsg('Connection error. Check your internet.','bot');
+  });
+}
+
+function addAdminChatMsg(text,role,cls){
+  var box=document.getElementById('admin-chat-msgs');
+  if(!box)return;
+  var div=document.createElement('div');
+  div.style.cssText='max-width:90%;padding:8px 11px;border-radius:10px;font-size:12px;line-height:1.5;'
+    +(role==='user'
+      ?'background:var(--f6);color:var(--iv);align-self:flex-end;margin-left:auto'
+      :'background:var(--ivd);color:var(--ink2);align-self:flex-start');
+  if(cls)div.id=cls;
+  div.textContent=text;
+  box.appendChild(div);
+  box.scrollTop=box.scrollHeight;
+}
+function removeAdminTyping(){var t=document.getElementById('admin-typing');if(t)t.remove();}
+
+
+// ── GUEST PHOTOS TAB ──
+function renderGuestPhotos(){
+  stGet('myphone',function(ph){
+    if(!ph){ renderGuestPhotosCloud(); return; }
+    stGet('guest_photos_'+ph,function(myPhotos){
+      var el=document.getElementById('photos-content');
+      if(!el)return;
+      if(myPhotos&&myPhotos.length){
+        var html='<div style="font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:10px">Your Photos from the Celebration</div>';
+        html+='<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:16px">';
+        myPhotos.forEach(function(p){
+          html+='<div style="border-radius:10px;overflow:hidden;border:1px solid var(--ivdd)">'
+            +'<img src="'+p.data+'" style="width:100%;aspect-ratio:1;object-fit:cover" loading="lazy">'
+            +'</div>';
+        });
+        html+='</div>';
+        el.innerHTML=html;
+        return;
+      }
+      renderGuestPhotosCloud();
+    });
+  });
+}
+function renderGuestPhotosCloud(){
+  stGet('photos_active',function(active){
+    stGet('photo_cloud_url',function(url){
+      var el=document.getElementById('photos-content');
+      if(!el)return;
+      if(active&&url){
+        el.innerHTML='<div style="text-align:center;padding:8px 0 16px">'
+          +'<div style="font-size:36px;margin-bottom:12px">📸</div>'
+          +'<div style="font-family:Cormorant Garamond,serif;font-size:22px;font-style:italic;color:var(--ink);margin-bottom:8px">Ishaa&#39;s Memories</div>'
+          +'<div style="font-size:13px;color:var(--ink3);font-weight:300;line-height:1.6;margin-bottom:18px">Beautiful moments from the celebration — all yours to keep.</div>'
+          +'<a href="'+url+'" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:var(--rsm);background:var(--f6);color:var(--iv);text-decoration:none;font-size:14px;font-weight:500;font-family:DM Sans,sans-serif">View Photos &rarr;</a>'
+          +'</div>';
+      } else {
+        // Surprise banner
+        el.innerHTML='<div style="text-align:center;padding:16px 0">'
+          +'<div style="font-size:48px;margin-bottom:12px">🎁</div>'
+          +'<div style="font-family:Cormorant Garamond,serif;font-size:24px;font-style:italic;color:var(--ink);margin-bottom:8px">Something Special Awaits</div>'
+          +'<div style="background:linear-gradient(150deg,var(--f8),var(--f6));border-radius:var(--r);padding:20px;margin:12px 0">'
+          +'<div style="font-size:13px;color:var(--sagp);font-weight:300;line-height:1.8">After the celebration, this space will be filled with beautiful memories from Ishaa&#39;s big day.<br><br>Come back after <strong style="color:var(--goldl)">May 2, 2026</strong> to relive all the magic. ✨</div>'
+          +'</div>'
+          +'<div style="font-size:11px;color:var(--ink4);font-weight:300;margin-top:8px;font-style:italic">Photos will appear here once the event is over</div>'
+          +'</div>';
+      }
+    });
+  });
+}
+
+
+// ── GUEST: SCHEDULE ──
+var EVENTS_HOMAM = [
+  {time:'7:30 AM',  end:'9:30 AM',  title:'Breakfast',     note:'Start your morning with a warm spread'},
+  {time:'8:30 AM',  end:'12:30 PM', title:'Ayush Homam',   note:'Sacred ceremony to bless Ishaa. Traditional attire preferred'},
+  {time:'12:30 PM', end:'2:30 PM',  title:'Lunch',         note:'Lavish spread following the ceremony'},
+  {time:'4:30 PM',  end:'5:30 PM',  title:'Hi-Tea',        note:'Refreshments before the evening celebration'}
+];
+var EVENTS_PARTY = [
+  {time:'6:00 PM',  end:'8:30 PM',  title:'Birthday Party', note:'Jungle-themed celebration. Dress to impress!'},
+  {time:'7:30 PM',  end:'10:30 PM', title:'Dinner',         note:'A grand dinner to celebrate Ishaa turning one'}
+];
+var EVENT_VERSION = 1;
+
+function renderEvents(){
+  var el = document.getElementById('events-content');
+  if(!el) return;
+  myRSVP(function(d){
+    if(!d){ el.innerHTML='<div style="font-size:13px;color:var(--ink3);padding:8px 0">RSVP first to see your schedule</div>'; return; }
+    var isHomam = d.evSel==='homam'||d.evSel==='both';
+    var isParty = d.evSel==='party'||d.evSel==='both';
+    var html = '';
+
+    if(isHomam){
+      html += '<div style="font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:10px">Morning — May 2, 2026</div>';
+      html += EVENTS_HOMAM.map(function(e){ return makeEventCard(e,'morning'); }).join('');
+    }
+    if(isParty){
+      html += '<div style="font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin:'+(isHomam?'16px':'0')+' 0 10px">Evening — May 2, 2026</div>';
+      html += EVENTS_PARTY.map(function(e){ return makeEventCard(e,'evening'); }).join('');
+    }
+    el.innerHTML = html || '<div style="font-size:13px;color:var(--ink3);font-style:italic">No events found for your selection.</div>';
+  });
+}
+
+function makeEventCard(e, type){
+  var bg     = type==='morning' ? 'rgba(168,130,58,0.07)' : 'rgba(74,122,90,0.07)';
+  var border = type==='morning' ? 'rgba(168,130,58,0.2)'  : 'rgba(74,122,90,0.2)';
+  var dot    = type==='morning' ? 'var(--gold)' : 'var(--sage)';
+  return '<div style="background:'+bg+';border:1px solid '+border+';border-radius:var(--rsm);padding:12px 14px;margin-bottom:8px;display:flex;gap:12px">'
+    +'<div style="flex-shrink:0;padding-top:6px"><div style="width:7px;height:7px;border-radius:50%;background:'+dot+'"></div></div>'
+    +'<div style="flex:1">'
+    +'<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:3px">'
+    +'<div style="font-family:Cormorant Garamond,serif;font-size:16px;font-style:italic;color:var(--ink)">'+e.title+'</div>'
+    +'<div style="font-size:11px;font-weight:500;color:var(--ink3);white-space:nowrap">'+e.time+' &ndash; '+e.end+'</div>'
+    +'</div>'
+    +'<div style="font-size:12px;color:var(--ink3);font-weight:300">'+e.note+'</div>'
+    +'</div></div>';
+}
+
+// ── GUEST: MY STAY TAB ──
+function renderGuestStay(){
+  var el = document.getElementById('gstay-content');
+  if(!el) return;
+  // Always re-fetch from storage to get latest room/driver assignments
+  stGet('myphone', function(ph){
+    if(!ph){ el.innerHTML='<div style="font-size:13px;color:var(--ink3);font-style:italic">Sign in to see your stay details.</div>'; return; }
+    stGet('rsvp:'+ph, function(d){
+      _renderGuestStayData(el, d, ph);
+    });
+  });
+}
+function _renderGuestStayData(el, d, ph){
+    if(!d || d.stay!=='yes'){ el.innerHTML='<div style="font-size:13px;color:var(--ink3);font-style:italic">No stay details found.</div>'; return; }
+    var html = '<div style="font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:12px">Your Stay at Bloom Hotel</div>';
+
+    // Room number
+    html += '<div style="background:var(--iv);border:1px solid var(--ivdd);border-radius:var(--r);padding:14px 16px;margin-bottom:12px">';
+    if(d.roomNumber){
+      html += '<div style="font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink4);margin-bottom:4px">Your Room</div>'
+        +'<div style="font-family:Cormorant Garamond,serif;font-size:36px;font-weight:300;color:var(--sage);line-height:1">'+d.roomNumber+'</div>'
+        +'<div style="font-size:12px;color:var(--ink3);margin-top:4px">Bloom Hotel, DLF Road, HITEC City</div>';
+    } else {
+      html += '<div style="font-size:13px;color:var(--ink3);font-style:italic">Room not yet assigned — you will be notified when it is ready.</div>';
+    }
+    html += '</div>';
+
+    // Check-in / out
+    if(d.ci){
+      html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px">';
+      html += '<div style="background:rgba(74,122,90,0.07);border:1px solid rgba(74,122,90,0.15);border-radius:var(--rsm);padding:12px 14px">'
+        +'<div style="font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);margin-bottom:4px">Check-in</div>'
+        +'<div style="font-size:15px;font-weight:500;color:var(--ink)">'+d.ci+'</div>'
+        +(d.ciTime?'<div style="font-size:12px;color:var(--ink3);margin-top:2px">'+fmtTime(d.ciTime)+'</div>':'')
+        +'</div>';
+      html += '<div style="background:rgba(74,122,90,0.07);border:1px solid rgba(74,122,90,0.15);border-radius:var(--rsm);padding:12px 14px">'
+        +'<div style="font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);margin-bottom:4px">Check-out</div>'
+        +'<div style="font-size:15px;font-weight:500;color:var(--ink)">'+d.co+'</div>'
+        +(d.coTime?'<div style="font-size:12px;color:var(--ink3);margin-top:2px">'+fmtTime(d.coTime)+'</div>':'')
+        +'</div>';
+      html += '</div>';
+    }
+
+    // Bloom Hotel map
+    html += '<a href="https://maps.app.goo.gl/DHhqLpeT2S1zuRAC6" target="_blank" rel="noopener" '
+      +'style="display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:var(--rsm);border:1px solid var(--ivdd);background:var(--iv);text-decoration:none">'
+      +'<div style="width:28px;height:28px;border-radius:6px;background:var(--f7);display:flex;align-items:center;justify-content:center;flex-shrink:0">'
+      +'<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7AAA88" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>'
+      +'<div style="flex:1"><div style="font-size:13px;font-weight:500;color:var(--ink2)">Bloom Hotel, DLF Road</div>'
+      +'<div style="font-size:11px;color:var(--ink4);font-weight:300">Tap to open in Google Maps</div></div>'
+      +'<span style="color:var(--ink4);font-size:14px">&rarr;</span>'
+      +'</a>';
+
+    // Transport section — always show if they requested pickup/drop
+    var tr = d.transport || {};
+    var driverPickup = d['driver_pickup_'+(ph||d.phone)];
+    var driverDrop   = d['driver_drop_'+(ph||d.phone)];
+
+    if(tr.needPickup || tr.needDrop){
+      html += '<div style="font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);margin:14px 0 8px">Transport</div>';
+
+      if(tr.needPickup){
+        var arrMode = tr.arrMode ? tr.arrMode.charAt(0).toUpperCase()+tr.arrMode.slice(1) : '';
+        var arrPlace = tr.arrPlace || '';
+        var arrWhen = (tr.arrDate||'') + (tr.arrTime ? ' at '+fmtTime(tr.arrTime) : '');
+        html += '<div style="border-radius:var(--r);overflow:hidden;margin-bottom:8px;border:1.5px solid '+(driverPickup?'rgba(74,122,90,0.3)':'rgba(216,207,192,0.8)')+'">';
+        html += '<div style="background:'+(driverPickup?'rgba(74,122,90,0.08)':'var(--ivd)')+';padding:11px 14px;display:flex;align-items:flex-start;gap:10px">';
+        html += '<div style="width:28px;height:28px;border-radius:50%;background:'+(driverPickup?'var(--sage)':'var(--ivdd)')+';display:flex;align-items:center;justify-content:center;flex-shrink:0">';
+        html += '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="'+(driverPickup?'#fff':'var(--ink4)')+'" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>';
+        html += '<div style="flex:1"><div style="font-size:12px;font-weight:600;color:'+(driverPickup?'var(--sage)':'var(--ink3)')+';margin-bottom:2px">'+(driverPickup ? '✓ Pickup Confirmed' : 'Pickup Requested')+'</div>';
+        if(arrMode || arrPlace) html += '<div style="font-size:12px;color:var(--ink2);margin-bottom:1px">'+(arrMode?arrMode+' ':'')+(arrPlace?'from '+arrPlace:'')+'</div>';
+        if(arrWhen) html += '<div style="font-size:11px;color:var(--ink3)">'+arrWhen+'</div>';
+        if(driverPickup){
+          html += '<div style="margin-top:8px;padding:8px 10px;background:rgba(74,122,90,0.06);border-radius:6px">'
+            +'<div style="font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);margin-bottom:3px">Driver Assigned</div>'
+            +'<div style="font-size:13px;font-weight:500;color:var(--ink)">'+driverPickup+'</div>'
+            +'</div>';
+        } else {
+          html += '<div style="margin-top:6px;font-size:11px;color:var(--ink4);font-style:italic">Driver details will appear here once assigned</div>';
+        }
+        html += '</div></div></div>';
+      }
+
+      if(tr.needDrop){
+        var depMode = tr.depMode ? tr.depMode.charAt(0).toUpperCase()+tr.depMode.slice(1) : '';
+        var depPlace = tr.depPlace || '';
+        var depWhen = (tr.depDate||'') + (tr.depTime ? ' at '+fmtTime(tr.depTime) : '');
+        html += '<div style="border-radius:var(--r);overflow:hidden;border:1.5px solid '+(driverDrop?'rgba(168,130,58,0.3)':'rgba(216,207,192,0.8)')+'">';
+        html += '<div style="background:'+(driverDrop?'rgba(168,130,58,0.07)':'var(--ivd)')+';padding:11px 14px;display:flex;align-items:flex-start;gap:10px">';
+        html += '<div style="width:28px;height:28px;border-radius:50%;background:'+(driverDrop?'var(--gold)':'var(--ivdd)')+';display:flex;align-items:center;justify-content:center;flex-shrink:0">';
+        html += '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="'+(driverDrop?'#fff':'var(--ink4)')+'" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>';
+        html += '<div style="flex:1"><div style="font-size:12px;font-weight:600;color:'+(driverDrop?'var(--gold)':'var(--ink3)')+';margin-bottom:2px">'+(driverDrop ? '✓ Drop Confirmed' : 'Drop Requested')+'</div>';
+        if(depMode || depPlace) html += '<div style="font-size:12px;color:var(--ink2);margin-bottom:1px">'+(depMode?depMode+' ':'')+(depPlace?'to '+depPlace:'')+'</div>';
+        if(depWhen) html += '<div style="font-size:11px;color:var(--ink3)">'+depWhen+'</div>';
+        if(driverDrop){
+          html += '<div style="margin-top:8px;padding:8px 10px;background:rgba(168,130,58,0.06);border-radius:6px">'
+            +'<div style="font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:3px">Driver Assigned</div>'
+            +'<div style="font-size:13px;font-weight:500;color:var(--ink)">'+driverDrop+'</div>'
+            +'</div>';
+        } else {
+          html += '<div style="margin-top:6px;font-size:11px;color:var(--ink4);font-style:italic">Driver details will appear here once assigned</div>';
+        }
+        html += '</div></div></div>';
+      }
+    }
+    el.innerHTML = html;
+}
+
+// ── GUEST: GIFT SHOPS ──
+var GIFT_SHOPS = {
+  'Hamleys': {
+    note: 'Best for premium soft toys & plush animals',
+    locations: [
+      {addr:'Inorbit Mall, HITEC City',    maps:'https://maps.app.goo.gl/HamleysInorbit'},
+      {addr:'Forum Sujana Mall, Kukatpally',maps:'https://maps.google.com/?q=Hamleys+Forum+Sujana+Mall+Hyderabad'}
+    ]
+  },
+  'FirstCry': {
+    note: 'Baby & kids specialty — great 1st birthday picks',
+    locations: [
+      {addr:'Kondapur',           maps:'https://maps.google.com/?q=FirstCry+Kondapur+Hyderabad'},
+      {addr:'Banjara Hills',      maps:'https://maps.google.com/?q=FirstCry+Banjara+Hills+Hyderabad'},
+      {addr:'Kukatpally',         maps:'https://maps.google.com/?q=FirstCry+Kukatpally+Hyderabad'},
+      {addr:'Dilsukhnagar',       maps:'https://maps.google.com/?q=FirstCry+Dilsukhnagar+Hyderabad'},
+      {addr:'Secunderabad',       maps:'https://maps.google.com/?q=FirstCry+Secunderabad+Hyderabad'}
+    ]
+  },
+  'Miniso': {
+    note: 'Adorable animal plush at great prices — jungle theme perfect!',
+    locations: [
+      {addr:'Inorbit Mall, HITEC City',    maps:'https://maps.google.com/?q=Miniso+Inorbit+Mall+Hyderabad'},
+      {addr:'Phoenix Arena, HITEC City',   maps:'https://maps.google.com/?q=Miniso+Phoenix+Arena+Hyderabad'},
+      {addr:'GVK One Mall, Banjara Hills', maps:'https://maps.google.com/?q=Miniso+GVK+One+Hyderabad'},
+      {addr:'Nexus Hyderabad Mall',        maps:'https://maps.google.com/?q=Miniso+Nexus+Mall+Hyderabad'}
+    ]
+  },
+  'Mothercare': {
+    note: 'Premium baby & toddler gifts — age 1+ soft toys',
+    locations: [
+      {addr:'Inorbit Mall, HITEC City',    maps:'https://maps.google.com/?q=Mothercare+Inorbit+Hyderabad'},
+      {addr:'GVK One Mall, Banjara Hills', maps:'https://maps.google.com/?q=Mothercare+GVK+One+Hyderabad'}
+    ]
+  },
+  'Landmark': {
+    note: 'Books, toys & gifts — great educational toys',
+    locations: [
+      {addr:'Inorbit Mall, HITEC City',    maps:'https://maps.google.com/?q=Landmark+Inorbit+HITEC+City+Hyderabad'},
+      {addr:'Nexus Hyderabad Mall',        maps:'https://maps.google.com/?q=Landmark+Nexus+Mall+Hyderabad'}
+    ]
+  },
+  'Toycra': {
+    note: 'Specialty toy store — wooden & educational toys',
+    locations: [
+      {addr:'Jubilee Hills, Hyderabad',    maps:'https://maps.google.com/?q=Toycra+Jubilee+Hills+Hyderabad'}
+    ]
+  },
+  'Archies Gallery': {
+    note: 'Soft toys, gift hampers & stuffed animals',
+    locations: [
+      {addr:'HITEC City',         maps:'https://maps.google.com/?q=Archies+Gallery+HITEC+City+Hyderabad'},
+      {addr:'Banjara Hills',      maps:'https://maps.google.com/?q=Archies+Gallery+Banjara+Hills+Hyderabad'},
+      {addr:'Ameerpet',           maps:'https://maps.google.com/?q=Archies+Gallery+Ameerpet+Hyderabad'}
+    ]
+  },
+  'Crossword': {
+    note: 'Books & educational toys for curious little ones',
+    locations: [
+      {addr:'Banjara Hills',      maps:'https://maps.google.com/?q=Crossword+Banjara+Hills+Hyderabad'},
+      {addr:'Inorbit Mall',       maps:'https://maps.google.com/?q=Crossword+Inorbit+Mall+Hyderabad'}
+    ]
+  },
+  'Mumma Care': {
+    note: 'Baby specialty gifts & organic toys',
+    locations: [
+      {addr:'Kondapur, Hyderabad',maps:'https://maps.google.com/?q=Mumma+Care+Kondapur+Hyderabad'}
+    ]
+  }
+};
+
+
+function giftAnswer(type){
+  // Highlight the tile
+  document.querySelectorAll('.ishaa-tile').forEach(function(t){ t.classList.remove('active'); });
+  var tileMap = {
+    'animal soft toys':'itile-1', 'toys with lights and movement':'itile-2',
+    'sound touch toys':'itile-3', 'light sound balls':'itile-4',
+    'touch feel sound books':'itile-5', 'shiny rich colour dresses':'itile-6',
+    'remote shape teethers':'itile-7', 'interactive toys':'itile-8'
+  };
+  var tile = document.getElementById(tileMap[type]);
+  if(tile) tile.classList.add('active');
+  var el = document.getElementById('gift-suggestion-area');
+  if(!el) return;
+
+  // Suggestion map
+  var suggestions = {
+    'toys with lights and movement': {
+      icon:'✨',
+      tip:'Ishaa loves things that light up and move. At 1, the best are spinning tops, light-up stacking toys and musical mobiles she can reach for.',
+      picks:['VTech Spin and Soothe Cat Gyro (Rs 700-1200)','Fisher-Price Brilliant Basics Musical Pop-Up (Rs 600-1000)','LeapFrog Lights and Music Learning Puppy (Rs 800-1500)','Battat Light-Up Stacker (Rs 500-900)']
+    },
+    'sound touch toys': {
+      icon:'🎵',
+      tip:'Press-and-play toys are perfect for Ishaa. She loves cause-and-effect — push it, it plays! Keyboard-style or animal sound panels are ideal.',
+      picks:['Fisher-Price Laugh & Learn Piano (Rs 800-1400)','VTech Animal Fun Laptop (Rs 700-1200)','Baby Einstein Music Touch Panel (Rs 900-1600)','Sassy Press & Play Activity Toy (Rs 500-900)']
+    },
+    'light sound balls': {
+      icon:'⚽',
+      tip:'Sound and light balls are brilliant for Ishaa — she can roll, throw, and watch them react. Great for motor development too.',
+      picks:['Fisher-Price Roller Ball Popper (Rs 600-1000)','Infantino Pop & Ball Drop (Rs 500-900)','Manhattan Toy Wimmer-Ferguson Senses Ball (Rs 800-1400)','Nuby Giggle Ball with lights (Rs 400-700)']
+    },
+    'touch feel sound books': {
+      icon:'📖',
+      tip:'Touch-and-feel and sound books are perfect for 1-year-olds. Ishaa will love books with animal sounds and textured pages to explore.',
+      picks:['That Is Not My Lion (Touchy-Feely, Rs 400-700)','Dear Zoo Lift-the-Flap Board Book (Rs 300-600)','LeapFrog Learning Book with sounds (Rs 600-1000)','DK Safari Animals Touch & Feel (Rs 500-900)']
+    },
+    'shiny rich colour dresses': {
+      icon:'👗',
+      tip:'Ishaa loves shiny, rich-colour outfits. Think sequins, shimmer, bold jewel tones and Indian festive wear — she will shine at the party!',
+      picks:['Sequin birthday frock with bloomers (Rs 600-1500)','Lehenga choli set in jewel tones (Rs 800-2000)','Shimmer smocked dress with big bow (Rs 700-1500)','Hand-embroidered anarkali with dupatta (Rs 1000-2500)']
+    },
+    'remote shape teethers': {
+      icon:'🦷',
+      tip:'Ishaa specifically loves remote-shaped teethers. She wants to hold what the adults hold! Safe BPA-free silicone is essential.',
+      picks:['Nuby Remote Control Teether (Rs 400-700)','Tiny Love Remote Teether in silicone (Rs 500-900)','Mee Mee Remote Soother Teether (Rs 250-450)','Silicone multi-texture teether set (Rs 400-800)']
+    },
+    
+    'animal soft toys': {
+      icon:'🐘',
+      tip:'Ishaa loves animal soft toys — especially elephants, lions and giraffes. Go large and huggable (40cm+). Machine-washable is a bonus for parents!',
+      picks:['Jellycat Bashful Elephant (Rs 2500-4000)','IKEA Djungelskog elephant or lion (Rs 499-799)','Wild Republic Safari plush set (Rs 1200-2000)','Hamleys jumbo giraffe (Rs 1500-3000)'],
+      shopCat:'soft toys'
+    },
+    'brain games & sensory': {
+      icon:'🧠',
+      tip:'Ishaa loves brain games! At 1, the best are shape sorters, stacking toys, and sensory balls. These build motor skills and keep her engaged for ages.',
+      picks:['Fisher-Price shape sorter (Rs 600-1000)','Skoolzy rainbow stacking rings (Rs 500-800)','Sensory crinkle & rattle ball set (Rs 400-700)','Hape wooden peg puzzle (Rs 700-1200)'],
+      shopCat:'brain games'
+    },
+    'teether toys': {
+      icon:'🦷',
+      tip:'Ishaa has a very specific favourite — remote-shaped teethers! She loves ones that look like real objects. Safe, BPA-free silicone is key.',
+      picks:['Nuby Remote Control teether (Rs 400-700)','Mee Mee phone-shaped teether (Rs 250-450)','Manhattan Toy remote teether (Rs 800-1500)','Silicone multi-sensory teether set (Rs 500-900)'],
+      shopCat:'soft toys'
+    },
+    'lego & building blocks': {
+      icon:'🧱',
+      tip:'LEGO DUPLO is perfect for 1-year-olds. Big blocks, safe, and builds creativity. The animal sets are ideal for Ishaa.',
+      picks:['LEGO DUPLO Wild Animals (Rs 2000-3500)','LEGO DUPLO Classic Brick Box (Rs 1500-2500)','Mega Bloks First Builders (Rs 800-1500)','B.Toys stacking blocks (Rs 600-1200)'],
+      shopCat:'lego'
+    },
+    'books & learning': {
+      icon:'📚',
+      tip:'Board books with textured pages, lift-the-flap or animal sounds are perfect for 1-year-olds. Avoid paper pages.',
+      picks:['Dear Zoo lift-the-flap book (Rs 300-600)','That Is Not My... touchy-feely series (Rs 400-700)','Safari animal sound books (Rs 500-900)','DK First Animal Encyclopedia (Rs 600-1000)'],
+      shopCat:'books'
+    },
+    'art & craft': {
+      icon:'🎨',
+      tip:'Chunky crayons, finger paints and play-dough are age-perfect. Avoid anything with small parts.',
+      picks:['Crayola My First Finger Paints (Rs 400-700)','Melissa & Doug jumbo crayons (Rs 300-500)','Play-Doh starter set (Rs 400-800)','Orbeez sensory kit (Rs 600-1000)'],
+      shopCat:'art'
+    },
+    'motor movement toys': {
+      icon:'🤸',
+      tip:'Ishaa is all about physical play — she loves crawling, reaching and stacking. These toys grow her motor skills while keeping her moving.',
+      picks:['VTech push and ride walking toy (Rs 1200-2000)','Stacking cups with textures (Rs 400-800)','Little Tikes cozy coupe (Rs 3000-5000)','Activity tunnel crawl-through (Rs 800-1500)'],
+      shopCat:'outdoor'
+    },
+    'shiny colourful dress': {
+      icon:'👗',
+      tip:'Ishaa loves shiny, colourful outfits — think sequins, bows, and bold colours. Indian ethnic wear with shimmer is always a winner for a 1st birthday!',
+      picks:['Sequin birthday frock (Rs 600-1500)','Embroidered lehenga set (Rs 800-2000)','Shimmer cotton frock with headband set (Rs 500-1200)','Smocked colourful dress with bloomers (Rs 700-1800)'],
+      shopCat:'soft toys'
+    },
+    'premium gift': {
+      icon:'⭐',
+      tip:'For a premium pick, go for a personalised keepsake or a high-quality branded toy that will last years.',
+      picks:['Jellycat large jungle animal (Rs 3000-6000)','LEGO DUPLO animal set (Rs 3500-6000)','Melissa & Doug wooden activity cube (Rs 3000-5000)','Personalised name wooden puzzle (Rs 1500-3000)'],
+      shopCat:'premium'
+    },
+    'interactive toys': {
+      icon:'🎮',
+      tip:'Ishaa loves toys she can interact with — press a button and something happens. Activity cubes, cause-and-effect toys and pop-up surprises keep her completely hooked.',
+      picks:['Fisher-Price Laugh & Learn Activity Cube (Rs 1200-2000)','VTech Pop-Up Surprise Animal Toy (Rs 700-1200)','Infantino Squeeze & Teethe Friends (Rs 400-800)','Skip Hop Press & Stay Sticker Scene (Rs 600-1000)']
+    }
+  };
+
+  var s = suggestions[type];
+  if(!s){ el.innerHTML=''; return; }
+
+  el.innerHTML = '<div style="background:rgba(74,122,90,0.06);border:1px solid rgba(74,122,90,0.15);border-radius:var(--r);padding:14px 16px;margin-bottom:10px">'
+    +'<div style="font-size:15px;margin-bottom:6px">'+s.icon+' '+type.charAt(0).toUpperCase()+type.slice(1)+'</div>'
+    +'<div style="font-size:12px;color:var(--ink2);font-weight:300;line-height:1.6;margin-bottom:10px">'+s.tip+'</div>'
+    +'<div style="font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);margin-bottom:6px">Top picks</div>'
+    +'<div style="font-size:12px;color:var(--ink2);line-height:1.9">'
+    +s.picks.map(function(p){return '&bull; '+p;}).join('<br>')
+    +'</div>'
+    +'</div>';
+
+}
+
+function findShop(query){
+  var el = document.getElementById('gift-shops-list');
+  if(!el) return;
+
+  // Tag each shop with categories
+  var shopList = [
+    {name:'Hamleys',         cat:['soft toys','animal plush','premium','lego','all'], note:'Premium plush & stuffed animals',
+     locs:[{addr:'Inorbit Mall, HITEC City', maps:'https://www.google.com/maps/search/Hamleys+Inorbit+Mall+Hyderabad'},
+           {addr:'Forum Sujana Mall, Kukatpally', maps:'https://www.google.com/maps/search/Hamleys+Forum+Sujana+Mall+Hyderabad'}]},
+    {name:'FirstCry',        cat:['soft toys','animal plush','books','wooden toys','brain games','rc cars','outdoor','budget','all'], note:'Best range for 1-year-olds',
+     locs:[{addr:'Kondapur',     maps:'https://www.google.com/maps/search/FirstCry+Kondapur+Hyderabad'},
+           {addr:'Banjara Hills',maps:'https://www.google.com/maps/search/FirstCry+Banjara+Hills+Hyderabad'},
+           {addr:'Kukatpally',   maps:'https://www.google.com/maps/search/FirstCry+Kukatpally+Hyderabad'},
+           {addr:'Secunderabad', maps:'https://www.google.com/maps/search/FirstCry+Secunderabad+Hyderabad'}]},
+    {name:'Miniso',          cat:['soft toys','animal plush','rc cars','budget','all'], note:'Adorable animal plush at great prices',
+     locs:[{addr:'Inorbit Mall, HITEC City', maps:'https://www.google.com/maps/search/Miniso+Inorbit+Mall+Hyderabad'},
+           {addr:'Phoenix Arena, HITEC City',maps:'https://www.google.com/maps/search/Miniso+Phoenix+Arena+Hyderabad'},
+           {addr:'GVK One, Banjara Hills',   maps:'https://www.google.com/maps/search/Miniso+GVK+One+Hyderabad'}]},
+    {name:'Mothercare',      cat:['soft toys','premium','all'], note:'Premium baby & toddler gifts',
+     locs:[{addr:'Inorbit Mall, HITEC City', maps:'https://www.google.com/maps/search/Mothercare+Inorbit+Hyderabad'},
+           {addr:'GVK One, Banjara Hills',   maps:'https://www.google.com/maps/search/Mothercare+GVK+One+Hyderabad'}]},
+    {name:'Landmark',        cat:['books','wooden toys','brain games','art','lego','all'], note:'Books, toys & educational gifts',
+     locs:[{addr:'Inorbit Mall, HITEC City', maps:'https://www.google.com/maps/search/Landmark+Inorbit+HITEC+City+Hyderabad'},
+           {addr:'Nexus Mall',               maps:'https://www.google.com/maps/search/Landmark+Nexus+Mall+Hyderabad'}]},
+    {name:'Crossword',       cat:['books','brain games','art','all'], note:'Books & educational toys',
+     locs:[{addr:'Banjara Hills', maps:'https://www.google.com/maps/search/Crossword+Banjara+Hills+Hyderabad'},
+           {addr:'Inorbit Mall',  maps:'https://www.google.com/maps/search/Crossword+Inorbit+Mall+Hyderabad'}]},
+    {name:'Toycra',          cat:['wooden toys','brain games','premium','lego','all'], note:'Specialty wooden & Montessori toys',
+     locs:[{addr:'Jubilee Hills', maps:'https://www.google.com/maps/search/Toycra+Jubilee+Hills+Hyderabad'}]},
+    {name:'Archies Gallery', cat:['soft toys','budget','all'], note:'Soft toys, gift hampers',
+     locs:[{addr:'HITEC City',    maps:'https://www.google.com/maps/search/Archies+Gallery+HITEC+City+Hyderabad'},
+           {addr:'Banjara Hills', maps:'https://www.google.com/maps/search/Archies+Gallery+Banjara+Hills+Hyderabad'},
+           {addr:'Ameerpet',      maps:'https://www.google.com/maps/search/Archies+Gallery+Ameerpet+Hyderabad'}]},
+    {name:'Mumma Care',      cat:['wooden toys','brain games','art','budget','all'], note:'Organic baby toys & gifts',
+     locs:[{addr:'Kondapur',      maps:'https://www.google.com/maps/search/Mumma+Care+Kondapur+Hyderabad'}]}
+  ];
+
+  var filtered = shopList.filter(function(s){ return s.cat.indexOf(query) >= 0; });
+
+  if(!filtered.length){
+    el.innerHTML='<div style="font-size:13px;color:var(--ink3);font-style:italic;padding:8px 0">No shops found. Try a different filter.</div>';
+    return;
+  }
+
+  el.innerHTML = filtered.map(function(s){
+    return '<div style="background:var(--iv);border:1px solid var(--ivdd);border-radius:var(--r);margin-bottom:8px;overflow:hidden">'
+      +'<div style="padding:11px 14px;border-bottom:1px solid var(--ivdd)">'
+      +'<div style="font-size:13px;font-weight:600;color:var(--ink)">'+s.name+'</div>'
+      +'<div style="font-size:11px;color:var(--ink4);font-weight:300;font-style:italic;margin-top:1px">'+s.note+'</div>'
+      +'</div>'
+      +s.locs.map(function(loc,i){
+        return '<a href="'+loc.maps+'" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;padding:9px 14px;background:'+(i%2===0?'var(--iv)':'var(--ivd)')+';text-decoration:none;border-bottom:'+(i<s.locs.length-1?'1px solid rgba(216,207,192,.3)':'none')+'">'
+          +'<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#4A7A5A" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>'
+          +'<span style="flex:1;font-size:12px;color:var(--ink2)">'+loc.addr+'</span>'
+          +'<span style="font-size:11px;color:var(--sage);font-weight:600">View Map &rarr;</span>'
+          +'</a>';
+      }).join('')
       +'</div>';
   }).join('');
-  // Event delegation for save buttons
-  el.querySelectorAll('.room-save-btn').forEach(function(btn){
-    btn.addEventListener('click',function(){saveRoom(btn.dataset.phone);});
+}
+
+function renderGiftShops(){
+  // don't auto-load — wait for user to pick a category
+  var el = document.getElementById('gift-shops-list');
+  if(!el) return;
+  var html = '';
+  Object.keys(GIFT_SHOPS).forEach(function(name){
+    var shop = GIFT_SHOPS[name];
+    var bid = 'shop_'+name.replace(/\s+/g,'_');
+    html += '<div style="margin-bottom:8px">'
+      +'<div class="shop-header" data-bid="'+bid+'" style="background:var(--iv);border:1px solid var(--ivdd);border-radius:var(--rsm);padding:11px 14px;cursor:pointer;display:flex;align-items:center;gap:10px;transition:all .18s">'
+      +'<div style="flex:1"><div style="font-size:13px;font-weight:600;color:var(--ink)">'+name+'</div>'
+      +'<div style="font-size:11px;color:var(--ink4);font-weight:300;font-style:italic;margin-top:1px">'+shop.note+'</div>'
+      +'<div style="font-size:10px;color:var(--sage);font-weight:500;margin-top:2px">'+shop.locations.length+' location'+(shop.locations.length>1?'s':'')+'</div>'
+      +'</div>'
+      +'<div style="font-size:16px;color:var(--ink4);transition:transform .2s" id="arr_'+bid+'">&#8250;</div>'
+      +'</div>'
+      +'<div id="'+bid+'" style="display:none;border:1px solid var(--ivdd);border-top:none;border-radius:0 0 var(--rsm) var(--rsm);overflow:hidden">';
+    shop.locations.forEach(function(loc, i){
+      html += '<a href="'+loc.maps+'" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;padding:10px 14px;background:'+(i%2===0?'var(--ivd)':'var(--iv)')+';text-decoration:none;border-bottom:'+(i<shop.locations.length-1?'1px solid rgba(216,207,192,.4)':'none')+'">'
+        +'<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>'
+        +'<span style="font-size:12px;color:var(--ink2);font-weight:400;flex:1">'+loc.addr+'</span>'
+        +'<span style="font-size:11px;color:var(--sage);font-weight:500">Maps &rarr;</span>'
+        +'</a>';
+    });
+    html += '</div></div>';
+  });
+  el.innerHTML = html;
+  el.querySelectorAll('.shop-header').forEach(function(h){ h.addEventListener('click',function(){toggleShopLocations(h.dataset.bid);}); });
+}
+
+function toggleShopLocations(id){
+  var el=document.getElementById(id);
+  var arr=document.getElementById('arr_'+id);
+  if(!el)return;
+  var isOpen=el.style.display==='block';
+  el.style.display=isOpen?'none':'block';
+  if(arr) arr.style.transform=isOpen?'':'rotate(90deg)';
+}
+
+// ── GUEST: AI GIFT CHAT ──
+var CHAT_HISTORY = [];
+
+function sendChat(){
+  var inp = document.getElementById('chat-inp');
+  var msg = (inp.value||'').trim();
+  if(!msg) return;
+  inp.value = '';
+  addChatMsg(msg,'user');
+  CHAT_HISTORY.push({role:'user', content:msg});
+  addChatMsg('...','bot','chat-typing');
+
+  fetch('https://api.anthropic.com/v1/messages',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({
+      model:'claude-sonnet-4-20250514',
+      max_tokens:350,
+      system:'You are a warm gifting assistant helping guests choose a gift for Ishaa who is turning 1. Know these facts about Ishaa: she loves animal soft toys especially elephants, lions, giraffes; she loves shiny and colourful dresses and outfits; she loves teethers especially remote-control shaped ones; she is into physical motor movement games like crawling, stacking, reaching; she enjoys brain games and sensory toys. The party has a jungle theme. When someone gives a budget, suggest 3-4 specific products with INR price ranges that match Ishaa preferences. Keep it warm, fun and concise. No need to mention shops.',
+      messages:CHAT_HISTORY
+    })
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(data){
+    var reply = (data.content&&data.content[0]&&data.content[0].text) || 'Try again!';
+    removeChatTyping();
+    addChatMsg(reply,'bot');
+    CHAT_HISTORY.push({role:'assistant',content:reply});
+  })
+  .catch(function(){
+    removeChatTyping();
+    addChatMsg('Try: elephant plush from Hamleys (Rs 500-2000) or Melissa & Doug safari set (Rs 1500-3000).','bot');
   });
 }
 
-function closePDF(){var f=document.getElementById("_pdf_frame");if(f)f.remove();}
+function addChatMsg(text,role,cls){
+  var box = document.getElementById('chat-msgs');
+  if(!box) return;
+  // Remove placeholder
+  var ph=box.querySelector('div[style*="font-style:italic"]');if(ph)ph.remove();
+  var div = document.createElement('div');
+  div.style.cssText='max-width:88%;padding:8px 11px;border-radius:10px;font-size:12px;line-height:1.5;'
+    +(role==='user'?'background:var(--f6);color:var(--iv);align-self:flex-end;margin-left:auto':'background:var(--ivd);color:var(--ink2);align-self:flex-start');
+  if(cls) div.id=cls;
+  div.textContent=text;
+  box.appendChild(div);
+  box.scrollTop=box.scrollHeight;
+}
+function removeChatTyping(){ var t=document.getElementById('chat-typing');if(t)t.remove(); }
+
 function doLogout(){
   stSet('myphone', null, function(){});
   swapTo('q');
@@ -1725,7 +3616,6 @@ function toast(msg){var el=document.getElementById('toast');el.textContent=msg;e
 
 // ── INIT ──
 (function(){
-  initRideLinks();
   myRSVP(function(me) {
     if (me && !me.cancelled) {
       document.getElementById('card-q').classList.add('hidden');
@@ -1734,6 +3624,10 @@ function toast(msg){var el=document.getElementById('toast');el.textContent=msg;e
       showDashboard(me);
     }
   });
+  // Load events from storage
+  stGet('events_homam',function(d){if(d&&d.length)EVENTS_HOMAM=d;});
+  stGet('events_party',function(d){if(d&&d.length)EVENTS_PARTY=d;});
+  stGet('event_version',function(v){if(v)EVENT_VERSION=v;});
 })();
 </script>
 </body>
