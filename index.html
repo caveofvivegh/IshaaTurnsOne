@@ -618,23 +618,26 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opac
     <!-- CARD: Sign In -->
     <div class="card hidden" id="card-login">
       <div class="login-inner">
-        <div style="margin-bottom:20px">
-          <span style="font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--sage);display:block;margin-bottom:8px">Sign in</span>
-          <div class="login-title">Welcome back</div>
-          <div class="login-sub">Enter the WhatsApp number you used when you RSVPed.</div>
+        <div style="margin-bottom:22px">
+          <span style="font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--sage);display:block;margin-bottom:10px">Already RSVPed? 🎉</span>
+          <div class="login-title">Good to see you again!</div>
+          <div class="login-sub" style="margin-top:8px">
+            Type in your mobile number — the same one you used when you said yes to Ishaa's big day.
+            <span style="display:block;margin-top:8px;font-size:12px;color:var(--ink4)">Psst — your schedule, room details, and a little surprise are waiting inside 🐘</span>
+          </div>
         </div>
         <div class="login-field">
-          <label>WhatsApp number</label>
+          <label>Your WhatsApp number</label>
           <div class="phone-wrap">
             <div class="phone-prefix">
               <span class="phone-flag">&#127470;&#127475;</span>
               <span class="phone-code">+91</span>
             </div>
-            <input class="phone-inp" id="login-phone" type="tel" placeholder="98765 43210" maxlength="10" inputmode="numeric" onkeydown="if(event.key==='Enter')signIn()">
+            <input class="phone-inp" id="login-phone" type="text" placeholder="98765 43210" maxlength="15" inputmode="text" onkeydown="if(event.key==='Enter')signIn()">
           </div>
           <div id="login-error" style="display:none;font-size:12px;color:#C05040;font-weight:400;margin-top:8px;font-style:italic"></div>
         </div>
-        <button class="btn-primary" id="login-btn" onclick="signIn()" style="margin-top:14px">Find my RSVP</button>
+        <button class="btn-primary" id="login-btn" onclick="signIn()" style="margin-top:16px">Take me to my RSVP &#8594;</button>
         <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--line);text-align:center">
           <span onclick="swapTo('q')" style="font-size:12px;color:var(--ink3);cursor:pointer;text-decoration:underline;text-underline-offset:3px;">&#8592; Back</span>
         </div>
@@ -650,13 +653,16 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opac
             <div class="dash-sub" id="dash-sub">Ishaa's 1st Birthday · May 2, 2026</div>
           </div>
           <div style="display:flex;align-items:center;gap:6px;flex-shrink:0;margin-top:2px">
-            <button onclick="downloadItinerary()" style="background:var(--f6);border:none;border-radius:8px;padding:7px 11px;cursor:pointer;display:flex;align-items:center;gap:5px;transition:background .18s;white-space:nowrap" onmouseover="this.style.background='var(--f5)'" onmouseout="this.style.background='var(--f6)'">
+            <button onclick="downloadItinerary()" title="Download Itinerary" style="background:var(--f6);border:none;border-radius:8px;padding:7px 11px;cursor:pointer;display:flex;align-items:center;gap:5px;white-space:nowrap">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--iv)" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               <span style="font-size:11px;font-weight:500;color:var(--iv);font-family:DM Sans,sans-serif">Itinerary</span>
             </button>
-            <button onclick="openNotifPanel()" id="notif-bell" style="position:relative;background:none;border:none;cursor:pointer;padding:4px">
+            <button onclick="openNotifPanel()" id="notif-bell" title="Notifications" style="position:relative;background:none;border:none;cursor:pointer;padding:4px">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--ink3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
               <div id="notif-badge" style="display:none;position:absolute;top:-2px;right:-2px;width:16px;height:16px;border-radius:50%;background:#E05040;font-size:9px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center;line-height:1">0</div>
+            </button>
+            <button onclick="doLogout()" title="Sign out" style="background:none;border:none;cursor:pointer;padding:4px;opacity:0.55;transition:opacity .18s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.55'">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--ink2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
             </button>
           </div>
         </div>
@@ -665,7 +671,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opac
           <button class="d-tab" onclick="dashTab('events',this);renderEvents()">Schedule</button>
           <button class="d-tab" onclick="dashTab('reach',this)">Getting There</button>
           <button id="gstay-tab" class="d-tab" style="display:none" onclick="dashTab('gstay',this);renderGuestStay()">My Stay</button>
-          <button class="d-tab" onclick="dashTab('photos',this);renderGuestPhotos()">Photos</button>
+          <button class="d-tab" onclick="dashTab('photos',this);setTimeout(function(){renderGuestPhotos();},100)">Photos</button>
           <button class="d-tab" onclick="dashTab('help',this);renderGiftShops()">Gift Ideas</button>
         </div>
       </div>
@@ -747,6 +753,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opac
       <!-- TAB: Help & Gifts -->
 
       <div class="d-panel" id="dp-help">
+        <div id="admin-gift-ideas-area"></div>
         <div style="font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:10px">What does Ishaa love?</div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">
           <div class="ishaa-tile" id="itile-1" onclick="giftAnswer('animal soft toys')">
@@ -807,6 +814,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opac
       <div class="d-panel" id="dp-adm-overview" style="padding:18px 22px"></div>
       <div class="d-panel" id="dp-food" style="padding:0"></div>
       <div class="d-panel" id="dp-adm-photos" style="padding:18px 22px"></div>
+      <div class="d-panel" id="dp-adm-gifts" style="padding:18px 22px"></div>
       <div class="d-panel" id="dp-admPhotos" style="padding:18px 22px"></div>
       <div class="d-panel" id="dp-admevents" style="padding:18px 22px"><div id="admin-events-wrap"></div></div>
       <!-- Notification panel overlay inside dash card -->
@@ -857,49 +865,50 @@ var GMAPS_BASE  = 'https://www.google.com/maps/dir/?api=1&destination=17.4477,78
 
 // ── STORAGE via window.storage (artifact persistent storage) ──
 // Falls back to localStorage if window.storage not available
+function _lsGet(key){ try{ var v=localStorage.getItem('ish_'+key); return v?JSON.parse(v):null; }catch(e){ return null; } }
+function _lsSet(key,val){ try{ if(val===null||val===undefined){ localStorage.removeItem('ish_'+key); } else { localStorage.setItem('ish_'+key,JSON.stringify(val)); } }catch(e){} }
+
 function stGet(key, cb) {
-  if (window.storage) {
+  // Always try localStorage first — it works everywhere including GitHub Pages
+  var lsVal = _lsGet(key);
+  if(lsVal !== null){ cb(lsVal); return; }
+  // Also try window.storage (Claude artifact env)
+  if(window.storage && window.storage.get){
     window.storage.get(key).then(function(r){
-      if(r) { cb(JSON.parse(r.value)); return; }
-      // not in storage — try localStorage fallback
-      try { var v=localStorage.getItem('ish_'+key); cb(v?JSON.parse(v):null); } catch(e){ cb(null); }
-    }).catch(function(){
-      try { var v=localStorage.getItem('ish_'+key); cb(v?JSON.parse(v):null); } catch(e){ cb(null); }
-    });
+      if(r && r.value){
+        try{ cb(JSON.parse(r.value)); }catch(e){ cb(null); }
+      } else { cb(null); }
+    }).catch(function(){ cb(null); });
   } else {
-    try { var v = localStorage.getItem('ish_'+key); cb(v ? JSON.parse(v) : null); } catch(e){ cb(null); }
+    cb(null);
   }
 }
+
 function stSet(key, val, cb) {
-  if(val === null || val === undefined) {
-    // delete
-    try { localStorage.removeItem('ish_'+key); } catch(e){}
-    if(window.storage) window.storage.delete(key).catch(function(){});
-    if(cb) cb();
-    return;
+  // Write to localStorage synchronously — this is the source of truth
+  _lsSet(key, val);
+  // Fire-and-forget to window.storage (Claude artifact env) — don't block cb on it
+  if(window.storage && window.storage.set && val !== null && val !== undefined){
+    try { window.storage.set(key, JSON.stringify(val)).catch(function(){}); } catch(e){}
   }
-  var str = JSON.stringify(val);
-  if (window.storage) {
-    window.storage.set(key, str).then(function(){ if(cb)cb(); }).catch(function(e){
-      // fallback to localStorage on storage error
-      try { localStorage.setItem('ish_'+key, str); } catch(le){}
-      if(cb) cb();
-    });
-  } else {
-    try { localStorage.setItem('ish_'+key, str); } catch(e){}
-    if(cb) cb();
-  }
+  // Always call cb immediately after localStorage write
+  if(cb) cb();
 }
 function stList(prefix, cb) {
-  if (window.storage) {
-    window.storage.list(prefix).then(function(r){ cb(r ? r.keys : []); }).catch(function(){ cb([]); });
-  } else {
-    var keys = [];
+  // Always scan localStorage first (guaranteed consistent with stGet/stSet)
+  var keys = [];
+  try {
     for (var i = 0; i < localStorage.length; i++) {
       var k = localStorage.key(i);
       if (k && k.indexOf('ish_'+prefix) === 0) keys.push(k.replace('ish_',''));
     }
-    cb(keys);
+  } catch(e){}
+  if(keys.length){ cb(keys); return; }
+  // Fallback: try window.storage
+  if (window.storage && window.storage.list) {
+    window.storage.list(prefix).then(function(r){ cb(r ? r.keys : []); }).catch(function(){ cb([]); });
+  } else {
+    cb([]);
   }
 }
 
@@ -908,11 +917,17 @@ function saveRSVP(d, cb) {
   if (!d.id) d.id = 'r' + Date.now();
   d.lastEdit = new Date().toISOString();
   if (!d.createdAt) d.createdAt = d.lastEdit;
-  // Store by phone as key so sign-in lookup works
+  // Store by phone key
   stSet('rsvp:' + d.phone, d, function() {
-    // Also store current user's id reference
-    stSet('myphone', d.phone, function() {
-      if (cb) cb(d, null);
+    // Maintain a phone index so allRSVPs never misses anyone
+    stGet('rsvp_index', function(idx) {
+      var arr = idx || [];
+      if (arr.indexOf(d.phone) < 0) arr.push(d.phone);
+      stSet('rsvp_index', arr, function() {
+        stSet('myphone', d.phone, function() {
+          if (cb) cb(d, null);
+        });
+      });
     });
   });
 }
@@ -1201,10 +1216,12 @@ function handleSubmit(){
   var orig=btn.textContent;
   btn.textContent='Saving…';btn.disabled=true;
   saveRSVP(d, function(saved, err){
-    btn.textContent=orig;btn.disabled=false;
-    var final=saved||d;
+    btn.textContent=orig; btn.disabled=false;
+    var final = saved||d;
+    // Swap to dashboard FIRST (instant, no animation)
     showDashboard(final);
-    setTimeout(function(){ showRSVPCard(final); }, 400);
+    // Then show overlay on top after a tiny delay so dash is rendered
+    setTimeout(function(){ showRSVPCard(final); }, 50);
   });
 }
 
@@ -1279,7 +1296,14 @@ function showDashboard(d){
   // Notifications
   if(d.phone){ setMyPhone(d.phone); checkNotifications(d); }
 
-  swapTo('dash');
+  // Instant swap — no animation delay so login card doesn't linger
+  ['card-q','card-rsvp','card-login'].forEach(function(id){
+    var e=document.getElementById(id); if(e) e.classList.add('hidden');
+  });
+  var dash=document.getElementById('card-dash');
+  if(dash) dash.classList.remove('hidden');
+  activeCard='dash';
+  window.scrollTo({top:0,behavior:'instant'});
 }
 
 function dashTab(id,el){
@@ -1317,7 +1341,7 @@ function tryEdit(){
 }
 
 // ── SIGN IN ──
-var ADMIN_CODE = 'Ishaa@0525'; // Type this instead of phone to access admin
+var ADMIN_CODE = '12051992'; // Type this instead of phone to access admin
 
 function signIn(){
   var raw = (document.getElementById('login-phone').value||'').trim();
@@ -1337,14 +1361,14 @@ function signIn(){
   }
 
   var btn=document.getElementById('login-btn');
-  btn.textContent='Looking up…';btn.disabled=true;
+  btn.textContent='Finding your spot… 🐾';btn.disabled=true;
   getRSVPByPhone(ph, function(rsvp, e){
-    btn.textContent='Find my RSVP';btn.disabled=false;
+    btn.textContent='Take me to my RSVP →';btn.disabled=false;
     if(rsvp){
       showDashboard(rsvp);
     } else {
       if(err){
-        err.textContent='No RSVP found for +91 '+ph+'. Please check the number or RSVP first.';
+        err.textContent='Hmm, we couldn\'t find an RSVP for +91 '+ph+'. Double-check the number, or head back and RSVP first!';
         err.style.display='block';
       }
     }
@@ -1607,30 +1631,31 @@ function downloadItinerary(){
       +'<div class="t2"></div>'
       +'</div></body></html>';
 
-    // Download
-    try {
-      var blob = new Blob([W],{type:'text/html;charset=utf-8'});
-      var url  = URL.createObjectURL(blob);
-      var a    = document.createElement('a');
-      a.href=url; a.download='Itinerary-Ishaa-'+(d.name||'Guest').replace(/[^a-zA-Z0-9]/g,'-')+'.html';
-      a.style.display='none'; document.body.appendChild(a); a.click();
-      setTimeout(function(){document.body.removeChild(a);URL.revokeObjectURL(url);},1000);
-      toast('Itinerary downloaded! Open the file in a browser to print as PDF.');
-    } catch(e){
-      _showCardOverlay(W);
-    }
+    // Show overlay with download button inside
+    _showCardOverlay(W, d.name||'Guest');
   });
 }
 
-function showRSVPCard(d){
-  d = d || window._lastRSVP;
-  if(!d){ myRSVP(function(me){ if(me) showRSVPCard(me); }); return; }
+function showRSVPCard(passedD){
+  // Always fetch fresh so room/driver assigned later appear
+  myRSVP(function(fresh){
+    _buildAndShowCard(fresh || passedD || window._lastRSVP);
+  });
+}
 
-  var evM  = {both:'Ayush Homam + Birthday Party', homam:'Ayush Homam', party:'Birthday Party'};
-  var attM = {yes:'Confirmed Attending', maybe:'Possibly Attending', no:'Cannot Attend'};
+function _buildAndShowCard(d){
+  if(!d) return;
+
+  var evM   = {both:'Ayush Homam + Birthday Party', homam:'Ayush Homam', party:'Birthday Party'};
+  var attM  = {yes:'Confirmed Attending', maybe:'Possibly Attending', no:'Cannot Attend'};
   var attColor = {yes:'#2D6B4F', maybe:'#8A6010', no:'#A32D2D'};
   var attBg    = {yes:'rgba(45,107,79,0.1)', maybe:'rgba(201,139,10,0.1)', no:'rgba(163,45,45,0.08)'};
 
+  var isHomam  = d.evSel==='homam'||d.evSel==='both';
+  var isParty  = d.evSel==='party'||d.evSel==='both';
+  var showStay = d.stay && d.stay!=='no';
+
+  // ── RSVP rows ──
   var rows = [];
   rows.push(['Event',   evM[d.evSel] || 'Birthday Party']);
   rows.push(['Status',  attM[d.att]  || d.att]);
@@ -1639,23 +1664,26 @@ function showRSVPCard(d){
   if(d.kids>0)    gStr += ', '+d.kids+' child'+(d.kids!==1?'ren':'');
   rows.push(['Guests', gStr]);
   if(d.phone) rows.push(['WhatsApp', '+91 '+d.phone]);
-  var showStay = d.stay && d.stay!=='no';
   if(showStay){
     var sStr = 'Bloom Hotel, DLF Road';
-    if(d.roomNumber) sStr += ' &bull; Room ' + d.roomNumber;
+    if(d.roomNumber) sStr += ' &bull; Room '+ d.roomNumber+(d.roomNumber2?' &amp; '+d.roomNumber2:'');
     if(d.ci) sStr += '<br><small style="color:#9FB0A8">Check-in: '+d.ci+(d.ciTime?' at '+fmtTime(d.ciTime):'')+' &rarr; Check-out: '+d.co+(d.coTime?' at '+fmtTime(d.coTime):'')+'</small>';
     rows.push(['Stay', sStr]);
   }
   var tr = d.transport||{};
+  var driverP = d['driver_pickup_'+d.phone];
+  var driverD = d['driver_drop_'+d.phone];
   if(tr.needPickup){
-    var ps=(tr.arrMode||'');if(tr.arrPlace)ps+=' &bull; '+tr.arrPlace;
-    if(tr.arrDate)ps+='<br><small style="color:#9FB0A8">'+tr.arrDate+(tr.arrTime?' at '+fmtTime(tr.arrTime):'')+'</small>';
+    var ps=(tr.arrMode||''); if(tr.arrPlace) ps+=' from '+tr.arrPlace;
+    if(tr.arrDate) ps+='<br><small style="color:#9FB0A8">'+tr.arrDate+(tr.arrTime?' at '+fmtTime(tr.arrTime):'')+'</small>';
+    if(driverP) ps+='<br><small style="color:#2D6B4F;font-weight:500">Driver: '+driverP+'</small>';
     rows.push(['Pickup', ps||'Requested']);
   }
   if(tr.needDrop){
-    var ds2=(tr.depMode||'');if(tr.depPlace)ds2+=' &bull; '+tr.depPlace;
-    if(tr.depDate)ds2+='<br><small style="color:#9FB0A8">'+tr.depDate+(tr.depTime?' at '+fmtTime(tr.depTime):'')+'</small>';
-    rows.push(['Drop', ds2||'Requested']);
+    var ds=(tr.depMode||''); if(tr.depPlace) ds+=' to '+tr.depPlace;
+    if(tr.depDate) ds+='<br><small style="color:#9FB0A8">'+tr.depDate+(tr.depTime?' at '+fmtTime(tr.depTime):'')+'</small>';
+    if(driverD) ds+='<br><small style="color:#2D6B4F;font-weight:500">Driver: '+driverD+'</small>';
+    rows.push(['Drop', ds||'Requested']);
   }
 
   var rowsHTML = rows.map(function(r,i){
@@ -1665,13 +1693,28 @@ function showRSVPCard(d){
       +'</div>';
   }).join('');
 
-  var evIsHomam = d.evSel==='homam'||d.evSel==='both';
-  var fname = 'RSVP-Ishaa-'+(d.name||'Guest').replace(/[^a-zA-Z0-9]/g,'-')+'.html';
+  // ── Schedule rows ──
+  function evRow(e,color){
+    return '<div style="display:flex;justify-content:space-between;align-items:flex-start;padding:8px 0;border-bottom:1px solid #EDE7DC">'
+      +'<div><div style="font-family:Cormorant Garamond,serif;font-size:15px;font-style:italic;color:#1A271E">'+e.title+'</div>'
+      +'<div style="font-size:10px;color:#9FB0A8;margin-top:1px">'+e.note+'</div></div>'
+      +'<div style="font-size:11px;font-weight:500;color:'+color+';white-space:nowrap;padding-top:3px;margin-left:8px">'+e.time+'</div>'
+      +'</div>';
+  }
+  var schedHTML = '';
+  if(isHomam){
+    schedHTML += '<div style="font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#A8823A;margin:14px 0 6px">Morning — Ayush Homam</div>';
+    EVENTS_HOMAM.forEach(function(e){ schedHTML += evRow(e,'#A8823A'); });
+  }
+  if(isParty){
+    schedHTML += '<div style="font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#4A7A5A;margin:'+(isHomam?'14px':'6px')+' 0 6px">Evening — Birthday Party</div>';
+    EVENTS_PARTY.forEach(function(e){ schedHTML += evRow(e,'#4A7A5A'); });
+  }
 
-  // Build the standalone HTML card
-  var cardHTML = '<!DOCTYPE html><html><head><meta charset="UTF-8">'
+  // ── Build HTML ──
+  var W = '<!DOCTYPE html><html><head><meta charset="UTF-8">'
     +'<meta name="viewport" content="width=device-width,initial-scale=1">'
-    +'<title>RSVP Confirmation - Ishaa Turns One</title>'
+    +'<title>RSVP — Ishaa Turns One</title>'
     +'<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">'
     +'<style>*{box-sizing:border-box;margin:0;padding:0}html,body{min-height:100%;background:#F4F1EB;font-family:DM Sans,sans-serif;display:flex;align-items:flex-start;justify-content:center;padding:24px 16px 40px}'
     +'.card{width:100%;max-width:440px;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 6px rgba(13,32,24,.1),0 20px 50px rgba(13,32,24,.15)}'
@@ -1689,7 +1732,7 @@ function showRSVPCard(d){
     +'.dw{font-size:11px;color:#6B8578;font-weight:300;margin-top:2px}'
     +'.body{padding:4px 20px 0}'
     +'.sh{font-size:9px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#9FB0A8;margin:14px 0 4px}'
-    +'.vb{border:1px solid #EDE7DC;border-radius:8px;overflow:hidden;margin:10px 0 0}'
+    +'.vb{border:1px solid #EDE7DC;border-radius:8px;overflow:hidden;margin:10px 0}'
     +'.vr{padding:10px 14px;border-bottom:1px solid #EDE7DC}'
     +'.vr:last-child{border-bottom:none}'
     +'.vl{font-size:9px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:#9FB0A8;margin-bottom:2px}'
@@ -1700,75 +1743,29 @@ function showRSVPCard(d){
     +'.fb{font-family:Cormorant Garamond,serif;font-size:13px;font-style:italic;color:#9FB0A8}'
     +'.fn{font-size:10px;color:#C4D9CC}'
     +'.t2{height:3px;background:linear-gradient(90deg,#4A7A5A,#A8823A,#4A7A5A)}'
-    +'a{color:#4A7A5A}'
-    +'@media print{body{background:#fff;padding:0}.card{box-shadow:none;max-width:100%;border-radius:0}}</style></head><body>'
-    +'<div class="card">'
+    +'@media print{body{background:#fff;padding:0}.card{box-shadow:none;max-width:100%;border-radius:0}}'
+    +'</style></head><body><div class="card">'
     +'<div class="t1"></div>'
     +'<div class="hero"><div class="ey">RSVP Confirmation</div>'
     +'<div class="nm">'+d.name+'</div>'
-    +'<div class="es">'+(evIsHomam?'Ayush Homam &amp; Birthday Celebration':'Birthday Party &bull; Jungle Theme')+'</div>'
+    +'<div class="es">'+(isHomam?'Ayush Homam &amp; ':'')+'Birthday Party &bull; May 2, 2026 &bull; Radisson HITEC City</div>'
     +'<div class="badge"><div class="dot"></div><div class="bl">'+(attM[d.att]||d.att)+'</div></div></div>'
-    +'<div class="ds"><div class="dl">'+(evIsHomam?'Morning Ceremony':'Evening Celebration')+'</div>'
-    +'<div class="dv">'+(evIsHomam?'Saturday, May 2nd &bull; 8:00 AM':'Saturday, May 2nd &bull; 6:00 PM')+'</div>'
-    +'<div class="dw">Radisson Hotel, HITEC City &bull; Hyderabad</div></div>'
-    +'<div class="body"><div class="sh">Your Details</div>'+rowsHTML+'</div>'
-    +'<div style="padding:0 20px">'
-    +'<div class="vb">'
-    +'<div class="vr"><div class="vl">Event Venue</div><div class="vn">Radisson Hotel, HITEC City</div><div class="va">Madhapur, Hyderabad</div><a class="vm" href="https://maps.app.goo.gl/pi5DkLRbGiPGX6PZ6" target="_blank">Open in Google Maps &rarr;</a></div>'
-    +(showStay?'<div class="vr"><div class="vl">Your Stay'+(d.roomNumber?' &bull; Room '+d.roomNumber:'')+'</div><div class="vn">Bloom Hotel, DLF Road</div><div class="va">DLF Cyber City, HITEC City, Hyderabad</div><a class="vm" href="https://maps.app.goo.gl/DHhqLpeT2S1zuRAC6" target="_blank">Open in Google Maps &rarr;</a></div>':'')
+    +'<div class="ds"><div class="dl">Venue</div>'
+    +'<div class="dv">Radisson Hotel, HITEC City</div>'
+    +'<div class="dw">Madhapur, Hyderabad</div></div>'
+    +'<div class="body"><div class="sh">Your RSVP</div>'+rowsHTML+'</div>'
+    +(schedHTML?'<div class="body">'+schedHTML+'</div>':'')
+    +'<div style="padding:0 20px"><div class="vb">'
+    +'<div class="vr"><div class="vl">Radisson Hotel HITEC City</div><div class="vn">Event Venue</div><div class="va">Madhapur, Hyderabad 500081</div><a class="vm" href="https://maps.app.goo.gl/pi5DkLRbGiPGX6PZ6" target="_blank">Open in Google Maps &rarr;</a></div>'
+    +(showStay?'<div class="vr"><div class="vl">Your Hotel'+(d.roomNumber?' &bull; Room '+d.roomNumber+(d.roomNumber2?' &amp; '+d.roomNumber2:''):'')+'</div><div class="vn">Bloom Hotel, DLF Road</div><div class="va">DLF Cyber City, HITEC City, Hyderabad</div><a class="vm" href="https://maps.app.goo.gl/DHhqLpeT2S1zuRAC6" target="_blank">Open in Google Maps &rarr;</a></div>':'')
     +'</div></div>'
     +'<div class="ft"><div class="fb">Ishaa Turns One &mdash; May 2, 2026</div><div class="fn">'+new Date().toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})+'</div></div>'
-    +'<div class="t2"></div></div>'
-    +'</body></html>';
+    +'<div class="t2"></div></div></body></html>';
 
-  // Try native download (works when file opened directly in browser)
-  try {
-    var blob = new Blob([cardHTML], {type:'text/html;charset=utf-8'});
-    var url  = URL.createObjectURL(blob);
-    var a    = document.createElement('a');
-    a.href = url;
-    a.download = fname;
-    a.style.display = 'none';
-    document.body.appendChild(a);
-    a.click();
-    setTimeout(function(){ document.body.removeChild(a); URL.revokeObjectURL(url); }, 1500);
-    toast('RSVP saved! Open the file and use Print to save as PDF');
-  } catch(e) {
-    // Sandbox fallback — show inline card
-    _showCardOverlay(cardHTML);
-  }
-
-  // If click didn't trigger download (sandbox blocks it), show overlay after short delay
-  setTimeout(function(){
-    var test = document.createElement('a');
-    if(typeof test.download === 'undefined'){
-      _showCardOverlay(cardHTML);
-    }
-  }, 800);
+  // Show overlay immediately (always — no download confusion)
+  _showCardOverlay(W, d.name||'Guest');
 }
 
-function _showCardOverlay(cardHTML){
-  var old = document.getElementById('_rsvp_card_ov');
-  if(old) old.remove();
-  var ov = document.createElement('div');
-  ov.id = '_rsvp_card_ov';
-  ov.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(13,32,24,.75);overflow-y:auto;-webkit-overflow-scrolling:touch';
-  var parser = new DOMParser();
-  var pdoc = parser.parseFromString(cardHTML,'text/html');
-  var cardEl = pdoc.querySelector('.card');
-  var st = pdoc.querySelector('style');
-  var bar = document.createElement('div');
-  bar.style.cssText = 'background:#0D2018;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:1';
-  bar.innerHTML = '<span style="font-size:13px;font-weight:500;color:rgba(255,255,255,.85);font-family:DM Sans,sans-serif">RSVP Confirmation</span>'
-    + '<button onclick="closeRSVPCard()" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.65);border:none;border-radius:7px;padding:7px 14px;font-size:12px;cursor:pointer;font-family:DM Sans,sans-serif">Close</button>';
-  var wrap = document.createElement('div');
-  wrap.style.cssText = 'max-width:460px;margin:20px auto;padding:0 16px 40px';
-  if(st){var s2=document.createElement('style');s2.textContent=st.textContent;wrap.appendChild(s2);}
-  if(cardEl) wrap.appendChild(cardEl);
-  ov.appendChild(bar);
-  ov.appendChild(wrap);
-  document.body.appendChild(ov);
-}
 
 
 // Smart map opener — detects iOS/Android and opens native app
@@ -2009,7 +2006,100 @@ function showNotifBanner(msg, link){
   setTimeout(function(){closeNotif();},5000);
 }
 
-function closeRSVPCard(){var o=document.getElementById("_rsvp_card_ov");if(o)o.remove();}
+function _doDownload(cardHTML, name){
+  try{
+    var blob=new Blob([cardHTML],{type:'text/html;charset=utf-8'});
+    var url=URL.createObjectURL(blob);
+    var a=document.createElement('a');
+    a.href=url; a.download=name||'Ishaa-Itinerary.html';
+    a.style.display='none'; document.body.appendChild(a); a.click();
+    setTimeout(function(){document.body.removeChild(a);URL.revokeObjectURL(url);},1500);
+  }catch(e){ toast('Open in a real browser to download'); }
+}
+
+function _showCardOverlay(cardHTML, guestName){
+  var old=document.getElementById('_rsvp_card_ov'); if(old)old.remove();
+
+  var ov=document.createElement('div');
+  ov.id='_rsvp_card_ov';
+  ov.style.cssText='position:fixed;inset:0;z-index:9999;background:rgba(13,32,24,.82);overflow-y:auto;-webkit-overflow-scrolling:touch;animation:fadeInOv .25s ease';
+
+  // Add keyframe if not already there
+  if(!document.getElementById('_ov_kf')){
+    var kf=document.createElement('style'); kf.id='_ov_kf';
+    kf.textContent='@keyframes fadeInOv{from{opacity:0}to{opacity:1}}';
+    document.head.appendChild(kf);
+  }
+
+  // Parse card HTML
+  var parser=new DOMParser();
+  var pdoc=parser.parseFromString(cardHTML,'text/html');
+  var cardEl=pdoc.querySelector('.card');
+  var st=pdoc.querySelector('style');
+  var link=pdoc.querySelector('link');
+
+  // Top bar
+  var bar=document.createElement('div');
+  bar.style.cssText='background:#0D2018;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:1;gap:10px';
+
+  var title=document.createElement('span');
+  title.style.cssText='font-size:13px;font-weight:500;color:rgba(255,255,255,.85);font-family:DM Sans,sans-serif';
+  title.textContent='Your Confirmation';
+
+  var btnRow=document.createElement('div');
+  btnRow.style.cssText='display:flex;gap:8px;align-items:center';
+
+  var dlBtn=document.createElement('button');
+  dlBtn.style.cssText='padding:7px 12px;border-radius:6px;border:none;background:rgba(74,122,90,.8);color:#fff;font-size:11px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif;display:flex;align-items:center;gap:5px';
+  dlBtn.innerHTML='<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download';
+  dlBtn.addEventListener('click',function(){ _doDownload(cardHTML, 'Ishaa-Confirmation-'+(guestName||'Guest')+'.html'); });
+
+  var closeBtn=document.createElement('button');
+  closeBtn.id='ov-close-btn';
+  closeBtn.style.cssText='background:rgba(255,255,255,.12);color:rgba(255,255,255,.7);border:none;border-radius:7px;padding:7px 13px;font-size:12px;cursor:pointer;font-family:DM Sans,sans-serif;min-width:72px;text-align:center';
+  closeBtn.textContent='Close (10)';
+  closeBtn.addEventListener('click', closeRSVPCard);
+
+  btnRow.appendChild(dlBtn);
+  btnRow.appendChild(closeBtn);
+  bar.appendChild(title);
+  bar.appendChild(btnRow);
+
+  var wrap=document.createElement('div');
+  wrap.style.cssText='max-width:460px;margin:20px auto;padding:0 16px 40px';
+  if(link){var l2=document.createElement('link');l2.rel='stylesheet';l2.href=link.href;wrap.appendChild(l2);}
+  if(st){var s2=document.createElement('style');s2.textContent=st.textContent;wrap.appendChild(s2);}
+  if(cardEl) wrap.appendChild(cardEl);
+
+  ov.appendChild(bar);
+  ov.appendChild(wrap);
+  document.body.appendChild(ov);
+
+  // Auto-download after 800ms
+  setTimeout(function(){
+    _doDownload(cardHTML, 'Ishaa-Confirmation-'+(guestName||'Guest')+'.html');
+  }, 800);
+
+  // Auto-close after 8s, countdown shown on button
+  var secs=5;
+  var tick=setInterval(function(){
+    secs--;
+    var cb=document.getElementById('ov-close-btn');
+    if(!cb){ clearInterval(tick); return; }
+    if(secs<=0){
+      clearInterval(tick);
+      closeRSVPCard();
+    } else {
+      cb.textContent='Closing in '+secs+'s';
+    }
+  },1000);
+  ov._tick=tick;
+}
+
+function closeRSVPCard(){
+  var o=document.getElementById('_rsvp_card_ov');
+  if(o){ if(o._tick)clearInterval(o._tick); o.remove(); }
+}
 
 function toggleAdminRow(el){var s=el.nextSibling;if(s)s.style.display=s.style.display==="block"?"none":"block";}
 
@@ -2033,7 +2123,8 @@ function showAdminDashboard(){
       {id:'at2', label:'Movement',  fn: function(b){ dashTab('movement',     b); renderAdminMovement(); }},
       {id:'at3', label:'Stay',      fn: function(b){ dashTab('stay',         b); renderAdminStay(); }},
       {id:'at4', label:'Events',    fn: function(b){ dashTab('admevents',    b); renderAdminEventsPanel(); }},
-      {id:'at5', label:'Photos',    fn: function(b){ dashTab('adm-photos',   b); renderAdminPhotosNew(); }}
+      {id:'at5', label:'Photos',    fn: function(b){ dashTab('adm-photos',   b); renderAdminPhotosNew(); }},
+      {id:'at6', label:'Gifts',     fn: function(b){ dashTab('adm-gifts',    b); renderAdminGifts(); }}
     ];
     adminTabs.forEach(function(t, i){
       var b = document.createElement('button');
@@ -2328,7 +2419,7 @@ function renderAdminPhotosNew(){
     var guests=all.filter(function(r){return r.att==='yes';});
     window._photoGuests=guests;
 
-    stGet('admin_photos',function(savedPhotos){
+    stGet('admin_photos_meta',function(savedPhotos){
       var photos=savedPhotos||[];
       el.innerHTML='';
 
@@ -2419,7 +2510,6 @@ function handlePhotoUpload(e){
       var pid='pend_'+Date.now()+'_'+fi;
       window._pendingPhotos.push({id:pid,data:dataUrl,tags:[],tagPhones:[]});
 
-      // Card
       var wrap=document.createElement('div');
       wrap.id=pid;
       wrap.style.cssText='background:var(--iv);border:1px solid var(--ivdd);border-radius:var(--r);padding:12px;margin-bottom:10px;display:flex;gap:12px;align-items:flex-start';
@@ -2430,7 +2520,6 @@ function handlePhotoUpload(e){
       img.style.cssText='width:72px;height:72px;object-fit:cover;border-radius:8px;flex-shrink:0;border:1px solid var(--ivdd)';
       wrap.appendChild(img);
 
-      // Right content
       var right=document.createElement('div');
       right.style.cssText='flex:1;min-width:0';
 
@@ -2444,63 +2533,75 @@ function handlePhotoUpload(e){
       lbl.textContent='Who is in this photo?';
       right.appendChild(lbl);
 
-      // Scrollable checkbox list (acts as multi-select dropdown)
-      var listWrap=document.createElement('div');
-      listWrap.style.cssText='border:1.5px solid var(--ivdd);border-radius:8px;overflow:hidden;max-height:140px;overflow-y:auto;background:var(--iv)';
+      // ── DROPDOWN multi-select ──
+      var selectWrap=document.createElement('div');
+      selectWrap.style.cssText='position:relative;margin-bottom:8px';
+
+      var selectBtn=document.createElement('button');
+      selectBtn.style.cssText='width:100%;padding:8px 12px;border:1.5px solid var(--ivdd);border-radius:6px;background:var(--iv);font-size:12px;font-family:DM Sans,sans-serif;color:var(--ink3);text-align:left;cursor:pointer;display:flex;align-items:center;justify-content:space-between';
+      selectBtn.innerHTML='<span id="sel_lbl_'+pid+'">Select guests…</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>';
+
+      var dropdown=document.createElement('div');
+      dropdown.id='drop_'+pid;
+      dropdown.style.cssText='display:none;position:absolute;top:calc(100% + 4px);left:0;right:0;background:var(--iv);border:1.5px solid var(--ivdd);border-radius:8px;box-shadow:0 4px 20px rgba(13,32,24,.15);z-index:100;max-height:180px;overflow-y:auto';
+
+      selectBtn.addEventListener('click',function(ev){
+        ev.stopPropagation();
+        var isOpen=dropdown.style.display==='block';
+        // Close all other dropdowns first
+        document.querySelectorAll('[id^="drop_pend_"]').forEach(function(d){ d.style.display='none'; });
+        dropdown.style.display=isOpen?'none':'block';
+      });
+
+      // Close on outside click
+      document.addEventListener('click',function(){ dropdown.style.display='none'; });
 
       if(!guests.length){
         var none=document.createElement('div');
         none.style.cssText='padding:10px 12px;font-size:12px;color:var(--ink3);font-style:italic';
         none.textContent='No confirmed guests yet';
-        listWrap.appendChild(none);
+        dropdown.appendChild(none);
       } else {
         guests.forEach(function(g,gi){
-          var row=document.createElement('label');
-          row.style.cssText='display:flex;align-items:center;gap:10px;padding:8px 12px;cursor:pointer;background:'+(gi%2===0?'var(--iv)':'var(--ivd)')+';border-bottom:1px solid rgba(216,207,192,.35)';
+          var item=document.createElement('label');
+          item.style.cssText='display:flex;align-items:center;gap:10px;padding:9px 13px;cursor:pointer;background:'+(gi%2===0?'transparent':'rgba(247,243,237,.5)')+';border-bottom:1px solid rgba(216,207,192,.25)';
+          item.addEventListener('click',function(ev){ ev.stopPropagation(); });
 
           var cb=document.createElement('input');
           cb.type='checkbox';
           cb.style.cssText='width:15px;height:15px;accent-color:var(--sage);cursor:pointer;flex-shrink:0';
 
           var nameSpan=document.createElement('span');
-          nameSpan.style.cssText='font-size:13px;font-weight:500;color:var(--ink);flex:1';
+          nameSpan.style.cssText='font-size:13px;color:var(--ink);flex:1';
           nameSpan.textContent=g.name||'Guest';
-
-          var phoneSpan=document.createElement('span');
-          phoneSpan.style.cssText='font-size:10px;color:var(--ink4);font-weight:300';
-          phoneSpan.textContent=g.phone?'+91 '+g.phone:'';
 
           cb.addEventListener('change',function(){
             var p=window._pendingPhotos.find(function(x){return x.id===pid;});
             if(!p)return;
             if(cb.checked){
-              if(p.tags.indexOf(g.name)<0){p.tags.push(g.name);p.tagPhones.push(g.phone);}
+              if(p.tags.indexOf(g.name)<0){ p.tags.push(g.name); p.tagPhones.push(g.phone); }
             } else {
               var ti=p.tags.indexOf(g.name);
-              if(ti>=0){p.tags.splice(ti,1);p.tagPhones.splice(ti,1);}
+              if(ti>=0){ p.tags.splice(ti,1); p.tagPhones.splice(ti,1); }
             }
-            countLbl.textContent=p.tags.length
-              ? p.tags.length+' guest'+(p.tags.length!==1?'s':'')+' tagged: '+p.tags.join(', ')
-              : 'No guests tagged yet';
+            var lblEl=document.getElementById('sel_lbl_'+pid);
+            if(lblEl) lblEl.textContent=p.tags.length?p.tags.join(', '):'Select guests…';
           });
 
-          row.appendChild(cb);row.appendChild(nameSpan);row.appendChild(phoneSpan);
-          listWrap.appendChild(row);
+          item.appendChild(cb);
+          item.appendChild(nameSpan);
+          dropdown.appendChild(item);
         });
       }
-      right.appendChild(listWrap);
 
-      // Count label
-      var countLbl=document.createElement('div');
-      countLbl.style.cssText='font-size:11px;color:var(--ink4);margin-top:5px;font-style:italic';
-      countLbl.textContent='No guests tagged yet';
-      right.appendChild(countLbl);
+      selectWrap.appendChild(selectBtn);
+      selectWrap.appendChild(dropdown);
+      right.appendChild(selectWrap);
 
-      // Save button
       var saveBtn=document.createElement('button');
       saveBtn.textContent='Save Photo';
-      saveBtn.style.cssText='margin-top:10px;width:100%;padding:9px 14px;border-radius:var(--rsm);border:none;background:var(--f6);color:var(--iv);font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif';
-      saveBtn.addEventListener('click',function(){saveTaggedPhoto(pid);});
+      saveBtn.style.cssText='width:100%;padding:9px 14px;border-radius:var(--rsm);border:none;background:var(--f6);color:var(--iv);font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif';
+      saveBtn.addEventListener('click',function(){ saveTaggedPhoto(pid); });
       right.appendChild(saveBtn);
 
       wrap.appendChild(right);
@@ -2514,44 +2615,189 @@ function handlePhotoUpload(e){
 }
 
 
-
 function saveTaggedPhoto(pendingId){
   var p=window._pendingPhotos.find(function(x){return x.id===pendingId;});
   if(!p){toast('Photo not found');return;}
-  if(!p.tags||!p.tags.length){toast('Tag at least one guest');return;}
+  if(!p.tags||!p.tags.length){toast('Please select at least one guest first');return;}
 
-  stGet('admin_photos',function(saved){
-    var photos=saved||[];
-    photos.push({data:p.data,tags:p.tags,tagPhones:p.tagPhones||[],savedAt:new Date().toISOString()});
-    stSet('admin_photos',photos,function(){
-      // Add photo to each tagged guest's storage
-      (p.tagPhones||[]).forEach(function(phone){
-        stGet('guest_photos_'+phone,function(gp){
-          var arr=gp||[];
-          arr.push({data:p.data,savedAt:new Date().toISOString()});
-          stSet('guest_photos_'+phone,arr.slice(0,50),function(){
-            // Notify guest
-            pushGuestNotif(phone, '📸 A photo from the celebration has been added to your Photos tab!', 'photos');
+  var phones=p.tagPhones||[];
+  var tags=p.tags||[];
+  var savedCount=0;
+
+  // Save per-guest separately (avoid hitting storage size limits on bulk keys)
+  // Also save a small reference in admin_photos (no image data — just metadata)
+  var photoId='photo_'+Date.now();
+
+  // Save full image data per guest
+  if(!phones.length){ toast('No phones to save to'); return; }
+
+  phones.forEach(function(phone, i){
+    stGet('guest_photos_'+phone, function(gp){
+      var arr=gp||[];
+      arr.push({id:photoId, data:p.data, savedAt:new Date().toISOString()});
+      // Keep max 30 photos per guest
+      if(arr.length>30) arr=arr.slice(arr.length-30);
+      stSet('guest_photos_'+phone, arr, function(){
+        pushGuestNotif(phone, '📸 A photo from the celebration has been added to your Photos tab!', 'photos');
+        savedCount++;
+        if(savedCount===phones.length){
+          // Save admin metadata (no image data to save space)
+          stGet('admin_photos_meta', function(meta){
+            var m=meta||[];
+            m.push({id:photoId, tags:tags, tagPhones:phones, savedAt:new Date().toISOString(), thumb:p.data.slice(0,200)});
+            stSet('admin_photos_meta', m.slice(0,200), function(){
+              window._pendingPhotos=window._pendingPhotos.filter(function(x){return x.id!==pendingId;});
+              var div=document.getElementById(pendingId); if(div)div.remove();
+              toast('Saved for: '+tags.join(', ')+' ('+phones.length+' guest'+(phones.length!==1?'s':'')+' notified)');
+              renderAdminPhotosNew();
+            });
           });
-        });
+        }
       });
-      // Remove from pending
-      window._pendingPhotos=window._pendingPhotos.filter(function(x){return x.id!==pendingId;});
-      var div=document.getElementById(pendingId);if(div)div.remove();
-      toast('Photo saved for: '+p.tags.join(', '));
-      renderAdminPhotosNew(); // refresh
     });
   });
 }
 
 function removePhoto(idx){
-  stGet('admin_photos',function(photos){
+  stGet('admin_photos_meta',function(photos){
     if(!photos)return;
     photos.splice(idx,1);
-    stSet('admin_photos',photos,function(){
+    stSet('admin_photos_meta',photos,function(){
       toast('Photo removed');
       renderAdminPhotosNew();
     });
+  });
+}
+
+
+// ═══════════════════════════════════════════════════════
+// ADMIN — GIFT IDEAS MANAGER
+// ═══════════════════════════════════════════════════════
+function renderAdminGifts(){
+  var el = document.getElementById('dp-adm-gifts');
+  if(!el) return;
+
+  stGet('admin_gift_ideas', function(saved){
+    var ideas = saved||[];
+
+    var wrap = document.createElement('div');
+
+    // Header
+    var hdr = document.createElement('div');
+    hdr.style.cssText='font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:12px';
+    hdr.textContent='Add Gift Ideas for Guests';
+    wrap.appendChild(hdr);
+
+    // Add form
+    var form = document.createElement('div');
+    form.style.cssText='background:var(--ivd);border-radius:var(--r);padding:14px 16px;margin-bottom:16px';
+
+    var emojiRow = document.createElement('div');
+    emojiRow.style.cssText='display:flex;gap:8px;margin-bottom:8px';
+
+    var emojiInp = document.createElement('input');
+    emojiInp.id='gift-emoji-inp';
+    emojiInp.type='text';
+    emojiInp.placeholder='Emoji (e.g. 🧸)';
+    emojiInp.maxLength=4;
+    emojiInp.style.cssText='width:72px;padding:9px 10px;border:1.5px solid var(--ivdd);border-radius:6px;font-size:18px;text-align:center;outline:none;font-family:DM Sans,sans-serif;color:var(--ink);background:var(--iv)';
+
+    var titleInp = document.createElement('input');
+    titleInp.id='gift-title-inp';
+    titleInp.type='text';
+    titleInp.placeholder='Gift title (e.g. Soft giraffe)';
+    titleInp.style.cssText='flex:1;padding:9px 10px;border:1.5px solid var(--ivdd);border-radius:6px;font-size:13px;outline:none;font-family:DM Sans,sans-serif;color:var(--ink);background:var(--iv)';
+
+    emojiRow.appendChild(emojiInp);
+    emojiRow.appendChild(titleInp);
+    form.appendChild(emojiRow);
+
+    var tipInp = document.createElement('textarea');
+    tipInp.id='gift-tip-inp';
+    tipInp.placeholder='Why Ishaa will love it / buying tip for guests…';
+    tipInp.rows=2;
+    tipInp.style.cssText='width:100%;padding:9px 10px;border:1.5px solid var(--ivdd);border-radius:6px;font-size:13px;outline:none;font-family:DM Sans,sans-serif;color:var(--ink);background:var(--iv);resize:vertical;box-sizing:border-box;margin-bottom:8px';
+    form.appendChild(tipInp);
+
+    var addBtn = document.createElement('button');
+    addBtn.textContent='Add Gift Idea';
+    addBtn.style.cssText='width:100%;padding:10px;border-radius:var(--rsm);border:none;background:var(--f6);color:var(--iv);font-family:DM Sans,sans-serif;font-size:13px;font-weight:600;cursor:pointer';
+    addBtn.addEventListener('click', function(){
+      var emoji=(emojiInp.value||'').trim()||'🎁';
+      var title=(titleInp.value||'').trim();
+      var tip=(tipInp.value||'').trim();
+      if(!title){ toast('Enter a gift title'); return; }
+
+      stGet('admin_gift_ideas',function(cur){
+        var arr=cur||[];
+        arr.push({emoji:emoji,title:title,tip:tip,addedAt:new Date().toISOString()});
+        stSet('admin_gift_ideas',arr,function(){
+          // Notify all confirmed guests
+          allRSVPs(function(all){
+            if(!all)all=[];
+            all.filter(function(r){return r.att==='yes';}).forEach(function(r){
+              pushGuestNotif(r.phone,'🎁 A new gift idea has been added: '+title+'. Check Gift Ideas tab!','help');
+            });
+          });
+          emojiInp.value=''; titleInp.value=''; tipInp.value='';
+          toast('Gift idea added & guests notified!');
+          renderAdminGifts();
+        });
+      });
+    });
+    form.appendChild(addBtn);
+    wrap.appendChild(form);
+
+    // Existing ideas
+    if(ideas.length){
+      var listHdr=document.createElement('div');
+      listHdr.style.cssText='font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px';
+      listHdr.textContent='Added Gift Ideas ('+ideas.length+')';
+      wrap.appendChild(listHdr);
+
+      ideas.forEach(function(idea,i){
+        var row=document.createElement('div');
+        row.style.cssText='display:flex;align-items:flex-start;gap:10px;background:var(--iv);border:1px solid var(--ivdd);border-radius:var(--rsm);padding:11px 13px;margin-bottom:7px';
+
+        var ico=document.createElement('div');
+        ico.style.cssText='font-size:22px;flex-shrink:0;margin-top:1px';
+        ico.textContent=idea.emoji||'🎁';
+
+        var txt=document.createElement('div');
+        txt.style.cssText='flex:1;min-width:0';
+        var t=document.createElement('div');
+        t.style.cssText='font-size:13px;font-weight:600;color:var(--ink)';
+        t.textContent=idea.title;
+        txt.appendChild(t);
+        if(idea.tip){
+          var s=document.createElement('div');
+          s.style.cssText='font-size:12px;color:var(--ink3);font-weight:300;margin-top:2px;line-height:1.4';
+          s.textContent=idea.tip;
+          txt.appendChild(s);
+        }
+
+        var del=document.createElement('button');
+        del.textContent='Remove';
+        del.style.cssText='flex-shrink:0;padding:5px 9px;border-radius:6px;border:1px solid rgba(192,80,70,.3);background:transparent;color:#C07060;font-size:11px;cursor:pointer;font-family:DM Sans,sans-serif';
+        del.addEventListener('click',function(){
+          stGet('admin_gift_ideas',function(cur){
+            var arr=cur||[];arr.splice(i,1);
+            stSet('admin_gift_ideas',arr,function(){ renderAdminGifts(); });
+          });
+        });
+
+        row.appendChild(ico);row.appendChild(txt);row.appendChild(del);
+        wrap.appendChild(row);
+      });
+    } else {
+      var empty=document.createElement('div');
+      empty.style.cssText='font-size:13px;color:var(--ink3);font-style:italic;text-align:center;padding:16px 0';
+      empty.textContent='No gift ideas added yet';
+      wrap.appendChild(empty);
+    }
+
+    el.innerHTML='';
+    el.appendChild(wrap);
   });
 }
 
@@ -3055,7 +3301,9 @@ function removeAdminTyping(){var t=document.getElementById('admin-typing');if(t)
 
 // ── GUEST PHOTOS TAB ──
 function renderGuestPhotos(){
-  stGet('myphone',function(ph){
+  // Use window._lastRSVP.phone if available (most reliable), else stGet myphone
+  var ph = (window._lastRSVP && window._lastRSVP.phone) ? window._lastRSVP.phone : null;
+  function doRender(ph){
     if(!ph){ renderGuestPhotosCloud(); return; }
     stGet('guest_photos_'+ph,function(myPhotos){
       var el=document.getElementById('photos-content');
@@ -3074,7 +3322,11 @@ function renderGuestPhotos(){
       }
       renderGuestPhotosCloud();
     });
-  });
+  }
+  if(ph){ doRender(ph); }
+  else {
+    stGet('myphone',function(p){ doRender(p); });
+  }
 }
 function renderGuestPhotosCloud(){
   stGet('photos_active',function(active){
@@ -3517,7 +3769,24 @@ function findShop(query){
 }
 
 function renderGiftShops(){
-  // don't auto-load — wait for user to pick a category
+  // Load admin-added gift ideas
+  stGet('admin_gift_ideas', function(ideas){
+    var area = document.getElementById('admin-gift-ideas-area');
+    if(!area) return;
+    if(!ideas||!ideas.length){ area.innerHTML=''; return; }
+    var html='<div style="font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:10px">Special picks from Meenu &amp; Vivegh</div>';
+    html+='<div style="margin-bottom:14px">';
+    ideas.forEach(function(idea){
+      html+='<div style="display:flex;align-items:flex-start;gap:10px;background:rgba(168,130,58,0.06);border:1px solid rgba(168,130,58,0.18);border-radius:var(--rsm);padding:11px 13px;margin-bottom:7px">'
+        +'<div style="font-size:20px;flex-shrink:0">'+idea.emoji+'</div>'
+        +'<div><div style="font-size:13px;font-weight:600;color:var(--ink)">'+idea.title+'</div>'
+        +(idea.tip?'<div style="font-size:12px;color:var(--ink3);font-weight:300;margin-top:2px;line-height:1.4">'+idea.tip+'</div>':'')
+        +'</div></div>';
+    });
+    html+='</div>';
+    area.innerHTML=html;
+  });
+
   var el = document.getElementById('gift-shops-list');
   if(!el) return;
   var html = '';
@@ -3605,9 +3874,41 @@ function addChatMsg(text,role,cls){
 }
 function removeChatTyping(){ var t=document.getElementById('chat-typing');if(t)t.remove(); }
 
+function checkNotifications(d){
+  // Just ensure notifications are loaded and badge is updated on login
+  if(d && d.phone) loadNotifs();
+}
+
 function doLogout(){
   stSet('myphone', null, function(){});
-  swapTo('q');
+  // Reset admin tab bar back to guest tabs
+  var tabBar = document.getElementById('guest-tab-bar');
+  if(tabBar){
+    tabBar.innerHTML = '';
+    var guestTabs = [
+      {label:'My RSVP',      fn:"dashTab('rsvp',this)"},
+      {label:'Schedule',     fn:"dashTab('events',this);renderEvents()"},
+      {label:'Getting There',fn:"dashTab('reach',this)"},
+      {label:'Photos',       fn:"dashTab('photos',this);setTimeout(function(){renderGuestPhotos();},100)"},
+      {label:'Gift Ideas',   fn:"dashTab('help',this);renderGiftShops()"}
+    ];
+    guestTabs.forEach(function(t,i){
+      var b=document.createElement('button');
+      b.className='d-tab'+(i===0?' on':'');
+      b.textContent=t.label;
+      b.setAttribute('onclick',t.fn);
+      tabBar.appendChild(b);
+    });
+  }
+  // Hide all cards, show only card-q
+  ['card-q','card-rsvp','card-login','card-dash'].forEach(function(id){
+    var el=document.getElementById(id);
+    if(el) el.classList.add('hidden');
+  });
+  var cq=document.getElementById('card-q');
+  if(cq) cq.classList.remove('hidden');
+  activeCard='q';
+  window.scrollTo({top:0,behavior:'instant'});
   toast('Signed out');
 }
 
