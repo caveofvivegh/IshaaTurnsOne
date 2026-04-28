@@ -610,7 +610,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opac
       </div>
       </div><!-- end core-fields -->
       <div class="sub-wrap">
-        <button class="sub-btn" id="sub-btn" onclick="handleSubmit()">Confirm my RSVP</button>
+        <button class="sub-btn" id="sub-btn" type="button">Confirm my RSVP</button>
         <p class="sub-note" id="sub-note"></p>
       </div>
     </div>
@@ -633,11 +633,11 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opac
               <span class="phone-flag">&#127470;&#127475;</span>
               <span class="phone-code">+91</span>
             </div>
-            <input class="phone-inp" id="login-phone" type="text" placeholder="98765 43210" maxlength="15" inputmode="text" onkeydown="if(event.key==='Enter')signIn()">
+            <input class="phone-inp" id="login-phone" type="text" placeholder="98765 43210" maxlength="15" inputmode="text">
           </div>
           <div id="login-error" style="display:none;font-size:12px;color:#C05040;font-weight:400;margin-top:8px;font-style:italic"></div>
         </div>
-        <button class="btn-primary" id="login-btn" onclick="signIn()" style="margin-top:16px">Take me to my RSVP &#8594;</button>
+        <button class="btn-primary" id="login-btn" type="button" style="margin-top:16px">Take me to my RSVP &#8594;</button>
         <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--line);text-align:center">
           <span onclick="swapTo('q')" style="font-size:12px;color:var(--ink3);cursor:pointer;text-decoration:underline;text-underline-offset:3px;">&#8592; Back</span>
         </div>
@@ -2008,13 +2008,21 @@ function showNotifBanner(msg, link){
 
 function _doDownload(cardHTML, name){
   try{
+    // Try Blob download (works in Chrome, desktop Safari)
     var blob=new Blob([cardHTML],{type:'text/html;charset=utf-8'});
     var url=URL.createObjectURL(blob);
     var a=document.createElement('a');
     a.href=url; a.download=name||'Ishaa-Itinerary.html';
     a.style.display='none'; document.body.appendChild(a); a.click();
     setTimeout(function(){document.body.removeChild(a);URL.revokeObjectURL(url);},1500);
-  }catch(e){ toast('Open in a real browser to download'); }
+  }catch(e){
+    try{
+      // iOS Safari fallback: open in new tab (user can share/save from there)
+      var w=window.open();
+      if(w){ w.document.write(cardHTML); w.document.close(); }
+      else { toast('Allow popups to view your itinerary'); }
+    }catch(e2){ toast('Screenshot or share this screen to save your itinerary'); }
+  }
 }
 
 function _showCardOverlay(cardHTML, guestName){
@@ -2031,12 +2039,26 @@ function _showCardOverlay(cardHTML, guestName){
     document.head.appendChild(kf);
   }
 
-  // Parse card HTML
-  var parser=new DOMParser();
-  var pdoc=parser.parseFromString(cardHTML,'text/html');
-  var cardEl=pdoc.querySelector('.card');
-  var st=pdoc.querySelector('style');
-  var link=pdoc.querySelector('link');
+  // Extract card content using a hidden iframe (Safari-safe alternative to DOMParser)
+  var cardEl=null, st=null, link=null;
+  try {
+    var parser=new DOMParser();
+    var pdoc=parser.parseFromString(cardHTML,'text/html');
+    cardEl=pdoc.querySelector('.card');
+    st=pdoc.querySelector('style');
+    link=pdoc.querySelector('link');
+  } catch(e){
+    // Safari fallback: inject into hidden div
+    var tmp=document.createElement('div');
+    tmp.style.display='none';
+    tmp.innerHTML=cardHTML;
+    document.body.appendChild(tmp);
+    cardEl=tmp.querySelector('.card');
+    st=tmp.querySelector('style');
+    link=tmp.querySelector('link');
+    if(cardEl) cardEl=cardEl.cloneNode(true);
+    document.body.removeChild(tmp);
+  }
 
   // Top bar
   var bar=document.createElement('div');
@@ -2075,10 +2097,13 @@ function _showCardOverlay(cardHTML, guestName){
   ov.appendChild(wrap);
   document.body.appendChild(ov);
 
-  // Auto-download after 800ms
-  setTimeout(function(){
-    _doDownload(cardHTML, 'Ishaa-Confirmation-'+(guestName||'Guest')+'.html');
-  }, 800);
+  // Auto-download — skip on iOS (Safari blocks programmatic downloads)
+  var isIOS=/iPhone|iPad|iPod/i.test(navigator.userAgent||'');
+  if(!isIOS){
+    setTimeout(function(){
+      _doDownload(cardHTML, 'Ishaa-Confirmation-'+(guestName||'Guest')+'.html');
+    }, 800);
+  }
 
   // Auto-close after 8s, countdown shown on button
   var secs=5;
@@ -3917,6 +3942,16 @@ function toast(msg){var el=document.getElementById('toast');el.textContent=msg;e
 
 // ── INIT ──
 (function(){
+  // Wire buttons explicitly for Safari compatibility
+  var lb=document.getElementById('login-btn');
+  if(lb){
+    lb.addEventListener('click', function(){ signIn(); });
+    // Wire enter key on phone input
+    var lp=document.getElementById('login-phone');
+    if(lp) lp.addEventListener('keydown',function(e){ if(e.key==='Enter') signIn(); });
+  }
+  var sb=document.getElementById('sub-btn');
+  if(sb){ sb.addEventListener('click', function(){ handleSubmit(); }); }
   myRSVP(function(me) {
     if (me && !me.cancelled) {
       document.getElementById('card-q').classList.add('hidden');
